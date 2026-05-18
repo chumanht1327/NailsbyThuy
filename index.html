@@ -387,7 +387,8 @@
 :root{--ink:#18120f;--paper:#f8f5f0;--bone:#ede8e0;--dust:#c8bfb4;--terra:#b5624f;--sand:#c9a97a;--mist:#8a7f76;--gap:2px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+html, body{width:100%;max-width:100vw;overflow-x:hidden;overscroll-behavior-x:none}
+body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;cursor:none}
 img{display:block;width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
@@ -841,14 +842,14 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .showcase-btn:hover{background:rgba(181,98,79,.55);border-color:var(--terra);transform:scale(1.04)}
 .showcase-nav{
   position:absolute;top:50%;transform:translateY(-50%);z-index:10;
-  width:60px;height:60px;border-radius:50%;
+  width:44px;height:44px;border-radius:999px;
   border:none;background:rgba(24,18,15,.55);color:white;
-  font-size:1.2rem;backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);
-  transition:background .25s,border-color .25s;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:1rem;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);
+  transition:background .2s,border-color .2s;cursor:pointer;display:flex;align-items:center;justify-content:center;
 }
 .showcase-nav:hover{background:rgba(181,98,79,.5);border-color:var(--terra)}
-.showcase-prev{left:14px}
-.showcase-next{right:14px}
+.showcase-prev{left:calc(50% - 10.65vw - 34px)}
+.showcase-next{right:calc(50% - 10.65vw - 34px)}
 .showcase-dots{display:flex;justify-content:center;gap:10px;margin-top:16px}
 .showcase-dot{
   width:8px;height:8px;border-radius:999px;
@@ -1340,7 +1341,7 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 
   .showcase-shell{
     padding:8px 0 20px;
-    overflow:visible;
+    overflow:hidden;
   }
 
   .showcase-track{
@@ -1362,19 +1363,18 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
     transform:scale(1);
   }
 
-  .showcase-count{
-    top:18px;
-    left:20px;
-
-    font-size:2rem !important;
+  .showcase-nav{
+    width:48px !important;
+    height:48px !important;
+    font-size:1rem !important;
   }
 
-  .showcase-content{
-    left:0 !important;
-    right:0 !important;
-    bottom:14px !important;
-    justify-content:center !important;
-    gap:0 !important;
+  .showcase-prev{
+    left:calc((100% - 63.8vw)/2 - 58px) !important;
+  }
+
+  .showcase-next{
+    right:calc((100% - 63.8vw)/2 - 58px) !important;
   }
 
   .showcase-info{
@@ -1394,7 +1394,6 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
   .showcase-desc{
     font-size:.74rem !important;
     line-height:1.6 !important;
-
     max-width:220px;
   }
 
@@ -1403,23 +1402,6 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
     padding:6px 14px !important;
     height:auto !important;
     min-width:0 !important;
-  }
-
-  .showcase-nav{
-    width:54px !important;
-    height:54px !important;
-
-    backdrop-filter:blur(10px);
-
-    background:rgba(255,255,255,.08);
-  }
-
-  .showcase-prev{
-    left:6px !important;
-  }
-
-  .showcase-next{
-    right:6px !important;
   }
 
   .showcase-dots{
@@ -1888,24 +1870,21 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
     transform:scale(1);
   }
 
-  .showcase-content{
-    left:0 !important;
-    right:0 !important;
-    bottom:18px !important;
-    justify-content:center !important;
+  .showcase-nav{
+    width:56px;
+    height:56px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
   }
 
-  .showcase-title{
-    font-size:4rem !important;
+  .showcase-prev{
+    left:calc(50% - 13.25vw - 34px);
   }
 
-  .showcase-desc{
-    font-size:.92rem !important;
-    max-width:320px;
+  .showcase-next{
+    right:calc(50% - 13.25vw - 34px);
   }
-
-  .showcase-btn{
-    font-size:.7rem !important;
     padding:7px 16px !important;
     height:auto !important;
     min-width:0 !important;
@@ -2674,14 +2653,27 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 }
 
 /* ── SMALL PHONES (≤480px) ───────────────────────────────────────── */
-@media(max-width:480px){
-  .hero-left{padding:80px 18px 40px}
-  .hero-right{min-height:48vw}
-  .t-display{font-size:clamp(3rem,13vw,5rem)}
-  .hero-sub{font-size:.8rem;max-width:100%}
-  .steps{grid-template-columns:1fr;gap:28px}
-  .step{padding:0 8px}
-  #faq-section{padding:48px 18px}
+@media(max-width:900px){
+
+  .showcase-card{
+    min-width:60.4vw;
+    max-width:60.4vw;
+  }
+
+  .showcase-nav{
+    width:48px;
+    height:48px;
+  }
+
+  .showcase-prev{
+    left:calc((100% - 60.4vw)/2 - 58px);
+  }
+
+  .showcase-next{
+    right:calc((100% - 60.4vw)/2 - 58px);
+  }
+
+}
   .faq-q{padding:18px 20px}
   .faq-a-inner{padding:12px 20px 20px}
   #local-area{padding:48px 18px}
@@ -2697,6 +2689,30 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
   .btn{padding:14px 28px;font-size:.7rem}
 }
 
+
+/* Final overrides: centralize showcase-track edges and tighten nav size */
+.showcase-nav{width:40px !important;height:40px !important;border-radius:999px !important;font-size:.95rem !important}
+
+@media(min-width:1200px){
+  /* desktop: card ~26.5vw -> half 13.25vw */
+  .showcase-nav{width:56px !important;height:56px !important}
+  .showcase-prev{left:calc(50% - 13.25vw - 28px) !important}
+  .showcase-next{right:calc(50% - 13.25vw - 28px) !important}
+}
+
+@media(min-width:769px) and (max-width:1199px){
+  /* tablet: card ~44vw -> half 22vw */
+  .showcase-nav{width:44px !important;height:44px !important}
+  .showcase-prev{left:calc(50% - 22vw - 28px) !important}
+  .showcase-next{right:calc(50% - 22vw - 28px) !important}
+}
+
+@media(max-width:900px){
+  /* mobile: card ~60.4vw -> half 30.2vw */
+  .showcase-nav{width:40px !important;height:40px !important}
+  .showcase-prev{left:calc(50% - 30.2vw - 34px) !important}
+  .showcase-next{right:calc(50% - 30.2vw - 34px) !important}
+}
 </style>
 </head>
 <body>
