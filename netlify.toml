@@ -8,6 +8,68 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Redirects and alias handling
+[[redirects]]
+  from = "https://nailsbythuy.com/*"
+  to = "https://www.nailsbythuy.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/nails-by-thuy"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/nailsbythuy"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/twee"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/book"
+  to = "/#booking"
+  status = 302
+
+[[redirects]]
+  from = "/booking"
+  to = "/#booking"
+  status = 302
+
+[[redirects]]
+  from = "/services"
+  to = "/#services"
+  status = 302
+
+[[redirects]]
+  from = "/gallery"
+  to = "/#gallery"
+  status = 302
+
+[[redirects]]
+  from = "/reviews"
+  to = "/#reviews"
+  status = 302
+
+[[redirects]]
+  from = "/about"
+  to = "/#about"
+  status = 302
+
+[[redirects]]
+  from = "/maps"
+  to = "https://maps.app.goo.gl/YMsQDuWs2UDaaP56A"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 # Enable Netlify's built-in asset optimization
 [build.processing]
   skip_processing = false

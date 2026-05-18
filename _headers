@@ -1,15 +1,9 @@
-# Netlify _headers — Nails by Thuy
-# Specific paths listed first — they override the /* wildcard below
-
 /index.html
-  # No cache — every Netlify deploy goes live instantly
   Cache-Control: public, max-age=0, must-revalidate
-  # Security
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  # CSP — frame-src allows Google Maps embed in local-area section
   Content-Security-Policy: default-src 'self' https:; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https:; frame-src https://www.google.com https://maps.google.com;
 
 /sitemap.xml
@@ -24,6 +18,5 @@
   Cache-Control: public, max-age=86400
 
 /*
-  # Long cache for all other static assets (images, fonts, etc.)
   Cache-Control: public, max-age=31536000, immutable
   X-Content-Type-Options: nosniff
