@@ -1,0 +1,20 @@
+# ── WWW → non-www canonical redirect (critical for Google Maps NAP consistency)
+# Force all traffic to www.nailsbythuy.com (matches canonical tag)
+https://nailsbythuy.com/* https://www.nailsbythuy.com/:splat 301!
+
+# ── Common misspellings / alternate spellings
+/nails-by-thuy     /  301
+/nailsbythuy       /  301
+/twee              /  301
+/book              /#booking  302
+/booking           /#booking  302
+/services          /#services 302
+/gallery           /#gallery  302
+/reviews           /#reviews  302
+/about             /#about    302
+
+# ── Old share.google Maps link → canonical Place ID URL (prevents link rot)
+/maps https://maps.app.goo.gl/YMsQDuWs2UDaaP56A 301
+
+# ── 404 fallback → homepage
+/*  /index.html  200

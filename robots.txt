@@ -1,0 +1,8 @@
+# robots.txt — Nails by Thuy
+# https://www.nailsbythuy.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.nailsbythuy.com/sitemap.xml
