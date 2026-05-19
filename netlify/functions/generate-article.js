@@ -81,10 +81,9 @@ exports.handler = async (event) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
           contents: [{
             parts: [{
-              text: `Write a complete SEO nail care guide for: "${topic.trim()}"\nCategory: ${(category || 'Nail Care').slice(0, 60)}\nInclude Austin TX location signals naturally.`
+              text: `${SYSTEM_PROMPT}\n\nWrite a complete SEO nail care guide for: "${topic.trim()}"\nCategory: ${(category || 'Nail Care').slice(0, 60)}\nInclude Austin TX location signals naturally.`
             }]
           }],
           generationConfig: { maxOutputTokens: 2000 }
