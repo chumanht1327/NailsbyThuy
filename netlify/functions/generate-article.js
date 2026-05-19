@@ -37,7 +37,7 @@ exports.handler = async (event) => {
   if (event.httpMethod === 'GET' && event.queryStringParameters?.debug === 'models') {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) return { statusCode: 500, body: 'No GEMINI_API_KEY set' };
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1/models?key=${apiKey}`);
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
     const body = await res.text();
     return { statusCode: res.status, headers: { 'Content-Type': 'application/json' }, body };
   }
@@ -76,14 +76,15 @@ exports.handler = async (event) => {
 
   try {
     const upstream = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
           contents: [{
             parts: [{
-              text: `${SYSTEM_PROMPT}\n\nWrite a complete SEO nail care guide for: "${topic.trim()}"\nCategory: ${(category || 'Nail Care').slice(0, 60)}\nInclude Austin TX location signals naturally.`
+              text: `Write a complete SEO nail care guide for: "${topic.trim()}"\nCategory: ${(category || 'Nail Care').slice(0, 60)}\nInclude Austin TX location signals naturally.`
             }]
           }],
           generationConfig: { maxOutputTokens: 2000 }
