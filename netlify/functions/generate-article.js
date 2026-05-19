@@ -37,7 +37,7 @@ exports.handler = async (event) => {
   if (event.httpMethod === 'GET' && event.queryStringParameters?.debug === 'models') {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) return { statusCode: 500, body: 'No GEMINI_API_KEY set' };
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1/models?key=${apiKey}`);
     const body = await res.text();
     return { statusCode: res.status, headers: { 'Content-Type': 'application/json' }, body };
   }
@@ -76,7 +76,7 @@ exports.handler = async (event) => {
 
   try {
     const upstream = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
