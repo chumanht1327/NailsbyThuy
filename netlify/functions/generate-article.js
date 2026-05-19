@@ -33,6 +33,15 @@ BOOKING CTA — include exactly once near the end:
 Write for nailsbythuy.com — private nail studio in East Austin TX.`;
 
 exports.handler = async (event) => {
+  // GET /generate-article?debug=models — lists available Gemini models for this key
+  if (event.httpMethod === 'GET' && event.queryStringParameters?.debug === 'models') {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) return { statusCode: 500, body: 'No GEMINI_API_KEY set' };
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+    const body = await res.text();
+    return { statusCode: res.status, headers: { 'Content-Type': 'application/json' }, body };
+  }
+
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
