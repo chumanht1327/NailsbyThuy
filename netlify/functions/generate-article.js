@@ -125,7 +125,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Internal error — please try again.' })
+      body: JSON.stringify({ error: 'Internal error — please try again.', detail: String(err) })
     };
   }
 };
