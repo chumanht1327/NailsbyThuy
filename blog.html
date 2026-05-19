@@ -25,14 +25,35 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Blog",
-  "@id": "https://www.nailsbythuy.com/blog",
-  "name": "Nail Care Guides — Nails by Thuy",
-  "description": "Expert nail care guides from Thuy, Austin TX Master Nail Technician and Freehand Art Specialist.",
-  "url": "https://www.nailsbythuy.com/blog",
-  "publisher": {"@id": "https://www.nailsbythuy.com/#business"},
-  "author": {"@id": "https://www.nailsbythuy.com/#artist"},
-  "inLanguage": "en-US"
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://www.nailsbythuy.com/blog",
+      "name": "Nail Care Guides — Nails by Thuy",
+      "description": "Expert nail care guides from Thuy, Austin TX Master Nail Technician and Freehand Art Specialist.",
+      "url": "https://www.nailsbythuy.com/blog",
+      "publisher": {"@type":"NailSalon","name":"Nails by Thuy","url":"https://www.nailsbythuy.com"},
+      "author": {"@type":"Person","name":"Thuy","jobTitle":"Master Nail Technician"},
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "ItemList",
+      "name": "Nail Care Guides",
+      "url": "https://www.nailsbythuy.com/blog",
+      "numberOfItems": 9,
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"BIAB vs Gel X — Which Is Right for You?","url":"https://www.nailsbythuy.com/biab-vs-gel-x"},
+        {"@type":"ListItem","position":2,"name":"Best Nail Shapes for Short Nails","url":"https://www.nailsbythuy.com/best-nail-shapes-short-nails"},
+        {"@type":"ListItem","position":3,"name":"How Long Do Gel X Nails Last?","url":"https://www.nailsbythuy.com/how-long-do-gel-x-nails-last"},
+        {"@type":"ListItem","position":4,"name":"Why Private Nail Studios Are Better Than Salons","url":"https://www.nailsbythuy.com/why-private-nail-studios-are-better"},
+        {"@type":"ListItem","position":5,"name":"Chrome Nails in Austin TX — Mirror Finish Guide","url":"https://www.nailsbythuy.com/chrome-nails-austin"},
+        {"@type":"ListItem","position":6,"name":"Gel X vs Acrylic Nails — Which Extension Wins?","url":"https://www.nailsbythuy.com/gel-x-vs-acrylic"},
+        {"@type":"ListItem","position":7,"name":"Nail Aftercare Tips — Make Your Set Last Longer","url":"https://www.nailsbythuy.com/nail-aftercare-tips"},
+        {"@type":"ListItem","position":8,"name":"How to Pick a Nail Color That Actually Flatters","url":"https://www.nailsbythuy.com/how-to-pick-a-nail-color"},
+        {"@type":"ListItem","position":9,"name":"Pedicure vs Manicure — What's the Difference?","url":"https://www.nailsbythuy.com/pedicure-vs-manicure"}
+      ]
+    }
+  ]
 }
 </script>
 
@@ -471,6 +492,7 @@ const SEED_ARTICLES = [
     excerpt: 'BIAB strengthens your natural nail with a gel overlay. Gel X adds a lightweight soft gel extension. Understanding the difference helps you choose the best service for your lifestyle and nail goals.',
     featured: true,
     readTime: '5 min read',
+    isStatic: true,
   },
   {
     id: 'best-nail-shapes-short-nails',
@@ -479,6 +501,7 @@ const SEED_ARTICLES = [
     title: 'Best Nail Shapes for Short Nails',
     excerpt: 'The right nail shape can make short nails look longer and more elegant. Almond, oval, squoval, and coffin all create different illusions — here\'s how to choose.',
     readTime: '4 min read',
+    isStatic: true,
   },
   {
     id: 'how-long-do-gel-x-nails-last',
@@ -487,6 +510,7 @@ const SEED_ARTICLES = [
     title: 'How Long Do Gel X Nails Last?',
     excerpt: 'With proper aftercare, Gel X extensions last 3–5 weeks. Aftercare routine, lifestyle factors, and fill timing — everything you need to know to get the most out of your set.',
     readTime: '4 min read',
+    isStatic: true,
   },
   {
     id: 'why-private-nail-studios-are-better',
@@ -495,43 +519,58 @@ const SEED_ARTICLES = [
     title: 'Why Private Nail Studios Are Better Than Salons',
     excerpt: 'One-on-one attention, zero wait time, fully custom designs, and a calm private atmosphere. Here\'s why clients drive across Austin for a boutique studio experience.',
     readTime: '5 min read',
+    isStatic: true,
+  },
+  {
+    id: 'chrome-nails-austin',
+    slug: '/chrome-nails-austin',
+    category: 'Nail Art',
+    title: 'Chrome Nails in Austin TX — Mirror Finish Guide',
+    excerpt: 'Chrome nails create a seamless mirror-metallic finish over gel. Learn the types (silver, rose gold, duochrome, aurora), how long they last, and what makes chrome different from glitter.',
+    readTime: '5 min read',
+    isStatic: true,
+  },
+  {
+    id: 'gel-x-vs-acrylic',
+    slug: '/gel-x-vs-acrylic',
+    category: 'Extensions',
+    title: 'Gel X vs Acrylic Nails — Which Extension Wins?',
+    excerpt: 'Gel X is lighter, more flexible, and gentler on nails than acrylic. A head-to-head comparison covering wear time, flexibility, removal damage, appearance, and cost.',
+    readTime: '6 min read',
+    isStatic: true,
+  },
+  {
+    id: 'nail-aftercare-tips',
+    slug: '/nail-aftercare-tips',
+    category: 'Nail Care',
+    title: 'Nail Aftercare Tips — Make Your Set Last Longer',
+    excerpt: 'The right aftercare habits can add 1–2 weeks to your gel or extension wear time. Eight daily habits that protect Gel X, BIAB, and gel manicures from early lifting and breakage.',
+    readTime: '5 min read',
+    isStatic: true,
+  },
+  {
+    id: 'how-to-pick-a-nail-color',
+    slug: '/how-to-pick-a-nail-color',
+    category: 'Nail Art',
+    title: 'How to Pick a Nail Color That Actually Flatters',
+    excerpt: 'Skin tone undertone, nail shape, season, and occasion all affect which shades look intentional. A practical color-picking framework that works — from someone who has done this thousands of times.',
+    readTime: '5 min read',
+    isStatic: true,
+  },
+  {
+    id: 'pedicure-vs-manicure',
+    slug: '/pedicure-vs-manicure',
+    category: 'Nail Care',
+    title: 'Pedicure vs Manicure — What\'s the Difference?',
+    excerpt: 'Pedicures and manicures serve different purposes beyond just hands vs. feet. What each service includes, how often to book, gel longevity differences, and which matters more for nail health.',
+    readTime: '5 min read',
+    isStatic: true,
   },
 ];
 
 /* Dynamic articles added by user */
 let dynamicArticles = [];
 
-/* ── SYSTEM PROMPT for article generation ──────────────────────── */
-const SYSTEM_PROMPT = `You are Thuy, a Master Nail Technician and Freehand Nail Art Specialist with 15+ years of experience based in Austin, TX 78725. You write expert nail care guides for your website blog.
-
-WRITING STYLE:
-- Authoritative but warm — you're the expert speaking directly to a client
-- Use "I" naturally when sharing personal experience or opinion
-- Specific and practical — give real numbers, real timeframes, real advice
-- Optimistic but honest — don't oversell, give the full picture
-- No fluff or padding — every sentence earns its place
-
-SEO REQUIREMENTS:
-- Primary keyword in H1, first paragraph, and naturally throughout
-- Include "Austin TX" or "Austin, Texas" where natural
-- Use H2 and H3 headings that match real search queries
-- Include a FAQ section at the end (3–4 questions)
-- Word count: 700–1000 words
-
-FORMAT — respond ONLY with this JSON (no markdown fences, no preamble):
-{
-  "title": "Article H1 title (can include em tags for italics)",
-  "metaTitle": "SEO title tag <60 chars",
-  "metaDescription": "Meta description 140–160 chars with keyword and location",
-  "category": "Short category label",
-  "readTime": "X min read",
-  "body": "Full HTML article body using only these tags: <h2>, <h3>, <p>, <strong>, <em>, <ul>, <li>, <blockquote>, <hr>, <div class=\\"callout\\"><strong>Pro Tip</strong>...</div>. Include a booking CTA naturally in the body."
-}
-
-BOOKING CTA — include exactly this HTML block once, near the end of the body:
-<div class="article-cta"><p>"Every set starts with a conversation. Text me your inspo."</p><a href="sms:+14259050469?body=Hi%20Thuy!%20I%27d%20like%20to%20book%20an%20appointment%20%F0%9F%92%85">📲 Text Thuy to Book</a></div>
-
-Write for nailsbythuy.com — Austin TX private nail studio.`;
 
 /* ── NAV scroll ────────────────────────────────────────────────── */
 const siteNav = document.getElementById('siteNav');
@@ -577,17 +616,22 @@ const articleCache = {};
 
 /* ── OPEN ARTICLE ──────────────────────────────────────────────── */
 async function openArticle(id) {
-  const reader = document.getElementById('article-reader');
-  const content = document.getElementById('readerContent');
   const all = [...SEED_ARTICLES, ...dynamicArticles];
   const meta = all.find(a => a.id === id);
   if (!meta) return;
 
+  // Static seed articles go to their dedicated SEO pages
+  if (meta.isStatic && meta.slug) {
+    window.location.href = meta.slug;
+    return;
+  }
+
+  // AI-generated articles open in the reader overlay
+  const reader = document.getElementById('article-reader');
+  const content = document.getElementById('readerContent');
   reader.classList.add('open');
   reader.scrollTop = 0;
   document.body.style.overflow = 'hidden';
-
-  // Update URL for shareability
   history.pushState({articleId: id}, '', meta.slug || `#${id}`);
 
   if (articleCache[id]) {
@@ -595,17 +639,15 @@ async function openArticle(id) {
     return;
   }
 
-  // Show skeleton while loading
   content.innerHTML = buildSkeleton(meta);
 
-  // Generate with Claude API
   try {
     const article = await generateArticle(meta.title, meta.category);
     articleCache[id] = article;
     renderArticle(meta, article);
   } catch(err) {
     content.innerHTML = `<div style="padding:80px 0;text-align:center">
-      <p style="color:var(--mist);font-size:.9rem">Unable to load article. Please try again.</p>
+      <p style="color:var(--mist);font-size:.9rem">Unable to generate article. Please try again.</p>
       <button onclick="openArticle('${id}')" style="margin-top:20px;padding:10px 24px;background:var(--terra);color:white;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase">Retry</button>
     </div>`;
   }
@@ -703,32 +745,22 @@ document.getElementById('copyLinkBtn').addEventListener('click', function() {
   });
 });
 
-/* ── CLAUDE API CALL ───────────────────────────────────────────── */
+/* ── ARTICLE GENERATION via Netlify function proxy ─────────────── */
 async function generateArticle(topic, category) {
   showStatus(`Writing "${topic}"…`);
 
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
+  const res = await fetch('/.netlify/functions/generate-article', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1800,
-      system: SYSTEM_PROMPT,
-      messages: [{
-        role: 'user',
-        content: `Write a complete SEO blog article for this topic: "${topic}"\nCategory: ${category || 'Nail Care'}\nTarget keyword: the main topic phrase\nInclude Austin TX location signals naturally.`
-      }]
-    })
+    body: JSON.stringify({ topic, category: category || 'Nail Care' })
   });
 
-  if (!res.ok) throw new Error(`API ${res.status}`);
-  const data = await res.json();
-  const text = data.content.map(b => b.type === 'text' ? b.text : '').join('');
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || `HTTP ${res.status}`);
+  }
 
-  // Strip JSON fences if present
-  const clean = text.replace(/^```(?:json)?\n?/,'').replace(/\n?```$/,'').trim();
-  const parsed = JSON.parse(clean);
-
+  const parsed = await res.json();
   hideStatus();
   return parsed;
 }

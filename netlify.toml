@@ -1,6 +1,10 @@
 # ── BUILD ────────────────────────────────────────────────────────────
 [build]
   publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
 
 # ── BUILD PROCESSING ─────────────────────────────────────────────────
 [build.processing]
@@ -82,3 +86,17 @@
   for = "/robots.txt"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# Images — long cache, immutable (files are content-hashed by script/output naming)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    # Let Netlify serve correct content types for AVIF/WebP
+
+# Showcase SEO images — long cache, immutable
+[[headers]]
+  for = "/nailsbythuy-showcase-seo/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
