@@ -67,7 +67,7 @@ exports.handler = async (event) => {
 
   try {
     const upstream = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -89,7 +89,7 @@ exports.handler = async (event) => {
       return {
         statusCode: 502,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: 'Generation failed — please try again.' })
+        body: JSON.stringify({ error: 'Generation failed — please try again.', detail: errBody })
       };
     }
 
