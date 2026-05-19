@@ -95,10 +95,13 @@ exports.handler = async (event) => {
     if (!upstream.ok) {
       const errBody = await upstream.text();
       console.error('Gemini error:', upstream.status, errBody);
+      let userMsg = 'Generation failed — please try again.';
+      if (upstream.status === 503) userMsg = 'AI is busy right now — please try again in a moment.';
+      if (upstream.status === 429) userMsg = 'Daily limit reached — please try again tomorrow.';
       return {
         statusCode: 502,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: 'Generation failed — please try again.', detail: errBody })
+        body: JSON.stringify({ error: userMsg, detail: errBody })
       };
     }
 

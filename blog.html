@@ -757,6 +757,7 @@ async function generateArticle(topic, category) {
 
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
+    hideStatus();
     throw new Error(err.error || `HTTP ${res.status}`);
   }
 
@@ -797,8 +798,8 @@ document.getElementById('generateBtn').addEventListener('click', async function(
     setTimeout(() => openArticle(id), 300);
 
   } catch(err) {
-    showStatus('Error generating article. Please try again.', true);
-    setTimeout(hideStatus, 3000);
+    showStatus(err.message || 'Error generating article. Please try again.', true);
+    setTimeout(hideStatus, 6000);
   } finally {
     this.disabled = false;
     this.textContent = 'Generate Guide →';
@@ -811,9 +812,12 @@ document.getElementById('topicInput').addEventListener('keydown', e => {
 });
 
 /* ── STATUS BAR ────────────────────────────────────────────────── */
-function showStatus(msg) {
+function showStatus(msg, isError) {
   const bar = document.getElementById('statusBar');
+  const dot = bar.querySelector('.status-dot');
   document.getElementById('statusText').textContent = msg;
+  dot.style.background = isError ? '#e05c3a' : 'var(--terra)';
+  dot.style.animation = isError ? 'none' : '';
   bar.classList.add('show');
 }
 function hideStatus() {
