@@ -1,5 +1,5 @@
-// Netlify serverless function — secure Claude API proxy for blog.html generator
-// API key lives in Netlify env vars (ANTHROPIC_API_KEY), never in browser JS.
+// Netlify serverless function — secure Gemini API proxy for blog.html generator
+// API key lives in Netlify env vars (GEMINI_API_KEY), never in browser JS.
 
 const SYSTEM_PROMPT = `You are Thuy, a Master Nail Technician and Freehand Nail Art Specialist with 15+ years of experience based in Austin, TX 78725. You write expert nail care guides for your website blog.
 
@@ -37,12 +37,12 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Service not configured — add ANTHROPIC_API_KEY to Netlify env vars.' })
+      body: JSON.stringify({ error: 'Service not configured — add GEMINI_API_KEY to Netlify env vars.' })
     };
   }
 
@@ -66,27 +66,26 @@ exports.handler = async (event) => {
   }
 
   try {
-    const upstream = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 2000,
-        system: SYSTEM_PROMPT,
-        messages: [{
-          role: 'user',
-          content: `Write a complete SEO nail care guide for: "${topic.trim()}"\nCategory: ${(category || 'Nail Care').slice(0, 60)}\nInclude Austin TX location signals naturally.`
-        }]
-      })
-    });
+    const upstream = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          contents: [{
+            parts: [{
+              text: `Write a complete SEO nail care guide for: "${topic.trim()}"\nCategory: ${(category || 'Nail Care').slice(0, 60)}\nInclude Austin TX location signals naturally.`
+            }]
+          }],
+          generationConfig: { maxOutputTokens: 2000 }
+        })
+      }
+    );
 
     if (!upstream.ok) {
       const errBody = await upstream.text();
-      console.error('Anthropic error:', upstream.status, errBody);
+      console.error('Gemini error:', upstream.status, errBody);
       return {
         statusCode: 502,
         headers: { 'Content-Type': 'application/json' },
@@ -95,7 +94,7 @@ exports.handler = async (event) => {
     }
 
     const data = await upstream.json();
-    const raw = data.content?.[0]?.text || '';
+    const raw = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
 
     // Strip optional JSON code fences
     const clean = raw.replace(/^```(?:json)?\n?/, '').replace(/\n?```$/, '').trim();
