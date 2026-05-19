@@ -11,6 +11,8 @@
   "theme_color": "#18120f",
   "orientation": "portrait",
   "lang": "en-US",
+  "prefer_related_applications": false,
+  "categories": ["beauty", "lifestyle"],
   "icons": [
     {
       "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='42' fill='%2318120f'/%3E%3Ctext x='96' y='138' text-anchor='middle' font-family='Georgia,serif' font-size='110' fill='%23b5624f'%3ET%3C/text%3E%3C/svg%3E",
@@ -25,20 +27,19 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["beauty", "lifestyle", "shopping"],
   "shortcuts": [
     {
       "name": "Book Appointment",
       "short_name": "Book Now",
       "description": "Text Thuy to book your nail appointment",
       "url": "sms:+14259050469?body=Hi%20Thuy!%20I%27d%20like%20to%20book%20an%20appointment%20%F0%9F%92%85",
-      "icons": [{"src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='20' fill='%23b5624f'/%3E%3Ctext x='48' y='65' text-anchor='middle' font-size='48' fill='white'%3E💅%3C/text%3E%3C/svg%3E", "sizes": "96x96", "purpose": "any"}]
+      "icons": [{"src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='20' fill='%23b5624f'/%3E%3Ctext x='48' y='65' text-anchor='middle' font-size='48' fill='white'%3E%F0%9F%92%85%3C/text%3E%3C/svg%3E", "sizes": "96x96", "purpose": "any"}]
     },
     {
       "name": "Service Menu",
       "short_name": "Services",
       "description": "View nail service details and offerings",
-      "url": "/services.html",
+      "url": "/services",
       "icons": [{"src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='20' fill='%2318120f'/%3E%3Ctext x='48' y='62' text-anchor='middle' font-size='42' fill='%23b5624f'%3ES%3C/text%3E%3C/svg%3E", "sizes": "96x96", "purpose": "any"}]
     }
   ]

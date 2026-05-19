@@ -9,10 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin/>
 <link rel="dns-prefetch" href="https://www.instagram.com"/>
+<link rel="dns-prefetch" href="https://maps.app.goo.gl"/>
+<link rel="dns-prefetch" href="https://www.google.com"/>
 <!-- Preload LCP hero image for fastest First Contentful Paint -->
 <link rel="preload" as="image" href="https://lh3.googleusercontent.com/pw/AP1GczOTQECPB1Ukk2WCwgnJxDG5BtYxE5ejQq6zboz7pmz8jD6W0bFfC7xrwxU8JPtncM5HfBhe4nAyyPnFGMZz0--qBXwBRX0syr9Ma13UkOu0KHBHLUQ=w1200-k-no" fetchpriority="high" type="image/jpeg"/>
 <!-- Preload above-fold profile photo to reduce CLS -->
 <link rel="preload" as="image" href="https://lh3.googleusercontent.com/pw/AP1GczOA262XONbzlPzY_tbc-eY1P9df82PbQpssLnRn9WtaOqKLlvOSrSHACtW-YhAsmEq1J0xC1lufWEUSI5hR2ZW39sj0_EU-NU-jTMCLDbGp8jWpszk=w1200-k-no" fetchpriority="auto"/>
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=60" fetchpriority="low"/>
 
 <!-- ── FAVICON / PWA ──────────────────────────────────────────────── -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318120f'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23b5624f'%3ET%3C/text%3E%3C/svg%3E"/>
@@ -46,7 +49,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Nails by Thuy"/>
 <meta property="og:title" content="Nails by Thuy · Austin TX — Freehand Nail Art Studio"/>
-<meta property="og:description" content="Master Nail Tech &amp; Freehand Art Specialist in Austin, TX. Every set is a one-of-a-kind creation — custom nail art, acrylic sets, Gel X, BIAB &amp; more. Text to book: (425) 905-0469."/>
+<meta property="og:description" content="Austin TX nail artist &amp; freehand specialist. Custom nail art, acrylic sets, Gel X, BIAB, 3D nails. Private studio — by appointment only. Text (425) 905-0469."/>
 <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczPfcqZPkK1gtAXEW8yTjO1khvKyFF7wX9MoV_LyOVpHNtWcbAxPMph65mBDIJKZj8OWprNz2UjU6UDvPirdZ0Eh4S4baOyHASHdDckZf8Mqyq1uiKk=w1400-k-no"/>
 <meta property="og:image:width" content="1400"/>
 <meta property="og:image:height" content="787"/>
@@ -58,7 +61,7 @@
 <!-- ── TWITTER / X ───────────────────────────────────────────────── -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@nailsbythuyh"/>
-<meta name="twitter:title" content="Nails by Thuy · Austin TX — Wearable Nail Art"/>
+<meta name="twitter:title" content="Nails by Thuy · Austin TX — Freehand Nail Art Studio"/>
 <meta name="twitter:description" content="Austin's premier freehand nail art specialist. Custom sets, acrylic, Gel X, BIAB &amp; 3D nail art. Text to book: (425) 905-0469."/>
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczPfcqZPkK1gtAXEW8yTjO1khvKyFF7wX9MoV_LyOVpHNtWcbAxPMph65mBDIJKZj8OWprNz2UjU6UDvPirdZ0Eh4S4baOyHASHdDckZf8Mqyq1uiKk=w1400-k-no"/>
 <meta name="twitter:image:alt" content="Custom nail art by Thuy in Austin TX"/>
@@ -69,7 +72,7 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["NailSalon", "LocalBusiness"],
+      "@type": ["NailSalon", "LocalBusiness", "HealthAndBeautyBusiness", "ProfessionalService"],
       "@id": "https://www.nailsbythuy.com/#business",
       "name": "Nails by Thuy",
       "alternateName": ["Twee Nails", "Nails by Twee"],
@@ -83,7 +86,6 @@
         "value": "ChIJpWwrrsS5RIYRKrruowqxcgk"
       },
       "sameAs": [
-        "https://www.nailsbythuy.com/",
         "https://nailsbythuy.link",
         "https://www.instagram.com/nailsbythuyh",
         "https://www.facebook.com/61579083883571",
@@ -238,6 +240,11 @@
           }
         ]
       },
+      "foundingDate": "2011",
+      "slogan": "Where nails become wearable art.",
+      "numberOfEmployees": {"@type": "QuantitativeValue", "value": 1},
+      "knowsAbout": ["Freehand Nail Art", "Acrylic Extensions", "Gel X", "BIAB", "3D Nail Art", "Dipping Powder"],
+      "award": "5.0 Google Rating — Austin TX Nail Studio",
       "potentialAction": [
         {
           "@type": "ReserveAction",
@@ -281,7 +288,7 @@
       "url": "https://www.nailsbythuy.com/",
       "name": "Nails by Thuy",
       "description": "Official website of Nails by Thuy — Austin TX freehand nail art specialist.",
-      "dateModified": "2026-05-18",
+      "dateModified": "2026-05-19",
       "inLanguage": ["en-US", "vi"],
       "publisher": {"@id": "https://www.nailsbythuy.com/#business"},
       "speakable": {
@@ -300,27 +307,6 @@
       "mainEntity": {"@id": "https://www.nailsbythuy.com/#business"}
     },
     {
-      "@type": "ImageGallery",
-      "@id": "https://www.nailsbythuy.com/#gallery",
-      "name": "Nails by Thuy — Nail Art Portfolio Austin TX",
-      "description": "Custom freehand nail art, acrylic sets, Gel X extensions, and 3D nail art by Thuy in Austin, TX 78725.",
-      "url": "https://www.nailsbythuy.com/#gallery",
-      "associatedMedia": [
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczPVzlkNdTgnrikHer9LYNLrrlhzmkxkzyePAV5m4e1cK3fLf7WVVioWkWku7txSAP7SJeU5QPAVKIs0oFyOe8yUpWq8mDmLS2z7ijerbAzH8J7g4Tg=w800-k-no", "name": "Custom Nail Art Set — Austin TX", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczPl-Zzyu0tY67JaCAnHyajWONsw6NsWxpUfCS_HUzEyh6BuhVb50abiuZes36df0C9eYkECrR2XZlZtWjIU-2G-Cc4CEkmed2M846eHC-8r-ATJ19U=w800-k-no", "name": "Freehand Nail Art — Nails by Thuy Austin", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczMhlEu2Kw3MZdo2a_HVFjtI9g3mA4TYp-sIFphka3WSsdNGm2TVU_lO0yDiqFdWm7mcuLaReWqFsMGjz0O2-U9ni7mtPJqTDTJcCqd-lIqDyFKqafE=w800-k-no", "name": "Bespoke Acrylic Set — Private Nail Studio Austin TX", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczPFhPGZoZSZAJNqEliqkmK4x78W4yYsyVo7xslr4gwREvh0TSC3i6SkP5oSRctPwpSpdCQTSLHfgVA1bd515qBytFHF0nFKOSI8XQfFyz3_xCj3fWA=w800-k-no", "name": "Gel X Extensions — Nails by Thuy Austin TX", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczOhE9LJJUOQF_hn-ka5AX_tSqoRrV6ei7D5R20L3-WZeJtAWGKbwfHKui9WF_nn3g0Bk6JNBIRQKx_UiI5P9B-JleZYMVZopLXUO2rS9f8CYYth5-I=w800-k-no", "name": "BIAB Builder Gel — East Austin Nail Studio", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczM25dP8Xabzv3ndCLnZ3VoHV8Ewz-nLaon7QuNzBUXVUR9N5dirKDHXp0CVX208OSPy6OMneOWtNId-MtjfJ5OyH_Wzwcv9fJN1SN4kaBi-9QBg9Es=w800-k-no", "name": "Dipping Powder Nails — Austin TX 78725", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczNuas1tOBJjiAQCSM9DafLSkNoYo78UambWMH1s0DVggvi-BMEmyEW5_QGg_bEbt3nlzb87atFdFhqMNbtNyVNLjakSR3STGtbX9ewu0UwmQS-UaN8=w800-k-no", "name": "3D Nail Art — Luxury Private Nail Studio Austin", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczMYea_5GrgTUCkTIQmD1syGOgv5EiKjrn8dD5eSJyZOYYoUL8GLkeT08NEMsaqta4u0lCcS-J5WS-2eWBlhT0J2uz2KQlZmsWJjaiQzuS7CcnxNXkc=w800-k-no", "name": "Custom Wearable Nail Art — Nails by Thuy Austin TX", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczOYa0n-MTPCfKFbJXGcEP8ovXpmfcS5TUzIQHqGtsJ65auNesptq_L-zqeAfDeGJvoiv2jpI2VwRcI4CLcg3c_OcqnGy9tYyY1x3hb0rlKVvB6Bvfc=w800-k-no", "name": "Nail Art Portfolio — Freehand Specialist Austin TX", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczPyJ7W9mq1qXSQ95Q40LJT-G-Kz2-ox28NrxEsIZTEPOakThKls5k9634sjBDIENbjXqxL0sSw93VSNyVY5qehXBb_Ss6CsUqBodwmEFl3VLViA_FQ=w800-k-no", "name": "Acrylic Nail Art — Private Studio East Austin TX", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczPBicYajqYXgaARGXWMblZkpEDNCe18lbLVdU-Rref2l2aG-2yVcwYUn2aqLRzTKpDDVBve2hG9HXkkfhN1PtkQV2fbt0gV5QWQiQlp__HxMrB1nGI=w800-k-no", "name": "Gel Nail Art — Nails by Thuy Austin TX 78725", "author": {"@id": "https://www.nailsbythuy.com/#artist"}},
-        {"@type": "ImageObject", "contentUrl": "https://lh3.googleusercontent.com/pw/AP1GczMgnGlZ8UkY6z92hRt6LOxNhFn9UsQd7w57Ina6CTAR103Gb4-mMjYF3wZ00wYRblBiO_r30eaPkOv-LzsyK4O4PyfB-56u8YBY9gDt1KCU3TLiNP0=w800-k-no", "name": "Nail Art Design — Austin Freehand Nail Artist", "author": {"@id": "https://www.nailsbythuy.com/#artist"}}
-      ]
-    },
-    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nailsbythuy.com/"},
@@ -330,7 +316,22 @@
         {"@type": "ListItem", "position": 5, "name": "FAQ", "item": "https://www.nailsbythuy.com/#faq-section"},
         {"@type": "ListItem", "position": 6, "name": "Serving Austin TX", "item": "https://www.nailsbythuy.com/#local-area"},
         {"@type": "ListItem", "position": 7, "name": "Reviews", "item": "https://www.nailsbythuy.com/#reviews"},
-        {"@type": "ListItem", "position": 8, "name": "Book Appointment", "item": "https://www.nailsbythuy.com/#booking"}
+        {"@type": "ListItem", "position": 8, "name": "Book Appointment", "item": "https://www.nailsbythuy.com/#booking"},
+        {"@type": "ListItem", "position": 9, "name": "Nail Guides", "item": "https://www.nailsbythuy.com/#nail-tips"}
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.nailsbythuy.com/#services-list",
+      "name": "Nail Services at Nails by Thuy — Austin TX",
+      "description": "Custom nail art services offered at Nails by Thuy private studio in Austin, TX 78725.",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Freehand Nail Art", "url": "https://www.nailsbythuy.com/#freehand-nail-art-austin"},
+        {"@type": "ListItem", "position": 2, "name": "Acrylic Full Set", "url": "https://www.nailsbythuy.com/#acrylic-nails-austin"},
+        {"@type": "ListItem", "position": 3, "name": "Gel X Extensions", "url": "https://www.nailsbythuy.com/#gel-x-extensions-austin"},
+        {"@type": "ListItem", "position": 4, "name": "Builder Gel BIAB", "url": "https://www.nailsbythuy.com/#biab-builder-gel-austin"},
+        {"@type": "ListItem", "position": 5, "name": "Dipping Powder Nails", "url": "https://www.nailsbythuy.com/#dipping-powder-nails-austin"}
       ]
     },
     {
@@ -378,13 +379,69 @@
         }
       ]
     }
+  ,
+    {
+      "@type": "Article",
+      "@id": "https://www.nailsbythuy.com/biab-vs-gel-x",
+      "headline": "BIAB vs Gel X Nails — Which Is Right for You? Austin Nail Artist Explains",
+      "description": "A complete comparison of Builder Gel (BIAB) and Gel X extensions from Nails by Thuy, Austin TX. Learn the differences in durability, application, removal, and which suits your lifestyle.",
+      "author": {"@id": "https://www.nailsbythuy.com/#artist"},
+      "publisher": {"@id": "https://www.nailsbythuy.com/#business"},
+      "datePublished": "2026-05-19",
+      "dateModified": "2026-05-19",
+      "mainEntityOfPage": "https://www.nailsbythuy.com/biab-vs-gel-x",
+      "about": [{"@type": "Thing", "name": "BIAB Builder Gel"}, {"@type": "Thing", "name": "Gel X Extensions"}],
+      "keywords": "BIAB vs Gel X, builder gel Austin TX, Gel X extensions Austin, nail services comparison"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.nailsbythuy.com/best-nail-shapes-short-nails",
+      "headline": "Best Nail Shapes for Short Nails — Austin Nail Artist Guide",
+      "description": "Discover the most flattering nail shapes for short nails. Almond, oval, squoval, and coffin shapes explained by Thuy, Austin TX freehand nail art specialist.",
+      "author": {"@id": "https://www.nailsbythuy.com/#artist"},
+      "publisher": {"@id": "https://www.nailsbythuy.com/#business"},
+      "datePublished": "2026-05-19",
+      "dateModified": "2026-05-19",
+      "mainEntityOfPage": "https://www.nailsbythuy.com/best-nail-shapes-short-nails",
+      "about": [{"@type": "Thing", "name": "Nail Shapes"}],
+      "keywords": "nail shapes for short nails, best nail shape Austin TX, nail art Austin"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.nailsbythuy.com/how-long-do-gel-x-nails-last",
+      "headline": "How Long Do Gel X Nails Last? Everything You Need to Know",
+      "description": "Gel X extensions typically last 3–5 weeks with proper care. Austin nail artist Thuy explains what affects longevity, aftercare tips, and when to book a fill.",
+      "author": {"@id": "https://www.nailsbythuy.com/#artist"},
+      "publisher": {"@id": "https://www.nailsbythuy.com/#business"},
+      "datePublished": "2026-05-19",
+      "dateModified": "2026-05-19",
+      "mainEntityOfPage": "https://www.nailsbythuy.com/how-long-do-gel-x-nails-last",
+      "about": [{"@type": "Thing", "name": "Gel X Nails"}],
+      "keywords": "how long do gel x nails last, gel x durability, gel x Austin TX"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://www.nailsbythuy.com/why-private-nail-studios-are-better",
+      "headline": "Why Private Nail Studios Are Better Than Traditional Salons",
+      "description": "Private nail studios offer one-on-one attention, custom designs, and a calm atmosphere traditional salons can't match. Nails by Thuy explains the difference in Austin TX.",
+      "author": {"@id": "https://www.nailsbythuy.com/#artist"},
+      "publisher": {"@id": "https://www.nailsbythuy.com/#business"},
+      "datePublished": "2026-05-19",
+      "dateModified": "2026-05-19",
+      "mainEntityOfPage": "https://www.nailsbythuy.com/why-private-nail-studios-are-better",
+      "about": [{"@type": "Thing", "name": "Private Nail Studio"}],
+      "keywords": "private nail studio Austin TX, nail atelier Austin, best nail experience Austin"
+    }
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+<!-- Non-blocking font load: media="print" trick loads async, onload switches to all -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/></noscript>
 <style>
-
 :root{--ink:#18120f;--paper:#f8f5f0;--bone:#ede8e0;--dust:#c8bfb4;--terra:#b5624f;--sand:#c9a97a;--mist:#8a7f76;--gap:2px}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:local('Georgia')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300 400;font-display:swap;src:local('Helvetica Neue'),local('Arial')}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overscroll-behavior-y:none;overflow-x:hidden}
 * {-webkit-tap-highlight-color:transparent}
@@ -393,60 +450,40 @@ img{display:block;width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
 em{font-style:italic;color:var(--terra)}
-
 .t-label{font-size:.75rem;letter-spacing:.38em;text-transform:uppercase;color:var(--terra);font-weight:400}
 .t-display{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:.95;font-size:clamp(3.8rem,8vw,7rem)}
 .t-heading{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.1;font-size:clamp(2rem,4vw,3.6rem)}
 .t-body{font-size:.8rem;line-height:2;color:#6e6560;letter-spacing:.02em}
-/* ── HERO TITLE ────────────────────────────────────────────────── */
 .hero-title{opacity:0;animation:fadeUp .9s .4s forwards;font-weight:300;color:var(--ink)}
 .hero-title em{font-style:italic;color:var(--terra);font-weight:300}
-
 #cur,#cur-r{position:fixed;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%)}
 #cur{width:7px;height:7px;background:var(--terra);transition:transform .12s}
 #cur-r{width:32px;height:32px;border:1px solid var(--terra);opacity:.5;transition:left .2s,top .2s,opacity .2s}
 @media(hover:none){#cur,#cur-r{display:none}body{cursor:auto}}
-/* Mobile: disable backdrop-filter — biggest single source of scroll jank on iOS/Android */
-@media(max-width:900px){
-  nav,nav.scrolled,.nav-drawer,.showcase-nav,.showcase-btn,
-  #showcasePopup,#showcasePopupClose,.popup-nav-btn,
-  .hero-pill,.dm-box,.sticky-booking-cta{
-    backdrop-filter:none !important;
-    -webkit-backdrop-filter:none !important;
-  }
-  /* Use solid fallback backgrounds instead */
-  nav.scrolled{background:rgba(248,245,240,.97) !important}
-  .nav-drawer{background:#f8f5f0 !important}
-  .showcase-nav{background:rgba(24,18,15,.75) !important}
-  .showcase-btn{background:rgba(0,0,0,.5) !important}
-}
-
+@media(max-width:900px){nav,nav.scrolled,.nav-drawer,.showcase-nav,.showcase-btn,#showcasePopup,#showcasePopupClose,.popup-nav-btn,.hero-pill,.sticky-booking-cta{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;}
+nav.scrolled{background:rgba(248,245,240,.97) !important}
+.nav-drawer{background:#f8f5f0 !important}
+.showcase-nav{background:rgba(10,6,5,.78) !important;border-color:rgba(255,255,255,.22) !important;}
+.showcase-btn{background:rgba(0,0,0,.55) !important}
+#showcasePopup{background:rgba(0,0,0,.97) !important}
+.popup-nav-btn{background:rgba(10,6,5,.78) !important}
+#showcasePopupClose{background:rgba(10,6,5,.78) !important}}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;transition:background .4s;will-change:transform;transform:translateZ(0);-webkit-transform:translateZ(0);overflow:hidden}
 nav.scrolled{background:rgba(248,245,240,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--bone)}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase}
 .nav-links{display:flex;gap:24px;list-style:none}
 .nav-links a{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;opacity:.5;transition:opacity .3s}
 .nav-links a:hover{opacity:1}
-
 .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:10px;cursor:pointer;z-index:210;min-width:44px;min-height:44px;justify-content:center;align-items:center}
 .nav-hamburger span{display:block;width:22px;height:1.5px;background:#fffaf5;transition:transform .3s,opacity .3s,background .35s}
 nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .nav-hamburger.open span:nth-child(2){opacity:0}
 .nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
-.nav-drawer{
-  display:none;position:fixed;inset:0;z-index:190;
-  background:rgba(248,245,240,.97);backdrop-filter:blur(16px);
-  flex-direction:column;align-items:center;justify-content:center;gap:36px;
-}
+.nav-drawer{display:none;position:fixed;inset:0;z-index:190;background:rgba(248,245,240,.97);backdrop-filter:blur(16px);flex-direction:column;align-items:center;justify-content:center;gap:36px;}
 .nav-drawer.open{display:flex}
-.nav-drawer a{
-  font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;
-  color:var(--ink);letter-spacing:.08em;opacity:.7;transition:opacity .25s,color .25s;
-}
+.nav-drawer a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--ink);letter-spacing:.08em;opacity:.7;transition:opacity .25s,color .25s;}
 .nav-drawer a:hover{opacity:1;color:var(--terra)}
-
 .hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;max-width:100%;overflow:hidden}
 .hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:100px 48px 64px;gap:20px;min-width:0;max-width:100%}
 .hero-eyebrow{opacity:0;animation:fadeUp .8s .2s forwards}
@@ -454,651 +491,162 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .hero-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .8s forwards}
 .hero-right{position:relative;overflow:hidden;background:var(--bone);max-width:100%;min-width:0}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(150deg,rgba(232,213,200,.18) 0%,rgba(181,98,79,.28) 60%,rgba(181,98,79,.45) 100%);z-index:1}
-.hero-texture{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=75');background-size:cover;background-position:center;opacity:1}
+.hero-texture{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=60');background-size:cover;background-position:center;opacity:1}
 .hero-pill{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(200px,50vw);height:min(200px,50vw);border-radius:50%;background:rgba(248,245,240,.12);border:1px solid rgba(248,245,240,.2);display:flex;align-items:center;justify-content:center;opacity:0;animation:fadeInPill 1s 1.1s forwards;z-index:2;overflow:hidden}
 @keyframes fadeInPill{from{opacity:0}to{opacity:.8}}
 .hero-pill img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .hero-word{position:absolute;bottom:40px;right:0;font-family:'Cormorant Garamond',serif;font-size:clamp(5rem,14vw,14rem);font-weight:300;font-style:italic;color:rgba(255,255,255,.1);line-height:1;pointer-events:none;animation:floatY 9s ease-in-out infinite;z-index:2;will-change:transform;overflow:hidden;max-width:100%;word-break:break-all}
-
 .ticker{overflow:hidden;background:var(--ink);padding:16px 0;border-top:1px solid rgba(255,255,255,.04);width:100%}
 .ticker-inner{display:flex;white-space:nowrap;animation:ticker 32s linear infinite;will-change:transform}
 .ticker-item{display:inline-flex;align-items:center;gap:20px;padding:0 36px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(248,245,240,.55)}
 .ticker-dot{color:var(--terra)}
-
 .section{padding:88px 48px}
 .section--dark{background:var(--ink)}
 .section--bone{background:var(--bone)}
 .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;gap:24px}
 .section-head-left{display:flex;flex-direction:column;gap:16px}
-
 #about{padding:0;scroll-margin-top:80px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;min-height:580px}
-.about-visual{
-  position:relative;overflow:hidden;background:var(--ink);
-  display:flex;flex-direction:column;justify-content:space-between;
-}
-.about-visual::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:
-    repeating-linear-gradient(0deg,rgba(248,245,240,.03) 0,rgba(248,245,240,.03) 1px,transparent 1px,transparent 48px),
-    repeating-linear-gradient(90deg,rgba(248,245,240,.03) 0,rgba(248,245,240,.03) 1px,transparent 1px,transparent 48px);
-}
-.about-mono{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:clamp(9rem,22vw,22rem);
-  font-weight:300;font-style:italic;color:rgba(248,245,240,.04);
-  user-select:none;pointer-events:none;
-}
-.about-profile{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:clamp(160px,22vw,260px);height:clamp(160px,22vw,260px);
-  border-radius:50%;overflow:hidden;z-index:4;
-  border:2px solid rgba(201,169,122,.35);
-  box-shadow:0 0 0 8px rgba(248,245,240,.04),0 24px 64px rgba(0,0,0,.5);
-}
-.about-profile img{
-  width:100%;height:100%;object-fit:cover;object-position:center top;
-  transition:transform .6s ease;
-}
+.about-visual{position:relative;overflow:hidden;background:var(--ink);display:flex;flex-direction:column;justify-content:space-between;}
+.about-visual::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(0deg,rgba(248,245,240,.03) 0,rgba(248,245,240,.03) 1px,transparent 1px,transparent 48px),repeating-linear-gradient(90deg,rgba(248,245,240,.03) 0,rgba(248,245,240,.03) 1px,transparent 1px,transparent 48px);}
+.about-mono{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:clamp(9rem,22vw,22rem);font-weight:300;font-style:italic;color:rgba(248,245,240,.04);user-select:none;pointer-events:none;}
+.about-profile{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(160px,22vw,260px);height:clamp(160px,22vw,260px);border-radius:50%;overflow:hidden;z-index:4;border:2px solid rgba(201,169,122,.35);box-shadow:0 0 0 8px rgba(248,245,240,.04),0 24px 64px rgba(0,0,0,.5);}
+.about-profile img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s ease;}
 .about-profile:hover img{transform:scale(1.04)}
-.about-year-strip{
-  position:relative;z-index:5;
-  padding:32px 36px 36px;
-  border-bottom:1px solid rgba(248,245,240,.06);
-  display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;
-}
-.about-year-num{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1;color:var(--terra);
-}
-.about-year-label{
-  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(248,245,240,.48);line-height:1.6;margin-top:4px;
-}
-.about-year-bio{
-  font-size:.85rem;line-height:1.9;color:rgba(248,245,240,.5);
-  margin-top:20px;max-width:340px;
-}
-.about-year-since{
-  font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(248,245,240,.2);font-style:italic;font-family:'Cormorant Garamond',serif;
-  white-space:nowrap;
-}
-.about-philosophy{
-  position:relative;z-index:3;
-  padding:32px 36px;
-  border-top:1px solid rgba(248,245,240,.07);
-  background:rgba(248,245,240,.02);
-}
-.about-philosophy-label{
-  font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--sand);margin-bottom:12px;
-}
-.about-philosophy-text{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.05rem;font-style:italic;
-  line-height:1.75;color:rgba(248,245,240,.55);max-width:420px;
-}
+.about-year-strip{position:relative;z-index:5;padding:32px 36px 36px;border-bottom:1px solid rgba(248,245,240,.06);display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.about-year-num{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1;color:var(--terra);}
+.about-year-label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,245,240,.48);line-height:1.6;margin-top:4px;}
+.about-year-bio{font-size:.85rem;line-height:1.9;color:rgba(248,245,240,.5);margin-top:20px;max-width:340px;}
+.about-year-since{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,245,240,.2);font-style:italic;font-family:'Cormorant Garamond',serif;white-space:nowrap;}
+.about-philosophy{position:relative;z-index:3;padding:32px 36px;border-top:1px solid rgba(248,245,240,.07);background:rgba(248,245,240,.02);}
+.about-philosophy-label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);margin-bottom:12px;}
+.about-philosophy-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;line-height:1.75;color:rgba(248,245,240,.55);max-width:420px;}
 .about-philosophy-line{width:32px;height:1px;background:var(--terra);margin-top:18px}
 .about-content{padding:48px 42px;display:flex;flex-direction:column;justify-content:center;gap:20px;position:relative}
-.about-profile-photo{
-  position:absolute;top:28px;right:28px;
-  width:88px;height:88px;border-radius:50%;
-  overflow:hidden;
-  border:2px solid rgba(181,98,79,.3);
-  box-shadow:0 8px 24px rgba(0,0,0,.12);
-  flex-shrink:0;
-}
+.about-profile-photo{position:absolute;top:28px;right:28px;width:88px;height:88px;border-radius:50%;overflow:hidden;border:2px solid rgba(181,98,79,.3);box-shadow:0 8px 24px rgba(0,0,0,.12);flex-shrink:0;}
 .about-profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
-
-.stats-row{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  margin-top:28px;border-top:1px solid var(--bone);
-}
-.stat-item{
-  padding:28px 0 0;position:relative;
-  display:flex;flex-direction:column;align-items:flex-start;
-}
-.stat-item:not(:last-child)::after{
-  content:'';position:absolute;right:0;top:28px;bottom:0;width:1px;background:var(--bone);
-}
-.stat-num{
-  font-family:'Cormorant Garamond',serif;font-size:2.8rem;
-  font-weight:300;color:var(--terra);line-height:1;display:block;
-}
-.stat-lbl{
-  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--mist);margin-top:8px;display:block;line-height:1.6;
-}
-
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px;border-top:1px solid var(--bone);}
+.stat-item{padding:28px 0 0;position:relative;display:flex;flex-direction:column;align-items:flex-start;}
+.stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:28px;bottom:0;width:1px;background:var(--bone);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--terra);line-height:1;display:block;}
+.stat-lbl{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);margin-top:8px;display:block;line-height:1.6;}
 .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
 .svc-link{display:flex;flex-direction:column;color:inherit;text-decoration:none}
 .svc-link:hover{text-decoration:none}
-.svc-hero{
-  grid-column:1/-1;display:grid;grid-template-columns:3fr 2fr;
-  background:rgba(181,98,79,.08);border:1px solid rgba(181,98,79,.18);
-  position:relative;overflow:hidden;
-}
-.svc-hero::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(135deg,rgba(181,98,79,.06) 0%,transparent 60%);
-}
+.svc-hero{grid-column:1/-1;display:grid;grid-template-columns:3fr 2fr;background:rgba(181,98,79,.08);border:1px solid rgba(181,98,79,.18);position:relative;overflow:hidden;}
+.svc-hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(181,98,79,.06) 0%,transparent 60%);}
 .svc-hero-content{padding:48px 42px;position:relative;z-index:1}
-.svc-hero-art{
-  display:flex;align-items:center;justify-content:flex-end;
-  padding:40px 52px;border-left:1px solid rgba(181,98,79,.12);
-}
-.svc-hero-art span{
-  font-family:'Cormorant Garamond',serif;font-size:clamp(5rem,9vw,11rem);
-  font-weight:300;font-style:italic;color:rgba(181,98,79,.18);
-  line-height:1;white-space:nowrap;transition:color .4s;
-}
+.svc-hero-art{display:flex;align-items:center;justify-content:flex-end;padding:40px 52px;border-left:1px solid rgba(181,98,79,.12);}
+.svc-hero-art span{font-family:'Cormorant Garamond',serif;font-size:clamp(5rem,9vw,11rem);font-weight:300;font-style:italic;color:rgba(181,98,79,.18);line-height:1;white-space:nowrap;transition:color .4s;}
 .svc-hero:hover .svc-hero-art span{color:rgba(181,98,79,.32)}
-.svc-num{
-  display:inline-flex;align-items:center;gap:12px;
-  font-size:.7rem;letter-spacing:.28em;color:var(--terra);opacity:.7;margin-bottom:20px;
-}
+.svc-num{display:inline-flex;align-items:center;gap:12px;font-size:.7rem;letter-spacing:.28em;color:var(--terra);opacity:.7;margin-bottom:20px;}
 .svc-num::after{content:'';flex:1;min-width:24px;height:1px;background:var(--terra);opacity:.3}
 .svc-hero .svc-num::after{display:none}
-.svc-name{
-  font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.1rem);
-  font-weight:300;color:rgba(248,245,240,.92);line-height:1.12;margin-bottom:16px;
-}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.1rem);font-weight:300;color:rgba(248,245,240,.92);line-height:1.12;margin-bottom:16px;}
 .svc-hero .svc-name{font-size:clamp(2rem,3.5vw,3rem)}
 .svc-desc{font-size:.85rem;line-height:1.9;color:rgba(248,245,240,.58);max-width:420px}
-.svc-tag{
-  display:inline-flex;align-items:center;gap:8px;
-  margin-top:28px;padding:7px 16px;
-  border:1px solid rgba(201,169,122,.22);
-  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sand);
-}
+.svc-tag{display:inline-flex;align-items:center;gap:8px;margin-top:28px;padding:7px 16px;border:1px solid rgba(201,169,122,.22);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sand);}
 .svc-tag::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--terra)}
-.svc-card{
-  padding:40px 34px;background:rgba(255,255,255,.02);
-  border:1px solid rgba(255,255,255,.05);
-  position:relative;overflow:hidden;
-  transition:background .35s,border-color .35s;
-  display:flex;flex-direction:column;
-}
-.svc-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,var(--terra),transparent);
-  transform:scaleX(0);transform-origin:left;transition:transform .45s ease;
-}
+.svc-card{padding:40px 34px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden;transition:background .35s,border-color .35s;display:flex;flex-direction:column;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--terra),transparent);transform:scaleX(0);transform-origin:left;transition:transform .45s ease;}
 .svc-card:hover{background:rgba(181,98,79,.05);border-color:rgba(181,98,79,.15)}
 .svc-card:hover::before{transform:scaleX(1)}
-.svc-card-bg-num{
-  position:absolute;bottom:-12px;right:16px;
-  font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:300;
-  color:rgba(248,245,240,.025);line-height:1;pointer-events:none;user-select:none;
-}
+.svc-card-bg-num{position:absolute;bottom:-12px;right:16px;font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:300;color:rgba(248,245,240,.025);line-height:1;pointer-events:none;user-select:none;}
 .svc-card .svc-tag{margin-top:auto;padding-top:24px;border:none;border-top:1px solid rgba(248,245,240,.06);padding-left:0}
-
 #gallery{background:var(--ink);scroll-margin-top:80px;overflow:visible}
-
-.gallery-controls{
-  display:flex;
-  align-items:center;
-  gap:8px;
-
-  flex-shrink:1;
-  min-width:0;
-}
-
-.control{
-  height:44px;
-
-  border-radius:14px;
-
-  border:1px solid rgba(255,255,255,.06);
-
-  background:rgba(255,255,255,.02);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  transition:
-    transform .25s ease,
-    border-color .25s ease,
-    background .25s ease;
-}
-
-.control:hover{
-  transform:translateY(-1px);
-
-  border-color:rgba(201,169,122,.16);
-
-  background:rgba(181,98,79,.05);
-}
-
-.full-gallery-btn{
-  padding:0 16px;
-
-  text-decoration:none;
-
-  flex-shrink:0;
-}
-
-.full-gallery-btn span{
-  font-size:.7rem;
-
-  letter-spacing:.24em;
-
-  text-transform:uppercase;
-
-  color:rgba(248,245,240,.82);
-
-  white-space:nowrap;
-}
-
-.gallery-toggle{
-  display:flex;
-  padding:3px;
-  gap:3px;
-
-  flex-shrink:0;
-}
-
-.toggle-btn{
-  width:44px;
-  height:44px;
-
-  border:none;
-
-  border-radius:9px;
-
-  background:transparent;
-
-  color:rgba(248,245,240,.28);
-
-  font-size:.75rem;
-
-  cursor:pointer;
-
-  transition:
-    background .25s ease,
-    color .25s ease;
-}
-
-.toggle-btn.active{
-  background:rgba(181,98,79,.18);
-
-  color:var(--paper);
-}
-
-.auto-btn{
-  padding:0 14px;
-
-  border:none;
-
-  color:rgba(248,245,240,.72);font-size:.7rem;
-
-  letter-spacing:.22em;
-
-  text-transform:uppercase;
-
-  white-space:nowrap;
-
-  cursor:pointer;
-
-  flex-shrink:0;
-}
-
-@media(max-width:768px){
-
-  .gallery-controls{
-    width:100%;
-
-    justify-content:flex-start;
-  }
-
-}
-
-.section-head{
-  align-items:center;
-}
-
-.gallery-controls{
-  margin-left:auto;
-}
-
-#gallery .section-head{
-  margin-bottom:56px;
-}
-
-.showcase-shell{
-  padding-top:10px;
-}
-
-.showcase-btn{
-  margin-top:18px;
-}
-
-.showcase-dots{
-  margin-top:28px;
-}
-
-.control{
-  backdrop-filter:blur(10px);
-}
-
-.full-gallery-btn{
-  min-width:92px;
-  justify-content:center;
-}
-
-.auto-btn{
-  min-width:96px;
-  justify-content:center;
-}
-
-.toggle-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-@media(max-width:900px){
-
-  #gallery .section-head{
-    gap:18px;
-  }
-
-  .gallery-controls{
-    margin-left:0;
-  }
-
-  .showcase-card{
-    min-width:60.4vw;
-    max-width:60.4vw;
-  }
-
-}
-
+.gallery-controls{display:flex;align-items:center;gap:8px;flex-shrink:1;min-width:0;}
+.control{height:44px;border-radius:14px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);display:flex;align-items:center;justify-content:center;transition:transform .25s ease,border-color .25s ease,background .25s ease;}
+.control:hover{transform:translateY(-1px);border-color:rgba(201,169,122,.16);background:rgba(181,98,79,.05);}
+.full-gallery-btn{padding:0 16px;text-decoration:none;flex-shrink:0;}
+.full-gallery-btn span{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(248,245,240,.82);white-space:nowrap;}
+.gallery-toggle{display:flex;padding:3px;gap:3px;flex-shrink:0;}
+.toggle-btn{width:44px;height:44px;border:none;border-radius:9px;background:transparent;color:rgba(248,245,240,.28);font-size:.75rem;cursor:pointer;transition:background .25s ease,color .25s ease;}
+.toggle-btn.active{background:rgba(181,98,79,.18);color:var(--paper);}
+.auto-btn{padding:0 14px;border:none;color:rgba(248,245,240,.72);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;cursor:pointer;flex-shrink:0;}
+@media(max-width:768px){.gallery-controls{width:100%;justify-content:flex-start;}}
+#gallery .section-head{margin-bottom:56px;}
+.full-gallery-btn{min-width:92px;justify-content:center;}
+.auto-btn{min-width:96px;justify-content:center;}
+.toggle-btn{display:flex;align-items:center;justify-content:center;}
+@media(max-width:900px){#gallery .section-head{gap:18px;}
+.gallery-controls{margin-left:0;}
+.showcase-card{min-width:60.4vw;max-width:60.4vw;}}
 .showcase-shell{position:relative;width:100%;overflow-x:hidden;overflow-y:visible;padding:20px 0 50px}
-.showcase-track{
-  display:flex;gap:20px;align-items:center;
-  will-change:margin-left;
-  transition:margin-left .7s cubic-bezier(.22,.61,.36,1);
-}
-.showcase-card{
-  position:relative;min-width:21.3vw;max-width:21.3vw;height:28.7vh;
-  border-radius:28px;overflow:hidden;background:#111;flex-shrink:0;
-  opacity:.42;transform:scale(.87);
-  transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);
-  box-shadow:0 40px 80px rgba(0,0,0,.55);cursor:pointer;
-}
+.showcase-track{display:flex;gap:20px;align-items:center;will-change:margin-left;transition:margin-left .7s cubic-bezier(.22,.61,.36,1);}
+.showcase-card{position:relative;min-width:21.3vw;max-width:21.3vw;height:28.7vh;border-radius:28px;overflow:hidden;background:#111;flex-shrink:0;opacity:.42;transform:scale(.87);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1);box-shadow:0 40px 80px rgba(0,0,0,.55);cursor:pointer;}
 .showcase-card.active{opacity:1;transform:scale(1)}
 .showcase-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
 .showcase-card:hover img{transform:scale(1.03)}
-.showcase-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.15) 45%,transparent 68%);
-}
-.showcase-count{
-  position:absolute;top:28px;left:32px;
-  font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:rgba(242,207,193,.7);
-  line-height:1;
-}
+.showcase-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.15) 45%,transparent 68%);}
+.showcase-count{position:absolute;top:28px;left:32px;font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:rgba(242,207,193,.7);line-height:1;}
 .showcase-content{position:absolute;left:0;right:0;bottom:18px;display:flex;justify-content:center;align-items:center}
-
-.showcase-btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:8px 18px;border-radius:999px;
-  border:1px solid rgba(255,255,255,.28);color:white;
-  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
-  backdrop-filter:blur(12px);background:rgba(0,0,0,.32);
-  transition:background .3s,border-color .3s,transform .2s;cursor:pointer;
-  white-space:nowrap;gap:0;
-}
+.showcase-btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.28);color:white;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;backdrop-filter:blur(12px);background:rgba(0,0,0,.32);transition:background .3s,border-color .3s,transform .2s;cursor:pointer;white-space:nowrap;gap:0;}
 .showcase-btn:hover{background:rgba(181,98,79,.55);border-color:var(--terra);transform:scale(1.04)}
-.showcase-stage{
-  width:100%;
-  display:flex;
-  align-items:center;
-  overflow:visible;
-}
-.showcase-nav{
-  position:absolute;
-  /* left and top set by JS precisely after paint — see positionNavButtons() */
-  z-index:10;
-  width:52px;height:52px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.13);
-  background:rgba(24,18,15,.55);color:white;
-  font-size:1.1rem;
-  transition:background .25s,border-color .25s,opacity .25s;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  min-width:44px;min-height:44px;
-  transform:translate(-50%,-50%);  /* center the button on its left/top point */
-}
-.showcase-nav:hover{background:rgba(181,98,79,.5);border-color:var(--terra)}
-/* .showcase-prev and .showcase-next left/top are set by positionNavButtons() in JS.
-   transform:translate(-50%,-50%) on .showcase-nav centers button on that point. */
+.showcase-stage{width:100%;display:flex;align-items:center;overflow:visible;}
+.showcase-nav{position:absolute;transform:translate(-50%,-50%);z-index:10;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(10,6,5,.65);color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;cursor:pointer;transition:background .22s ease,border-color .22s ease,transform .18s ease;-webkit-tap-highlight-color:transparent;user-select:none;}
+.showcase-nav:hover,.showcase-nav:focus-visible{background:var(--terra);border-color:var(--terra);outline:none;}
+.showcase-nav:active{transform:translate(-50%,-50%) scale(.93)}
+.showcase-nav svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .showcase-dots{display:flex;justify-content:center;gap:10px;margin-top:16px}
-.showcase-dot{
-  width:8px;height:8px;border-radius:999px;
-  background:rgba(255,255,255,.14);transition:width .4s,background .4s,opacity .4s;
-  border:none;cursor:pointer;padding:0;
-}
+.showcase-dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.14);transition:width .4s,background .4s,opacity .4s;border:none;cursor:pointer;padding:0;}
 .showcase-dot.active{width:32px;background:var(--terra)}
-
-.gallery-masonry{
-  columns:3;column-gap:12px;
-  display:none;
-}
+.gallery-masonry{columns:3;column-gap:12px;display:none;}
 .gallery-masonry.active{display:block}
-.gallery-masonry-item{
-  break-inside:avoid;margin-bottom:12px;
-  position:relative;overflow:hidden;border-radius:12px;cursor:pointer;
-  background:#111;
-}
-.gallery-masonry-item img{
-  width:100%;display:block;
-  transition:transform .6s ease,filter .4s;
-  filter:brightness(.92);
-}
+.gallery-masonry-item{break-inside:avoid;margin-bottom:12px;position:relative;overflow:hidden;border-radius:12px;cursor:pointer;background:#111;}
+.gallery-masonry-item img{width:100%;display:block;transition:transform .6s ease,filter .4s;filter:brightness(.92);}
 .gallery-masonry-item:hover img{transform:scale(1.04);filter:brightness(1)}
-.gallery-masonry-item .gm-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 55%);
-  opacity:0;transition:opacity .4s;
-  display:flex;align-items:flex-end;padding:20px;
-}
+.gallery-masonry-item .gm-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 55%);opacity:0;transition:opacity .4s;display:flex;align-items:flex-end;padding:20px;}
 .gallery-masonry-item:hover .gm-overlay{opacity:1}
-.gm-label{
-  font-family:'Cormorant Garamond',serif;font-size:1.1rem;
-  color:white;line-height:1.2;
-}
+.gm-label{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:white;line-height:1.2;}
 .gallery-masonry-item.tall img{object-position:center top}
-
 .showcase-shell{display:block}
 .showcase-shell.hidden{display:none}
 #showcaseDots{display:flex}
 #showcaseDots.hidden{display:none}
-
-#gallery{
-  background:
-    radial-gradient(circle at top center,
-      rgba(181,98,79,.08),
-      transparent 45%),
-    #090606;
-}
-
-#gallery .section-head{
-  margin-bottom:32px !important;
-}
-
-.showcase-shell{
-  padding:12px 0 34px;
-}
-
-.showcase-card{
-  min-width:20.9vw;
-  max-width:20.9vw;
-  height:28.7vh;
-
-  border-radius:34px;
-
-  overflow:hidden;
-
-  border:1px solid rgba(255,255,255,.06);
-
-  background:#120d0b;
-
-  box-shadow:0 40px 90px rgba(0,0,0,.55);
-
-  opacity:.28;
-  transform:scale(.9);
-
-  transition:
-    transform .7s cubic-bezier(.22,.61,.36,1),
-    opacity .7s cubic-bezier(.22,.61,.36,1);
-}
-
-.showcase-card.active{
-  opacity:1;
-  transform:scale(1);
-}
-
-.showcase-overlay{
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.78) 0%,
-      rgba(0,0,0,.18) 48%,
-      transparent 72%
-    );
-}
-
-.showcase-count{
-  top:28px;
-  left:34px;
-
-  font-size:3rem;
-
-  color:#e5b0aa;
-}
-
-.showcase-content{
-  left:0;
-  right:0;
-  bottom:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:0;
-}
-
-.showcase-info{
-  max-width:260px;
-}
-
+#gallery{background:radial-gradient(circle at top center,rgba(181,98,79,.08),transparent 45%),#090606;}
+#gallery .section-head{margin-bottom:32px !important;}
+.showcase-card{min-width:20.9vw;max-width:20.9vw;height:28.7vh;border-radius:34px;overflow:hidden;border:1px solid rgba(255,255,255,.06);background:#120d0b;box-shadow:0 40px 90px rgba(0,0,0,.55);opacity:.28;transform:scale(.9);transition:transform .7s cubic-bezier(.22,.61,.36,1),opacity .7s cubic-bezier(.22,.61,.36,1);}
+.showcase-card.active{opacity:1;transform:scale(1);}
+.showcase-overlay{background:linear-gradient(
+to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.18) 48%,transparent 72%
+);}
+.showcase-count{top:28px;left:34px;font-size:3rem;color:#e5b0aa;}
+.showcase-content{left:0;right:0;bottom:18px;display:flex;align-items:center;justify-content:center;gap:0;}
+.showcase-info{max-width:260px;}
 .showcase-title{display:none}
 .showcase-line{display:none}
 .showcase-desc{display:none}
-
-.showcase-nav{
-  width:72px;height:72px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter:blur(16px)}
-
-.showcase-dots{
-  margin-top:22px;
-  gap:12px;
-}
-
-.showcase-dot{
-  width:10px;
-  height:10px;
-  background:rgba(255,255,255,.18);
-}
-
-.showcase-dot.active{
-  width:12px;
-  background:#d7a7a0;
-}
-
-@media(max-width:900px){
-
-  .showcase-card{
-    min-width:59.5vw;
-    max-width:59.5vw;
-    height:51.9vh;
-    border-radius:28px;
-  }
-
-  .showcase-content{
-    left:0;
-    right:0;
-    bottom:14px;
-    flex-direction:row;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .showcase-title{
-    font-size:2.2rem;
-  }
-
-  .showcase-nav{
-    width:52px;height:52px}
-
-}
-
-#showcasePopup{
-  position:fixed;inset:0;background:rgba(0,0,0,.96);
-  display:none;align-items:center;justify-content:center;
-  z-index:99999;padding:40px;backdrop-filter:blur(16px);
-}
-#showcasePopup.open{display:flex;flex-direction:column;gap:16px}
-.popup-img-wrap{position:relative;display:flex;align-items:center;justify-content:center}
-#showcasePopupImg{
-  max-width:90vw;max-height:82vh;object-fit:contain;
-  border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.7);
-}
-.popup-caption{
-  text-align:center;
-  font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;
-  color:rgba(255,255,255,.55);letter-spacing:.04em;
-}
-.popup-counter{
-  text-align:center;font-size:.72rem;letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(255,255,255,.25);margin-top:-8px;
-}
-.popup-nav-btn{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.15);
-  background:rgba(0,0,0,.4);color:white;font-size:1.1rem;
-  cursor:pointer;backdrop-filter:blur(8px);
-  transition:background .25s;display:flex;align-items:center;justify-content:center;
-}
-.popup-nav-btn:hover{background:rgba(181,98,79,.5)}
-.popup-prev{left:-70px}.popup-next{right:-70px}
-#showcasePopupClose{
-  position:fixed;top:20px;right:20px;
-  width:48px;height:48px;border:1px solid rgba(255,255,255,.15);border-radius:50%;
-  background:rgba(0,0,0,.5);color:white;
-  font-size:20px;cursor:pointer;transition:background .25s;
-  display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);
-}
-#showcasePopupClose:hover{background:rgba(181,98,79,.5)}
-
+.showcase-nav{width:72px;height:72px;background:rgba(10,6,5,.72);border:1px solid rgba(255,255,255,.15)}
+.showcase-dots{margin-top:22px;gap:12px;}
+.showcase-dot{width:10px;height:10px;background:rgba(255,255,255,.18);}
+.showcase-dot.active{width:12px;background:#d7a7a0;}
+@media(max-width:900px){.showcase-card{min-width:59.5vw;max-width:59.5vw;height:51.9vh;border-radius:28px;}
+.showcase-content{left:0;right:0;bottom:14px;flex-direction:row;align-items:center;justify-content:center;}
+.showcase-title{font-size:2.2rem;}
+.showcase-nav{width:52px;height:52px}}
+#showcasePopup{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:99999;padding:env(safe-area-inset-top,16px) env(safe-area-inset-right,16px) env(safe-area-inset-bottom,16px) env(safe-area-inset-left,16px);touch-action:pan-x pan-y;}
+#showcasePopup.open{display:flex}
+.popup-img-wrap{position:relative;display:flex;align-items:center;justify-content:center;width:100%;flex:1;min-height:0;}
+#showcasePopupImg{max-width:min(92vw,960px);max-height:min(82vh,840px);width:auto;height:auto;object-fit:contain;border-radius:14px;box-shadow:0 24px 72px rgba(0,0,0,.65);display:block;user-select:none;-webkit-user-drag:none;}
+.popup-counter{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.28);text-align:center;flex-shrink:0;}
+.popup-nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(10,6,5,.62);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .22s,border-color .22s,transform .15s;z-index:2;flex-shrink:0;-webkit-tap-highlight-color:transparent;user-select:none;}
+.popup-nav-btn:hover,.popup-nav-btn:focus-visible{background:var(--terra);border-color:var(--terra);outline:none}
+.popup-nav-btn:active{transform:translateY(-50%) scale(.91)}
+.popup-prev{left:clamp(8px,2.5vw,24px)}
+.popup-next{right:clamp(8px,2.5vw,24px)}
+.popup-nav-btn svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+#showcasePopupClose{position:fixed;top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));width:44px;height:44px;border:1px solid rgba(255,255,255,.18);border-radius:50%;background:rgba(10,6,5,.65);color:#fff;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .22s,border-color .22s;z-index:100000;-webkit-tap-highlight-color:transparent;}
+#showcasePopupClose:hover,#showcasePopupClose:focus-visible{background:var(--terra);border-color:var(--terra);outline:none}
+@media(max-width:640px) and (pointer:coarse){.popup-nav-btn{display:none}
+#showcasePopup::after{content:'← swipe →';position:absolute;bottom:56px;left:50%;transform:translateX(-50%);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.18);pointer-events:none;animation:fadeOut 2.4s 1.2s forwards;}}
+@keyframes fadeOut{0%{opacity:1}100%{opacity:0}}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
 .steps::before{content:'';position:absolute;top:28px;left:12%;right:12%;height:1px;background:var(--dust)}
 .step{text-align:center;padding:0 20px}
-.step-n{
-  width:56px;height:56px;border-radius:50%;background:var(--paper);border:1px solid var(--dust);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 24px;position:relative;z-index:1;
-  font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--terra);
-  transition:background .3s,color .3s;
-}
+.step-n{width:56px;height:56px;border-radius:50%;background:var(--paper);border:1px solid var(--dust);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--terra);transition:background .3s,color .3s;}
 .step:hover .step-n{background:var(--terra);color:var(--paper);border-color:var(--terra)}
 .step-t{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--ink);margin-bottom:10px}
 .step-d{font-size:.82rem;line-height:1.9;color:var(--mist)}
-
 .reviews-strip{overflow:hidden;width:100%}
 .reviews-track{display:flex;gap:16px;animation:ticker 52s linear infinite;will-change:transform}
 .reviews-track:hover{animation-play-state:paused}
@@ -1109,33 +657,15 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .review-author{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
 .review-skel-wrap{display:flex;gap:16px;overflow:hidden}
 .review-skel{min-width:320px;flex-shrink:0;background:var(--bone);height:180px;animation:shimmer 1.6s infinite}
-
 .booking-grid{display:grid;grid-template-columns:1fr 1fr;min-height:420px}
 .booking-info{padding:72px 56px;display:flex;flex-direction:column}
 .booking-meta{display:flex;flex-direction:column;gap:20px;margin-top:48px;margin-bottom:56px}
 .b-label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);margin-bottom:6px}
 .b-val{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:rgba(248,245,240,.85);font-style:italic}
 .booking-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-.booking-right{
-  position:relative;overflow:hidden;
-  border-left:var(--gap) solid rgba(255,255,255,.04);
-}
-.booking-right-img{
-  position:absolute;inset:0;
-  background-image:url('https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1200&q=80');
-  background-size:cover;background-position:center;
-}
-.booking-right-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to right,rgba(9,5,5,.45) 0%,rgba(9,5,5,.1) 60%,transparent 100%);
-}
-
-.btn{
-  display:inline-block;font-family:'DM Sans',sans-serif;
-  font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;
-  font-weight:300;border:none;padding:15px 40px;
-  transition:background .3s,color .3s;text-decoration:none;
-}
+.booking-right{position:relative;overflow:hidden;border-left:var(--gap) solid rgba(255,255,255,.04);}
+.booking-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(9,5,5,.45) 0%,rgba(9,5,5,.1) 60%,transparent 100%);}
+.btn{display:inline-block;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:300;border:none;padding:15px 40px;transition:background .3s,color .3s;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .btn-dark{background:var(--ink);color:var(--paper)}
 .btn-dark:hover{background:var(--terra)}
 .btn-terra{background:var(--terra);color:var(--paper)}
@@ -1144,44 +674,14 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .btn-outline:hover{border-color:var(--sand);color:var(--paper)}
 .btn-subtle{font-size:.72rem;padding:10px 18px;opacity:.72;letter-spacing:.18em;text-transform:uppercase;background:rgba(248,245,240,.04);border:1px solid rgba(248,245,240,.18);color:rgba(248,245,240,.75);transition:background .25s,border-color .25s,color .25s}
 .btn-subtle:hover{background:rgba(248,245,240,.08);border-color:rgba(248,245,240,.32);color:rgba(248,245,240,.92)}
-.btn-text{
-  background:none;border:none;padding:0;
-  font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--terra);border-bottom:1px solid var(--dust);padding-bottom:3px;
-  transition:color .3s,border-color .3s;
-}
+.btn-text{background:none;border:none;padding:0;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);border-bottom:1px solid var(--dust);padding-bottom:3px;transition:color .3s,border-color .3s;}
 .btn-text:hover{color:var(--ink);border-color:var(--ink)}
 .btn-text--light{color:var(--sand);border-color:rgba(255,255,255,.25)}
 .btn-text--light:hover{color:var(--paper);border-color:var(--sand)}
-
-.sticky-booking-cta{
-  display:none;
-  position:fixed;
-  left:50%;
-  bottom:20px;
-  transform:translateX(-50%) translateZ(0);
-  will-change:transform;
-  z-index:9999;
-  background:var(--terra);
-  color:var(--paper);
-  padding:14px 24px;
-  border-radius:999px;
-  box-shadow:0 20px 40px rgba(0,0,0,.2);
-  text-decoration:none;
-  font-size:.88rem;
-  font-weight:500;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-}
+.sticky-booking-cta{display:none;position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateZ(0);will-change:transform;z-index:9999;background:var(--terra);color:var(--paper);padding:14px 24px;border-radius:999px;box-shadow:0 20px 40px rgba(0,0,0,.2);text-decoration:none;font-size:.88rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;}
 .sticky-booking-cta:hover{background:#9c4e3f}
-@media(max-width:900px){
-  .sticky-booking-cta{display:flex;align-items:center;justify-content:center;}
-}
-
-.footer-main{
-  background:var(--ink);display:grid;grid-template-columns:1.4fr 1fr 1fr;
-  gap:42px;padding:48px 48px;border-top:1px solid rgba(255,255,255,.04);
-}
+@media(max-width:900px){.sticky-booking-cta{display:flex;align-items:center;justify-content:center;}}
+.footer-main{background:var(--ink);display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:42px;padding:48px 48px;border-top:1px solid rgba(255,255,255,.04);}
 .footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:rgba(248,245,240,.9);font-weight:300;margin-bottom:12px}
 .footer-tagline{font-size:.82rem;line-height:1.9;color:rgba(248,245,240,.32)}
 .footer-col-head{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);margin-bottom:18px}
@@ -1191,1242 +691,251 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .footer-col-links a:hover{color:rgba(248,245,240,.85)}
 .footer-contact-line{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:rgba(248,245,240,.38);margin-bottom:10px}
 .footer-contact-line .ic{color:var(--terra);flex-shrink:0}
-.footer-bar{
-  background:var(--ink);border-top:1px solid rgba(255,255,255,.04);
-  display:flex;justify-content:space-between;align-items:center;padding:16px 60px;
-}
+.footer-bar{background:var(--ink);border-top:1px solid rgba(255,255,255,.04);display:flex;justify-content:space-between;align-items:center;padding:16px 60px;}
 .footer-bar p{font-size:.72rem;letter-spacing:.1em;color:rgba(248,245,240,.38)}
 .footer-social{display:flex;gap:20px}
 .footer-social a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(248,245,240,.38);transition:color .3s}
 .footer-social a:hover{color:var(--sand)}
-
-/* ── FOCUS / KEYBOARD NAVIGATION ────────────────────────────────── */
 :focus{outline:none}
-:focus-visible{
-  outline:2px solid var(--terra);
-  outline-offset:3px;
-  border-radius:2px;
-}
-.btn:focus-visible,.btn-text:focus-visible{
-  outline:2px solid var(--terra);
-  outline-offset:4px;
-}
-.faq-q:focus-visible{
-  outline:2px solid var(--terra);
-  outline-offset:-2px;
-}
-.showcase-card:focus-visible,.gallery-masonry-item:focus-visible{
-  outline:2px solid var(--terra);
-  outline-offset:2px;
-}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:2px;}
+.btn:focus-visible,.btn-text:focus-visible{outline:2px solid var(--terra);outline-offset:4px;}
+.faq-q:focus-visible{outline:2px solid var(--terra);outline-offset:-2px;}
+.showcase-card:focus-visible,.gallery-masonry-item:focus-visible{outline:2px solid var(--terra);outline-offset:2px;}
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes shimmer{0%,100%{opacity:.55}50%{opacity:1}}
-
-@media(max-width:900px){
-  .hero-word{display:none !important}
-  nav{padding:20px 24px}.nav-links{display:none}
-  .nav-hamburger{display:flex}
-  .hero{grid-template-columns:1fr;min-height:auto;overflow:hidden}
-  .hero-left{padding:88px 22px 48px}
-  .hero-right{min-height:56vw;overflow:hidden;width:100%;max-width:100%}
-  .about-grid{grid-template-columns:1fr}
-  .about-visual{min-height:340px}
-  .about-year-strip{padding:24px}
-  .about-year-num{font-size:2.6rem}
-  .about-philosophy{padding:24px}
-  .about-philosophy-text{font-size:.95rem}
-  .about-content{padding:48px 24px;gap:16px}
-  
-  .section{padding:72px 24px}
-  .section-head{flex-direction:column;align-items:flex-start;margin-bottom:48px}
-  .services-grid{grid-template-columns:1fr}
-  .svc-hero{grid-template-columns:1fr}
-  .svc-hero-art{display:none}
-  .svc-hero-content{padding:40px 28px}
-  .svc-card{padding:36px 28px}
-  .showcase-card{min-width:59.5vw;max-width:59.5vw;height:51.9vh}
-  
-  .showcase-nav{width:48px;height:48px;font-size:1rem}
-  .gallery-masonry-item{margin-bottom:8px}
-  .steps{grid-template-columns:1fr 1fr;gap:32px}
-  .steps::before{display:none}
-  .booking-grid{grid-template-columns:1fr}
-  .booking-info{padding:64px 24px}
-  .booking-right{display:none}
-  .booking-actions{flex-direction:column;align-items:stretch;gap:10px}
-  .footer-main{grid-template-columns:1fr;padding:48px 24px;gap:40px}
-  .footer-bar{flex-direction:column;gap:10px;padding:16px 24px;text-align:center}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-}
-
-.section-head{
-  margin-bottom:40px !important;
-}
-
-.showcase-shell{
-  padding-bottom:28px;
-}
-
-.booking-meta{
-  gap:20px;
-  margin-top:36px;
-  margin-bottom:40px;
-}
-
-.footer-main{
-  padding-top:42px;
-  padding-bottom:42px;
-}
-
-.review-card{
-  padding:26px 28px;
-}
-
-.about-content .t-body{
-  line-height:1.8;
-}
-
-@media(max-width:900px){
-
-  .section{
-    padding:60px 22px;
-  }
-
-  .hero-left{
-    padding:92px 22px 48px;
-  }
-
-  .about-content{
-    padding:40px 22px;
-  }
-
-  .svc-card{
-    padding:30px 24px;
-  }
-
-  .svc-hero-content{
-    padding:34px 24px;
-  }
-
-  .booking-info{
-    padding:48px 24px;
-  }
-
-  .footer-main{
-    padding:40px 24px;
-  }
-
-}
-
-@media(max-width:768px){
-
-  #gallery{
-    overflow:hidden;
-  }
-
-  #gallery .section-head{
-    margin-bottom:20px !important;
-  }
-
-  .showcase-shell{
-    padding:8px 0 20px;
-    overflow-x:hidden;
-    overflow-y:visible;
-  }
-
-  .showcase-track{
-    gap:14px;
-  }
-
-  .showcase-card{
-    min-width:63.8vw !important;
-    max-width:63.8vw !important;
-
-    height:47.6vh !important;
-
-    border-radius:24px !important;
-
-    transform:scale(.92);
-  }
-
-  .showcase-card.active{
-    transform:scale(1);
-  }
-
-  .showcase-count{
-    top:18px;
-    left:20px;
-
-    font-size:2rem !important;
-  }
-
-  .showcase-content{
-    left:0 !important;
-    right:0 !important;
-    bottom:14px !important;
-    justify-content:center !important;
-    gap:0 !important;
-  }
-
-  .showcase-info{
-    max-width:100%;
-  }
-
-  .showcase-title{
-    font-size:2rem !important;
-    margin-bottom:8px !important;
-  }
-
-  .showcase-line{
-    width:34px;
-    margin-bottom:12px !important;
-  }
-
-  .showcase-desc{
-    font-size:.74rem !important;
-    line-height:1.6 !important;
-
-    max-width:220px;
-  }
-
-  .showcase-btn{
-    font-size:.65rem !important;
-    padding:6px 14px !important;
-    height:auto !important;
-    min-width:0 !important;
-  }
-
-  .showcase-nav{
-    width:46px !important;height:46px !important;
-    backdrop-filter:blur(10px);
-    background:rgba(255,255,255,.08)}
-
-  .showcase-dots{
-    margin-top:14px !important;
-  }
-
-  .gallery-controls{
-    gap:6px;
-  }
-
-  .full-gallery-btn,
-  .auto-btn{
-    height:40px;
-  }
-
-}
-
-/* ── TABLET (768px – 1199px) ─────────────────────────────────────── */
-@media(min-width:769px) and (max-width:1199px){
-  /* NAV — reduce gap to prevent overflow with 6 links */
-  nav{padding:20px 32px}
-  .nav-links{gap:20px}
-  .nav-links a{font-size:.7rem;letter-spacing:.16em}
-
-  /* HERO — single column on tablet */
-  .hero{grid-template-columns:1fr}
-  .hero-left{padding:110px 40px 60px}
-  .hero-right{min-height:55vw}
-
-  /* ABOUT — single column on tablet */
-  .about-grid{grid-template-columns:1fr}
-  .about-visual{min-height:360px}
-  .about-content{padding:40px !important}
-
-  /* SERVICES */
-  .services-grid{grid-template-columns:1fr}
-  .svc-hero{grid-template-columns:1fr}
-  .svc-hero-art{display:none}
-  .svc-card{padding:36px 32px}
-
-  /* GALLERY carousel */
-  .showcase-card{min-width:44vw !important;max-width:44vw !important;height:44vh !important}
-
-  /* STEPS */
-  .steps{grid-template-columns:1fr 1fr;gap:40px}
-  .steps::before{display:none}
-
-  /* FAQ */
-  #faq-section{padding:72px 40px}
-  .faq-grid{grid-template-columns:1fr}
-
-  /* LOCAL AREA */
-  #local-area{padding:72px 40px}
-  .local-grid{grid-template-columns:1fr;gap:48px}
-
-  /* BOOKING */
-  .booking-grid{grid-template-columns:1fr}
-  .booking-info{padding:64px 40px}
-  .booking-right{display:none}
-
-  /* FOOTER */
-  .footer-main{grid-template-columns:1fr 1fr;gap:40px;padding:56px 40px}
-  .footer-bar{padding:16px 40px}
-}
-
-#gallery .section-head{
-  flex-direction:column;
-  align-items:center !important;
-  text-align:center;
-}
-
-#gallery .section-head-left{
-  align-items:center;
-}
-
-.gallery-controls{
-  justify-content:center;
-  margin:0 auto;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-.stats-row{
-  position:relative;
-
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-
-  align-items:center;
-
-  gap:0;
-
-  margin-top:48px;
-
-  padding:42px 12px;
-
-  border-top:1px solid rgba(24,18,15,.06);
-  border-bottom:1px solid rgba(24,18,15,.06);
-
-  background:#f5f2ee;
-}
-
-.stat-item{
-  position:relative;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  gap:18px;
-
-  min-height:92px;
-
-  padding:0 18px;
-}
-
-.stat-item:not(:last-child)::after{
-  content:'';
-
-  position:absolute;
-
-  right:0;
-  top:50%;
-
-  width:1px;
-  height:72px;
-
-  transform:translateY(-50%);
-
-  background:rgba(24,18,15,.08);
-}
-
-.stat-num{
-  font-family:'Cormorant Garamond',serif;
-
-  font-size:clamp(3.4rem,5vw,4.8rem);
-
-  line-height:.82;
-
-  font-weight:300;
-
-  letter-spacing:-.05em;
-
-  color:#b56a5a;
-
-  white-space:nowrap;
-
-  display:flex;
-  align-items:center;
-  gap:10px;
-
-  flex-shrink:0;
-}
-
-.stat-num .star{
-  font-size:.72em;
-
-  transform:translateY(-1px);
-}
-
-.stat-lbl{
-  font-family:'DM Sans',sans-serif;
-
-  font-size:.72rem;
-  line-height:1.75;
-
-  letter-spacing:.34em;
-
-  text-transform:uppercase;
-
-  color:rgba(24,18,15,.46);
-
-  max-width:110px;
-}
-
-@media(max-width:980px){
-
-  .stats-row{
-    padding:34px 8px;
-  }
-
-  .stat-item{
-    gap:14px;
-    padding:0 14px;
-  }
-
-  .stat-num{
-    font-size:3rem;
-  }
-
-  .stat-lbl{
-    font-size:.65rem;
-    letter-spacing:.24em;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .stats-row{
-    display:flex !important;
-
-    flex-direction:row !important;
-
-    justify-content:space-between !important;
-
-    align-items:center !important;
-
-    gap:0 !important;
-
-    overflow-x:auto;
-
-    padding:24px 0 !important;
-
-    scrollbar-width:none;
-  }
-
-  .stats-row::-webkit-scrollbar{
-    display:none;
-  }
-
-  .stat-item{
-    flex:1 0 33.333%;
-
-    min-width:33.333%;
-
-    display:flex !important;
-
-    flex-direction:column;
-
-    align-items:center !important;
-
-    justify-content:center !important;
-
-    text-align:center;
-
-    gap:10px !important;
-
-    padding:0 10px !important;
-  }
-
-  .stat-item:not(:last-child)::after{
-    display:block !important;
-
-    right:0;
-
-    top:50%;
-
-    width:1px;
-
-    height:52px;
-
-    transform:translateY(-50%);
-  }
-
-  .stat-num{
-    min-width:auto !important;
-
-    font-size:2.8rem !important;
-
-    justify-content:center;
-  }
-
-  .stat-lbl{
-    font-size:.7rem !important;
-    line-height:1.6 !important;
-
-    letter-spacing:.22em !important;
-
-    max-width:90px !important;
-  }
-
-}
-
-/* ── HERO BLACK BACKDROP (>900px) ───────────────────────────────── */
-@media(min-width:901px){
-  /* Both panels go black for a unified full-width dark stage */
-  .hero-left{background:#000}
-  .hero-right{background:#0a0806}
-  .hero{background:#000}
-
-  /* Text on black */
-  .hero-left .t-label{color:rgba(201,169,122,.75)}
-  .hero-left .hero-title{color:#fffaf6}
-  .hero-left .hero-title em{color:#f0a890}
-
-  /* Hero-sub: clearly readable on black — warm white */
-  .hero-left .hero-sub{
-    color:rgba(248,245,240,.82);
-    letter-spacing:.01em;
-  }
-
-  /* On desktop: ONE button only — Book Appointment (modal trigger)
-     Hide the sms: Text to Book entirely */
-  #heroBookBtn{display:none !important}
-  .btn-modal-trigger{display:inline-block !important}
-
-  /* Nav hamburger stays light on black */
-  nav#nav:not(.scrolled) .nav-hamburger span{background:#fffaf5}
-
-  /* Hero actions: single button then View Work link */
-  .hero-actions{
-    display:flex;
-    flex-wrap:nowrap;
-    align-items:center;
-    gap:20px;
-  }
-  .hero-actions .btn{
-    flex:0 0 auto;
-    min-width:200px;
-    text-align:center;
-  }
-
-  /* Book Appointment — outlined glass style */
-  .hero-left .btn-modal-trigger{
-    background:rgba(180,175,168,.15);
-    color:rgba(248,245,240,.92);
-    border:1px solid rgba(248,245,240,.28);
-    letter-spacing:.28em;
-    backdrop-filter:blur(8px);
-    transition:background .3s,border-color .3s,color .3s;
-  }
-  .hero-left .btn-modal-trigger:hover{
-    background:rgba(248,245,240,.18);
-    border-color:rgba(248,245,240,.5);
-    color:#fff;
-  }
-  .hero-left .btn-text{color:rgba(248,245,240,.6);border-bottom-color:rgba(248,245,240,.22)}
-  .hero-left .btn-text:hover{color:#fff;border-bottom-color:rgba(248,245,240,.6)}
-}
-
-@media(min-width:1200px){
-
-  :root{
-    --container:1440px;
-  }
-
-  body{
-    overflow-x:hidden;
-  }
-
-  
-
-  
-
-  .hero{
-    min-height:100vh;
-  }
-
-  
-
-  .hero-left{
-    padding:120px 0 100px 40px;
-  }
-
-  .hero-title{
-    font-size:clamp(6.5rem,9.5vw,10rem);
-    line-height:.88;
-    max-width:780px;
-  }
-
-  .hero-sub{
-    font-size:1.1rem;
-    max-width:540px;
-    line-height:1.95;
-    margin-top:36px;
-  }
-
-  .hero-actions{
-    margin-top:42px;
-    gap:18px;
-  }
-
-  
-
-  
-
-  .about-grid{
-    grid-template-columns:.95fr 1.05fr;
-    gap:80px;
-    align-items:center;
-  }
-
-  .about-content{
-    padding-right:40px;
-  }
-
-  .t-display{
-    font-size:4.8rem;
-    line-height:.95;
-  }
-
-  .t-body{
-    font-size:1rem;
-    line-height:2;
-    max-width:620px;
-  }
-
-  
-
-  .stats-row{
-    width:100%;
-    margin:72px 0 0;
-    padding:52px 12px;
-  }
-
-  .stat-item{
-    min-height:110px;
-  }
-
-  .stat-num{
-    font-size:5.2rem;
-  }
-
-  
-
-  .services-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:28px;
-  }
-
-  .svc-card{
-    min-height:320px;
-    padding:42px;
-    border-radius:28px;
-  }
-
-  
-
-  
-
-  #gallery{
-    padding-top:120px;
-    padding-bottom:120px;
-  }
-
-  #gallery .section-head{
-    margin-bottom:44px !important;
-  }
-
-  .showcase-shell{
-    padding-top:22px;
-  }
-
-  .showcase-track{
-    gap:34px;
-  }
-
-  .showcase-card{
-    min-width:26.5vw !important;
-    max-width:26.5vw !important;
-    height:47.6vh !important;
-
-    border-radius:38px;
-
-    opacity:.38;
-    transform:scale(.88);
-  }
-
-  .showcase-card.active{
-    opacity:1;
-    transform:scale(1);
-  }
-
-  .showcase-content{
-    left:0 !important;
-    right:0 !important;
-    bottom:18px !important;
-    justify-content:center !important;
-  }
-
-  .showcase-title{
-    font-size:4rem !important;
-  }
-
-  .showcase-desc{
-    font-size:.92rem !important;
-    max-width:320px;
-  }
-
-  .showcase-btn{
-    font-size:.7rem !important;
-    padding:7px 16px !important;
-    height:auto !important;
-    min-width:0 !important;
-  }
-
-  .showcase-nav{
-    width:84px !important;height:84px !important}
-
-  .showcase-dots{
-    margin-top:28px !important;
-  }
-
-  
-
-  
-
-  
-
-  
-
-  .review-card{
-    min-height:240px;
-    padding:34px;
-  }
-
-  
-
-  .booking-grid{
-    grid-template-columns:.85fr 1.15fr;
-    min-height:760px;
-  }
-
-  .booking-info{
-    padding:80px 72px;
-  }
-
-  
-
-  
-
-  .footer-main{
-    grid-template-columns:1.2fr .8fr .8fr;
-    gap:80px;
-
-    padding-top:72px;
-    padding-bottom:72px;
-  }
-
-}
-
-@media(min-width:1600px){
-
-  .showcase-card{
-    min-width:24.5vw !important;
-    max-width:24.5vw !important;
-  }
-
-  .hero-title{
-    font-size:clamp(10rem,11vw,13rem);
-  }
-
-}
-
-@media(min-width:1200px){
-
-  html{
-    font-size:16px;
-  }
-
-  body{
-    overflow-x:hidden;
-  }
-
-  
-
-  section{
-    position:relative;
-  }
-
-  
-
-  .hero{
-    min-height:100vh;
-    padding:0;
-  }
-
-  
-
-  .hero-left{
-    padding:120px 0 100px 36px;
-    max-width:760px;
-  }
-
-  .hero-title{
-    font-size:clamp(7rem,9vw,11rem);
-    line-height:.86;
-    letter-spacing:-.045em;
-    margin-bottom:36px;
-  }
-
-  .hero-sub{
-    font-size:1.15rem;
-    line-height:2;
-    max-width:580px;
-    color:rgba(248,245,240,.38);
-    opacity:1;
-  }
-
-  .hero-actions{
-    margin-top:46px;
-    gap:18px;
-  }
-
-  
-
-  
-
-  #about{
-    padding-top:140px;
-    padding-bottom:140px;
-  }
-
-  .about-grid{
-    grid-template-columns:.9fr 1.1fr;
-    gap:100px;
-    align-items:center;
-  }
-
-  .t-display{
-    font-size:5rem;
-    line-height:.92;
-    letter-spacing:-.04em;
-  }
-
-  .t-body{
-    font-size:1rem;
-    line-height:2;
-    max-width:640px;
-  }
-
-  
-
-  .stats-row{
-    width:100%;
-
-    margin:72px 0 0;
-
-    padding:44px 18px;
-
-    border-top:1px solid rgba(255,255,255,.05);
-    border-bottom:1px solid rgba(255,255,255,.05);
-  }
-
-  .stat-item{
-    min-height:92px;
-  }
-
-  .stat-num{
-    font-size:4.8rem;
-  }
-
-  
-
-  #services{
-    padding-top:140px;
-    padding-bottom:140px;
-  }
-
-  .services-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:28px;
-  }
-
-  .svc-card{
-    min-height:320px;
-
-    padding:44px;
-
-    border-radius:30px;
-
-    transition:
-      transform .45s ease,
-      border-color .45s ease,
-      background .45s ease;
-  }
-
-  .svc-card:hover{
-    transform:translateY(-6px);
-
-    border-color:rgba(181,98,79,.22);
-
-    background:
-      linear-gradient(
-        145deg,
-        rgba(181,98,79,.08),
-        rgba(0,0,0,.18)
-      );
-  }
-
-  #gallery{
-    padding-top:150px;
-    padding-bottom:150px;
-
-    overflow:hidden;
-  }
-
-  #gallery .section-head{
-    width:min(1440px,90vw);
-    margin-inline:auto;
-    margin-bottom:52px !important;
-  }
-
-  .showcase-shell{
-    padding:26px 0 34px;
-  }
-
-  .showcase-track{
-    gap:42px;
-  }
-
-  .showcase-card{
-    min-width:25.1vw !important;
-    max-width:25.1vw !important;
-
-    height:48.3vh !important;
-
-    border-radius:42px;
-
-    opacity:.32;
-
-    transform:scale(.84);
-
-    transition:
-      transform .7s cubic-bezier(.22,.61,.36,1),
-      opacity .7s cubic-bezier(.22,.61,.36,1);
-  }
-
-  .showcase-card.active{
-    opacity:1;
-    transform:scale(1);
-  }
-
-  .showcase-content{
-    left:0 !important;
-    right:0 !important;
-    bottom:20px !important;
-    justify-content:center !important;
-  }
-
-  .showcase-title{
-    font-size:4.4rem !important;
-    line-height:.92;
-    margin-bottom:16px !important;
-  }
-
-  .showcase-desc{
-    font-size:.95rem !important;
-    line-height:1.9 !important;
-    max-width:340px;
-  }
-
-  .showcase-btn{
-    font-size:.7rem !important;
-    padding:7px 18px !important;
-    height:auto !important;
-    min-width:0 !important;
-    letter-spacing:.22em !important;
-  }
-
-  .showcase-nav{
-    width:64px !important;height:64px !important;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.14);
-    backdrop-filter:blur(20px)}
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  #reviews{
-    padding-top:120px;
-    padding-bottom:120px;
-  }
-
-  
-
-  .review-card{
-    min-height:260px;
-
-    padding:38px;
-
-    border-radius:28px;
-
-    background:
-      linear-gradient(
-        145deg,
-        rgba(255,255,255,.03),
-        rgba(255,255,255,.015)
-      );
-
-    border:1px solid rgba(255,255,255,.05);
-  }
-
-  
-
-  #booking{
-    padding-top:120px;
-  }
-
-  .booking-grid{
-    display:grid;
-    grid-template-columns:44% 56%;
-
-    min-height:840px;
-
-    border-radius:42px;
-
-    overflow:hidden;
-  }
-
-  .booking-info{
-    padding:92px 80px;
-  }
-
-  
-
-  
-
-  footer{
-    padding-top:90px;
-  }
-
-  .footer-main{
-    grid-template-columns:1.2fr .8fr .8fr;
-    gap:100px;
-
-    padding-top:72px;
-    padding-bottom:72px;
-  }
-
-}
-
-@media(min-width:1200px){
-
-  
-
-  #about{background:#f5f1ec;}
-  #services{background:linear-gradient(180deg,#130d0b 0%,#0d0807 100%);}
-  #gallery{background:radial-gradient(circle at top center,rgba(181,98,79,.10),transparent 42%),#070404;}
-  #faq-section{background:#f7f4f0;}
-  #local-area{background:#0d0908;}
-  #reviews{background:#f6f2ed;}
-  #booking{background:#090505;}
-  footer{background:#060303;}
-
-  
-
-  #services .t-body, #gallery .t-body, #local-area .t-body, #booking .t-body,
-  
-
-  #about .t-body,
-  #faq-section .t-body,
-  #reviews 
-
-  
-
-  .svc-title,
-  .showcase-title,
-  .review-title,
-  .booking-title,
-  
-
-  #about .t-display,
-  #reviews .t-display,
-  #experience .t-display{
-    color:#1b1513 !important;
-  }
-
-  
-
-  #about,
-  #services,
-  #gallery,
-  #experience,
-  #reviews,
-  #booking{
-    padding-top:96px !important;
-    padding-bottom:96px !important;
-  }
-
-  .hero-left{
-    padding-top:96px !important;
-    padding-bottom:72px !important;
-  }
-
-  .section-head{
-    margin-bottom:36px !important;
-  }
-
-  .showcase-shell{
-    padding-top:12px !important;
-    padding-bottom:16px !important;
-  }
-
-  
-
-  .stats-row{
-    margin-top:44px !important;
-  }
-
-  
-
-  .booking-grid{
-    min-height:720px !important;
-  }
-
-  .booking-info{
-    padding:72px 64px !important;
-  }
-
-  .footer-main{
-    padding-top:56px !important;
-    padding-bottom:48px !important;
-  }
-
-  
-
-  .svc-card{
-    background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.015));
-    border:1px solid rgba(255,255,255,.08);
-  }
-
-  
-
-  
-
-  .review-card{
-    background:white;
-    border:1px solid rgba(0,0,0,.05);
-    box-shadow:0 14px 40px rgba(0,0,0,.04);
-  }
-
-  
-
-  .showcase-btn{
-    background:
-      linear-gradient(
-        145deg,
-        rgba(181,98,79,.28),
-        rgba(181,98,79,.14)
-      ) !important;
-
-    border-color:rgba(255,255,255,.22) !important;
-
-    color:white !important;
-  }
-
-}
-
-@media(min-width:1200px){
-
-  
-
-  .hero{
-    min-height:auto !important;
-  }
-
-  
-
-  .hero-left{
-    padding-top:72px !important;
-    padding-bottom:52px !important;
-    padding-left:24px !important;
-
-    max-width:680px !important;
-  }
-
-  .hero-title{
-    margin-bottom:22px !important;
-
-    font-size:clamp(7rem,9vw,11rem) !important;
-
-    line-height:.86 !important;
-  }
-
-  .hero-sub{
-    margin-top:24px !important;
-    font-size:1.15rem !important;
-    color:rgba(248,245,240,.38) !important;
-    max-width:580px !important;
-  }
-
-  .hero-actions{
-    margin-top:32px !important;
-  }
-
-  
-
-  
-
-  #about{
-    padding-top:72px !important;
-    padding-bottom:72px !important;
-  }
-
-  .about-grid{
-    gap:64px !important;
-  }
-
-  .stats-row{
-    margin-top:34px !important;
-  }
-
-  
-
-  .section-head{
-    margin-bottom:28px !important;
-  }
-
-  .t-display{
-    margin-bottom:18px !important;
-  }
-
-}
-
-/* ── DESKTOP MODAL TRIGGER — only show on hover/mouse devices ─────── */
-/* Mobile: sms button visible, modal trigger hidden */
+@media(max-width:900px){.hero-word{display:none !important}
+nav{padding:20px 24px}.nav-links{display:none}
+.nav-hamburger{display:flex}
+.hero{grid-template-columns:1fr;min-height:auto;overflow:hidden}
+.hero-left{padding:88px 22px 48px}
+.hero-right{min-height:56vw;overflow:hidden;width:100%;max-width:100%}
+.about-grid{grid-template-columns:1fr}
+.about-visual{min-height:340px}
+.about-year-strip{padding:24px}
+.about-year-num{font-size:2.6rem}
+.about-philosophy{padding:24px}
+.about-philosophy-text{font-size:.95rem}
+.about-content{padding:48px 24px;gap:16px}
+.section{padding:72px 24px}
+.section-head{flex-direction:column;align-items:flex-start;margin-bottom:48px}
+.services-grid{grid-template-columns:1fr}
+.svc-hero{grid-template-columns:1fr}
+.svc-hero-art{display:none}
+.svc-hero-content{padding:40px 28px}
+.svc-card{padding:36px 28px}
+.showcase-card{min-width:59.5vw;max-width:59.5vw;height:51.9vh}
+.showcase-nav{width:48px;height:48px;font-size:1rem}
+.gallery-masonry-item{margin-bottom:8px}
+.steps{grid-template-columns:1fr 1fr;gap:32px}
+.steps::before{display:none}
+.booking-grid{grid-template-columns:1fr}
+.booking-info{padding:64px 24px}
+.booking-right{display:none}
+.booking-actions{flex-direction:column;align-items:stretch;gap:10px}
+.footer-main{grid-template-columns:1fr;padding:48px 24px;gap:40px}
+.footer-bar{flex-direction:column;gap:10px;padding:16px 24px;text-align:center}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.booking-meta{gap:20px;margin-top:36px;margin-bottom:40px;}
+.footer-main{padding-top:42px;padding-bottom:42px;}
+.about-content .t-body{line-height:1.8;}
+@media(max-width:900px){.section{padding:60px 22px;}
+.hero-left{padding:92px 22px 48px;}
+.about-content{padding:40px 22px;}
+.svc-card{padding:30px 24px;}
+.svc-hero-content{padding:34px 24px;}
+.booking-info{padding:48px 24px;}
+.footer-main{padding:40px 24px;}}
+@media(max-width:768px){#gallery{overflow:hidden;}
+#gallery .section-head{margin-bottom:20px !important;}
+.showcase-shell{padding:8px 0 20px;overflow-x:hidden;overflow-y:visible;}
+.showcase-track{gap:14px;}
+.showcase-card{min-width:63.8vw !important;max-width:63.8vw !important;height:47.6vh !important;border-radius:24px !important;transform:scale(.92);}
+.showcase-card.active{transform:scale(1);}
+.showcase-count{top:18px;left:20px;font-size:2rem !important;}
+.showcase-content{left:0 !important;right:0 !important;bottom:14px !important;justify-content:center !important;gap:0 !important;}
+.showcase-info{max-width:100%;}
+.showcase-title{font-size:2rem !important;margin-bottom:8px !important;}
+.showcase-line{width:34px;margin-bottom:12px !important;}
+.showcase-desc{font-size:.74rem !important;line-height:1.6 !important;max-width:220px;}
+.showcase-btn{font-size:.65rem !important;padding:6px 14px !important;height:auto !important;min-width:0 !important;}
+.showcase-nav{width:46px !important;height:46px !important;background:rgba(10,6,5,.78) !important;border-color:rgba(255,255,255,.22) !important}
+.showcase-dots{margin-top:14px !important;}
+.gallery-controls{gap:6px;}
+.full-gallery-btn,.auto-btn{height:40px;}}
+@media(min-width:769px) and (max-width:1199px){nav{padding:20px 32px}
+.nav-links{gap:20px}
+.nav-links a{font-size:.7rem;letter-spacing:.16em}
+.hero{grid-template-columns:1fr}
+.hero-left{padding:110px 40px 60px}
+.hero-right{min-height:55vw}
+.about-grid{grid-template-columns:1fr}
+.about-visual{min-height:360px}
+.about-content{padding:40px !important}
+.services-grid{grid-template-columns:1fr}
+.svc-hero{grid-template-columns:1fr}
+.svc-hero-art{display:none}
+.svc-card{padding:36px 32px}
+.showcase-card{min-width:44vw !important;max-width:44vw !important;height:44vh !important}
+.steps{grid-template-columns:1fr 1fr;gap:40px}
+.steps::before{display:none}
+#faq-section{padding:72px 40px}
+.faq-grid{grid-template-columns:1fr}
+#local-area{padding:72px 40px}
+.local-grid{grid-template-columns:1fr;gap:48px}
+.booking-grid{grid-template-columns:1fr}
+.booking-info{padding:64px 40px}
+.booking-right{display:none}
+.footer-main{grid-template-columns:1fr 1fr;gap:40px;padding:56px 40px}
+.footer-bar{padding:16px 40px}}
+#gallery .section-head{flex-direction:column;align-items:center !important;text-align:center;}
+#gallery .section-head-left{align-items:center;}
+.gallery-controls{justify-content:center;margin:0 auto;flex-wrap:wrap;gap:8px;}
+.stats-row{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:0;margin-top:48px;padding:42px 12px;border-top:1px solid rgba(24,18,15,.06);border-bottom:1px solid rgba(24,18,15,.06);background:#f5f2ee;}
+.stat-item{position:relative;display:flex;align-items:center;justify-content:center;gap:18px;min-height:92px;padding:0 18px;}
+.stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;width:1px;height:72px;transform:translateY(-50%);background:rgba(24,18,15,.08);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:clamp(3.4rem,5vw,4.8rem);line-height:.82;font-weight:300;letter-spacing:-.05em;color:#b56a5a;white-space:nowrap;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.stat-num .star{font-size:.72em;transform:translateY(-1px);}
+.stat-lbl{font-family:'DM Sans',sans-serif;font-size:.72rem;line-height:1.75;letter-spacing:.34em;text-transform:uppercase;color:rgba(24,18,15,.46);max-width:110px;}
+@media(max-width:980px){.stats-row{padding:34px 8px;}
+.stat-item{gap:14px;padding:0 14px;}
+.stat-num{font-size:3rem;}
+.stat-lbl{font-size:.65rem;letter-spacing:.24em;}}
+@media(max-width:768px){.stats-row{display:flex !important;flex-direction:row !important;justify-content:space-between !important;align-items:center !important;gap:0 !important;overflow-x:auto;padding:24px 0 !important;scrollbar-width:none;}
+.stats-row::-webkit-scrollbar{display:none;}
+.stat-item{flex:1 0 33.333%;min-width:33.333%;display:flex !important;flex-direction:column;align-items:center !important;justify-content:center !important;text-align:center;gap:10px !important;padding:0 10px !important;}
+.stat-item:not(:last-child)::after{display:block !important;right:0;top:50%;width:1px;height:52px;transform:translateY(-50%);}
+.stat-num{min-width:auto !important;font-size:2.8rem !important;justify-content:center;}
+.stat-lbl{font-size:.7rem !important;line-height:1.6 !important;letter-spacing:.22em !important;max-width:90px !important;}}
+@media(min-width:901px){.hero-left{background:#000}
+.hero-right{background:#0a0806}
+.hero{background:#000}
+.hero-left .t-label{color:rgba(201,169,122,.75)}
+.hero-left .hero-title{color:#fffaf6}
+.hero-left .hero-title em{color:#f0a890}
+.hero-left .hero-sub{color:rgba(248,245,240,.82);letter-spacing:.01em;}
+#heroBookBtn{display:none !important}
+.btn-modal-trigger{display:inline-block !important}
+nav#nav:not(.scrolled) .nav-hamburger span{background:#fffaf5}
+.hero-actions{display:flex;flex-wrap:nowrap;align-items:center;gap:20px;}
+.hero-actions .btn{flex:0 0 auto;min-width:200px;text-align:center;}
+.hero-left .btn-modal-trigger{background:rgba(180,175,168,.15);color:rgba(248,245,240,.92);border:1px solid rgba(248,245,240,.28);letter-spacing:.28em;backdrop-filter:blur(8px);transition:background .3s,border-color .3s,color .3s;}
+.hero-left .btn-modal-trigger:hover{background:rgba(248,245,240,.18);border-color:rgba(248,245,240,.5);color:#fff;}
+.hero-left .btn-text{color:rgba(248,245,240,.6);border-bottom-color:rgba(248,245,240,.22)}
+.hero-left .btn-text:hover{color:#fff;border-bottom-color:rgba(248,245,240,.6)}}
+@media(min-width:1200px){:root{--container:1440px;}
+body{overflow-x:hidden;}
+.hero{min-height:100vh;}
+.hero-left{padding:120px 0 100px 40px;}
+.hero-title{font-size:clamp(6.5rem,9.5vw,10rem);line-height:.88;max-width:780px;}
+.hero-sub{font-size:1.1rem;max-width:540px;line-height:1.95;margin-top:36px;}
+.hero-actions{margin-top:42px;gap:18px;}
+.about-grid{grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center;}
+.about-content{padding-right:40px;}
+.t-display{font-size:4.8rem;line-height:.95;}
+.t-body{font-size:1rem;line-height:2;max-width:620px;}
+.stats-row{width:100%;margin:72px 0 0;padding:52px 12px;}
+.stat-item{min-height:110px;}
+.stat-num{font-size:5.2rem;}
+.services-grid{grid-template-columns:repeat(2,1fr);gap:28px;}
+.svc-card{min-height:320px;padding:42px;border-radius:28px;}
+#gallery{padding-top:120px;padding-bottom:120px;}
+#gallery .section-head{margin-bottom:44px !important;}
+.showcase-shell{padding-top:22px;}
+.showcase-track{gap:34px;}
+.showcase-card{min-width:26.5vw !important;max-width:26.5vw !important;height:47.6vh !important;border-radius:38px;opacity:.38;transform:scale(.88);}
+.showcase-card.active{opacity:1;transform:scale(1);}
+.showcase-content{left:0 !important;right:0 !important;bottom:18px !important;justify-content:center !important;}
+.showcase-title{font-size:4rem !important;}
+.showcase-desc{font-size:.92rem !important;max-width:320px;}
+.showcase-btn{font-size:.7rem !important;padding:7px 16px !important;height:auto !important;min-width:0 !important;}
+.showcase-nav{width:84px !important;height:84px !important}
+.showcase-dots{margin-top:28px !important;}
+.review-card{min-height:240px;padding:34px;}
+.booking-grid{grid-template-columns:.85fr 1.15fr;min-height:760px;}
+.booking-info{padding:80px 72px;}
+.footer-main{grid-template-columns:1.2fr .8fr .8fr;gap:80px;padding-top:72px;padding-bottom:72px;}}
+@media(min-width:1600px){.showcase-card{min-width:24.5vw !important;max-width:24.5vw !important;}
+.hero-title{font-size:clamp(10rem,11vw,13rem);}}
+@media(min-width:1200px){html{font-size:16px;}
+section{position:relative;}
+.hero{min-height:100vh;padding:0;}
+.hero-left{padding:120px 0 100px 36px;max-width:760px;}
+.hero-title{font-size:clamp(7rem,9vw,11rem);line-height:.86;letter-spacing:-.045em;margin-bottom:36px;}
+.hero-sub{font-size:1.15rem;line-height:2;max-width:580px;color:rgba(248,245,240,.38);opacity:1;}
+.hero-actions{margin-top:46px;gap:18px;}
+#about{padding-top:140px;padding-bottom:140px;}
+.about-grid{grid-template-columns:.9fr 1.1fr;gap:100px;align-items:center;}
+.t-display{font-size:5rem;line-height:.92;letter-spacing:-.04em;}
+.t-body{font-size:1rem;line-height:2;max-width:640px;}
+.stats-row{width:100%;margin:72px 0 0;padding:44px 18px;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);}
+.stat-item{min-height:92px;}
+.stat-num{font-size:4.8rem;}
+#services{padding-top:140px;padding-bottom:140px;}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+.svc-card{min-height:320px;padding:44px;border-radius:30px;transition:transform .45s ease,border-color .45s ease,background .45s ease;}
+.svc-card:hover{transform:translateY(-6px);border-color:rgba(181,98,79,.22);background:linear-gradient(
+145deg,rgba(181,98,79,.08),rgba(0,0,0,.18)
+);}
+#gallery{padding-top:150px;padding-bottom:150px;overflow:hidden;}
+#gallery .section-head{width:min(1440px,90vw);margin-inline:auto;margin-bottom:52px !important;}
+.showcase-shell{padding:26px 0 34px;}
+.showcase-track{gap:42px;}
+.showcase-card{min-width:25.1vw !important;max-width:25.1vw !important;height:48.3vh !important;border-radius:42px;opacity:.32;transform:scale(.84);transition:transform .7s cubic-bezier(.22,.61,.36,1),opacity .7s cubic-bezier(.22,.61,.36,1);}
+.showcase-card.active{opacity:1;transform:scale(1);}
+.showcase-content{left:0 !important;right:0 !important;bottom:20px !important;justify-content:center !important;}
+.showcase-title{font-size:4.4rem !important;line-height:.92;margin-bottom:16px !important;}
+.showcase-desc{font-size:.95rem !important;line-height:1.9 !important;max-width:340px;}
+.showcase-btn{font-size:.7rem !important;padding:7px 18px !important;height:auto !important;min-width:0 !important;letter-spacing:.22em !important;}
+.showcase-nav{width:64px !important;height:64px !important;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(20px)}
+#reviews{padding-top:120px;padding-bottom:120px;}
+.review-card{min-height:260px;padding:38px;border-radius:28px;background:linear-gradient(
+145deg,rgba(255,255,255,.03),rgba(255,255,255,.015)
+);border:1px solid rgba(255,255,255,.05);}
+#booking{padding-top:120px;}
+.booking-grid{display:grid;grid-template-columns:44% 56%;min-height:840px;border-radius:42px;overflow:hidden;}
+.booking-info{padding:92px 80px;}
+footer{padding-top:90px;}
+.footer-main{grid-template-columns:1.2fr .8fr .8fr;gap:100px;padding-top:72px;padding-bottom:72px;}}
+@media(min-width:1200px){#about{background:#f5f1ec;}
+#services{background:linear-gradient(180deg,#130d0b 0%,#0d0807 100%);}
+#gallery{background:radial-gradient(circle at top center,rgba(181,98,79,.10),transparent 42%),#070404;}
+#faq-section{background:#f7f4f0;}
+#local-area{background:#0d0908;}
+#reviews{background:#f6f2ed;}
+#booking{background:#090505;}
+footer{background:#060303;}
+#services .t-body,#gallery .t-body,#local-area .t-body,#booking .t-body,#about .t-body,#faq-section .t-body,#reviews
+.svc-title,.showcase-title,.review-title,.booking-title,#about .t-display,#reviews .t-display,#experience .t-display{color:#1b1513 !important;}
+#about,#services,#gallery,#experience,#reviews,#booking{padding-top:96px !important;padding-bottom:96px !important;}
+.hero-left{padding-top:96px !important;padding-bottom:72px !important;}
+.section-head{margin-bottom:36px !important;}
+.showcase-shell{padding-top:12px !important;padding-bottom:16px !important;}
+.stats-row{margin-top:44px !important;}
+.booking-grid{min-height:720px !important;}
+.booking-info{padding:72px 64px !important;}
+.footer-main{padding-top:56px !important;padding-bottom:48px !important;}
+.svc-card{background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);}
+.review-card{background:white;border:1px solid rgba(0,0,0,.05);box-shadow:0 14px 40px rgba(0,0,0,.04);}
+.showcase-btn{background:linear-gradient(
+145deg,rgba(181,98,79,.28),rgba(181,98,79,.14)
+) !important;border-color:rgba(255,255,255,.22) !important;color:white !important;}}
+@media(min-width:1200px){.hero{min-height:auto !important;}
+.hero-left{padding-top:72px !important;padding-bottom:52px !important;padding-left:24px !important;max-width:680px !important;}
+.hero-title{margin-bottom:22px !important;font-size:clamp(7rem,9vw,11rem) !important;line-height:.86 !important;}
+.hero-sub{margin-top:24px !important;font-size:1.15rem !important;color:rgba(248,245,240,.38) !important;max-width:580px !important;}
+.hero-actions{margin-top:32px !important;}
+#about{padding-top:72px !important;padding-bottom:72px !important;}
+.about-grid{gap:64px !important;}
+.stats-row{margin-top:34px !important;}
+.section-head{margin-bottom:28px !important;}
+.t-display{margin-bottom:18px !important;}}
 #heroBookBtn{display:inline-block}
 .btn-modal-trigger{display:none}
-
-/* ── DESKTOP BOOKING MODAL ───────────────────────────────────────── */
 #desktopModal{position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;background:rgba(24,18,15,.82);backdrop-filter:blur(12px)}
 #desktopModal.open{display:flex}
 .dm-box{background:var(--paper);max-width:420px;width:90%;padding:48px 40px;position:relative;animation:fadeUp .35s ease}
@@ -2442,145 +951,29 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .dm-opt-text{font-size:.85rem;line-height:1.6}
 .dm-opt-title{font-weight:400;letter-spacing:.04em}
 .dm-opt-desc{color:var(--mist);font-size:.78rem}
-
-#about{
-  position:relative;
-  overflow:hidden;
-}
-
-.about-grid{
-  position:relative;
-  z-index:2;
-
-  align-items:center !important;
-}
-
-.about-visual{
-  position:relative;
-
-  z-index:1;
-
-  isolation:isolate;
-}
-
-.about-visual::after{
-  content:'';
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      to right,
-      rgba(245,241,236,.06),
-      transparent 28%
-    );
-
-  pointer-events:none;
-
-  z-index:2;
-}
-
-.about-content{
-  position:relative;
-
-  z-index:3;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(245,241,236,.92),
-      rgba(245,241,236,.78)
-    );
-
-  backdrop-filter:blur(8px);
-
-  border:1px solid rgba(0,0,0,.04);
-
-  border-radius:28px;
-
-  padding:42px !important;
-
-  box-shadow:
-    0 20px 60px rgba(0,0,0,.05);
-
-  overflow:visible;
-}
-
-.about-content .t-display{
-  color:#1c1513 !important;
-}
-
-.about-content .t-body{
-  color:rgba(28,21,19,.76) !important;
-}
-
-@media(min-width:1200px){
-
-  .about-grid{
-    grid-template-columns:.95fr 1.05fr !important;
-
-    gap:42px !important;
-  }
-
-  .about-visual{
-    transform:translateX(-8px);
-  }
-
-  .about-content{
-    transform:translateX(-24px);
-
-    max-width:720px;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .about-content{
-    transform:none !important;
-
-    padding:28px !important;
-
-    border-radius:22px;
-  }
-
-  .about-visual{
-    transform:none !important;
-  }
-
-}
-
-.nav-logo{
-  transition:
-    color .35s ease,
-    text-shadow .35s ease;
-}
-
-@media(min-width:901px){
-  nav#nav:not(.scrolled) .nav-logo{
-    color:#fffaf5 !important;
-    text-shadow:0 2px 12px rgba(0,0,0,.18);
-  }
-
-  nav#nav.scrolled .nav-logo{
-    color:#17110e !important;
-    text-shadow:none !important;
-  }
-}
-
-@media(max-width:900px){
-  nav#nav .nav-logo{
-    color:#17110e !important;
-    text-shadow:none !important;
-  }
-}
-
-/* ── FAQ SECTION ─────────────────────────────────────────────────── */
+#about{position:relative;overflow:hidden;}
+.about-grid{position:relative;z-index:2;align-items:center !important;}
+.about-visual{position:relative;z-index:1;isolation:isolate;}
+.about-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(
+to right,rgba(245,241,236,.06),transparent 28%
+);pointer-events:none;z-index:2;}
+.about-content{position:relative;z-index:3;background:linear-gradient(
+145deg,rgba(245,241,236,.92),rgba(245,241,236,.78)
+);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.04);border-radius:28px;padding:42px !important;box-shadow:0 20px 60px rgba(0,0,0,.05);overflow:visible;}
+.about-content .t-display{color:#1c1513 !important;}
+.about-content .t-body{color:rgba(28,21,19,.76) !important;}
+@media(min-width:1200px){.about-grid{grid-template-columns:.95fr 1.05fr !important;gap:42px !important;}
+.about-visual{transform:translateX(-8px);}
+.about-content{transform:translateX(-24px);max-width:720px;}}
+@media(max-width:768px){.about-content{transform:none !important;padding:28px !important;border-radius:22px;}
+.about-visual{transform:none !important;}}
+.nav-logo{transition:color .35s ease,text-shadow .35s ease;}
+@media(min-width:901px){nav#nav:not(.scrolled) .nav-logo{color:#fffaf5 !important;text-shadow:0 2px 12px rgba(0,0,0,.18);}
+nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;}}
+@media(max-width:900px){nav#nav .nav-logo{color:#17110e !important;text-shadow:none !important;}}
 #faq-section{background:var(--paper);padding:80px 48px;scroll-margin-top:80px}
 #faq-section .section-head{align-items:center;text-align:center}
 #faq-section .section-head-left{align-items:center}
-
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:0}
 .faq-item{background:white;border:1px solid var(--bone);overflow:hidden}
 .faq-q{width:100%;text-align:left;background:none;border:none;padding:24px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
@@ -2592,8 +985,6 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .faq-a-inner{padding:16px 28px 24px;border-top:1px solid var(--bone)}
 .faq-a-inner p{font-size:.88rem;line-height:1.9;color:var(--mist)}
 @media(max-width:900px){#faq-section{padding:60px 24px}.faq-grid{grid-template-columns:1fr}}
-
-/* ── LOCAL AREA SECTION ──────────────────────────────────────────── */
 #local-area{background:var(--ink);padding:72px 48px;scroll-margin-top:80px}
 #local-area .section-head{align-items:center;text-align:center}
 #local-area .section-head-left{align-items:center}
@@ -2608,53 +999,34 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .local-map iframe{width:100%;height:280px;border:0;filter:sepia(.25) contrast(1.05) brightness(.9)}
 .local-map-label{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(24,18,15,.9);backdrop-filter:blur(8px);padding:7px 16px;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(248,245,240,.7);white-space:nowrap;pointer-events:none}
 @media(max-width:900px){#local-area{padding:60px 24px}.local-grid{grid-template-columns:1fr;gap:40px}.local-areas{grid-template-columns:1fr 1fr}}
-
-@media(min-width:1200px){
-  .stats-row{
-    width:100% !important;
-    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
-    overflow:visible !important;
-    padding-left:0 !important;
-    padding-right:0 !important;
-  }
-  .stat-item{min-width:0 !important;padding:0 26px !important;}
-  .stat-num{font-size:4.4rem !important;white-space:nowrap !important;}
-  .stat-lbl{max-width:140px !important;}
-}
-
-@media(min-width:1700px){
-  .stats-row{width:100% !important;}
-  .stat-num{font-size:4.8rem !important;}
-}
-
-/* ── SMALL PHONES (≤480px) ───────────────────────────────────────── */
-@media(max-width:480px){
-  .hero-left{padding:80px 18px 40px}
-  .hero-right{min-height:48vw}
-  .t-display{font-size:clamp(3rem,13vw,5rem)}
-  .hero-sub{font-size:.8rem;max-width:100%}
-  .steps{grid-template-columns:1fr;gap:28px}
-  .step{padding:0 8px}
-  #faq-section{padding:48px 18px}
-  .faq-q{padding:18px 20px}
-  .faq-a-inner{padding:12px 20px 20px}
-  #local-area{padding:48px 18px}
-  .local-area-pill{padding:10px 14px}
-  .section{padding:48px 18px}
-  .svc-hero-content{padding:28px 18px}
-  .svc-card{padding:28px 18px}
-  .booking-info{padding:48px 18px}
-  .footer-main{padding:40px 18px}
-  .footer-bar{padding:14px 18px}
-  .about-content{padding:22px !important}
-  .dm-box{padding:32px 24px}
-  .btn{padding:14px 28px;font-size:.7rem}
-}
-
+@media(min-width:1200px){.stats-row{width:100% !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;overflow:visible !important;padding-left:0 !important;padding-right:0 !important;}
+.stat-item{min-width:0 !important;padding:0 26px !important;}
+.stat-num{font-size:4.4rem !important;white-space:nowrap !important;}
+.stat-lbl{max-width:140px !important;}}
+@media(min-width:1700px){.stats-row{width:100% !important;}
+.stat-num{font-size:4.8rem !important;}}
+@media(max-width:480px){.hero-left{padding:80px 18px 40px}
+.hero-right{min-height:48vw}
+.t-display{font-size:clamp(3rem,13vw,5rem)}
+.hero-sub{font-size:.8rem;max-width:100%}
+.steps{grid-template-columns:1fr;gap:28px}
+.step{padding:0 8px}
+#faq-section{padding:48px 18px}
+.faq-q{padding:18px 20px}
+.faq-a-inner{padding:12px 20px 20px}
+#local-area{padding:48px 18px}
+.local-area-pill{padding:10px 14px}
+.section{padding:48px 18px}
+.svc-hero-content{padding:28px 18px}
+.svc-card{padding:28px 18px}
+.booking-info{padding:48px 18px}
+.footer-main{padding:40px 18px}
+.footer-bar{padding:14px 18px}
+.about-content{padding:22px !important}
+.dm-box{padding:32px 24px}
+.btn{padding:14px 28px;font-size:.7rem}}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--terra);color:#fff;padding:8px 16px;z-index:9999;font-size:.75rem;letter-spacing:.1em;transition:top .2s}
 .skip-link:focus{top:0}
-
-/* ── STAGGER ANIMATION (CSS-driven, no style.cssText forced recalc) ── */
 .stagger-hidden{opacity:0;transform:translateY(22px)}
 .stagger-show{opacity:1;transform:translateY(0);transition:opacity .55s var(--stagger,0s) ease,transform .55s var(--stagger,0s) ease}
 </style>
@@ -2666,11 +1038,11 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 
 <!-- LIGHTBOX POPUP -->
 <div id="showcasePopup" role="dialog" aria-modal="true" aria-label="Photo lightbox">
-  <button id="showcasePopupClose" aria-label="Close lightbox">&#10005;</button>
+  <button id="showcasePopupClose" aria-label="Close lightbox"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   <div class="popup-img-wrap">
-    <button class="popup-nav-btn popup-prev" id="popupPrev" aria-label="Previous photo">&#8592;</button>
+    <button class="popup-nav-btn popup-prev" id="popupPrev" aria-label="Previous photo"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
     <img id="showcasePopupImg" src="" alt="Nail Art by Thuy"/>
-    <button class="popup-nav-btn popup-next" id="popupNext" aria-label="Next photo">&#8594;</button>
+    <button class="popup-nav-btn popup-next" id="popupNext" aria-label="Next photo"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
   </div>
   <div class="popup-counter" id="popupCounter"></div>
 </div>
@@ -2685,6 +1057,7 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
     <li><a href="#faq-section">FAQ</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#booking">Book</a></li>
+    <li><a href="#nail-tips">Guides</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -2699,6 +1072,7 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
   <a href="#faq-section" class="drawer-link">FAQ</a>
   <a href="#reviews" class="drawer-link">Reviews</a>
   <a href="#booking" class="drawer-link">Book</a>
+  <a href="#nail-tips" class="drawer-link">Guides</a>
 </div>
 
 <!-- HERO -->
@@ -2719,7 +1093,7 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
     <div class="hero-texture"></div>
     <div class="hero-word">Twee</div>
     <div class="hero-pill">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOTQECPB1Ukk2WCwgnJxDG5BtYxE5ejQq6zboz7pmz8jD6W0bFfC7xrwxU8JPtncM5HfBhe4nAyyPnFGMZz0--qBXwBRX0syr9Ma13UkOu0KHBHLUQ=w1200-k-no" alt="Nails by Thuy — Freehand Nail Art Austin TX" loading="eager" fetchpriority="high" width="1200" height="900"/>
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOTQECPB1Ukk2WCwgnJxDG5BtYxE5ejQq6zboz7pmz8jD6W0bFfC7xrwxU8JPtncM5HfBhe4nAyyPnFGMZz0--qBXwBRX0syr9Ma13UkOu0KHBHLUQ=w1200-k-no" alt="Nails by Thuy — Freehand Nail Art Austin TX" loading="eager" fetchpriority="high" width="1200" height="900" decoding="sync"/>
       </div>
   </div>
 </section>
@@ -2752,7 +1126,7 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
     </div>
     <div class="about-content">
       <div class="about-profile-photo">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOA262XONbzlPzY_tbc-eY1P9df82PbQpssLnRn9WtaOqKLlvOSrSHACtW-YhAsmEq1J0xC1lufWEUSI5hR2ZW39sj0_EU-NU-jTMCLDbGp8jWpszk=w1200-k-no" alt="Thuy (Twee) — Master Nail Artist and freehand nail art specialist in Austin TX 78725" loading="lazy" width="1200" height="1200"/>
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOA262XONbzlPzY_tbc-eY1P9df82PbQpssLnRn9WtaOqKLlvOSrSHACtW-YhAsmEq1J0xC1lufWEUSI5hR2ZW39sj0_EU-NU-jTMCLDbGp8jWpszk=w400-k-no" alt="Thuy (Twee) — Master Nail Artist and freehand nail art specialist in Austin TX 78725" loading="lazy" width="400" height="400" decoding="async"/>
       </div>
       <p class="t-label reveal">About Thuy</p>
       <h2 class="t-heading reveal">Meet <em>Twee</em>,<br/>Your Nail Artist</h2>
@@ -2893,8 +1267,8 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 
   <!-- CAROUSEL VIEW -->
   <div class="showcase-shell" id="carouselView">
-    <button class="showcase-nav showcase-prev" aria-label="Previous slide">&#8592;</button>
-    <button class="showcase-nav showcase-next" aria-label="Next slide">&#8594;</button>
+    <button class="showcase-nav showcase-prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="showcase-nav showcase-next" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
     <div class="showcase-stage">
       <div class="showcase-track" id="showcaseTrack"></div>
     </div>
@@ -3051,7 +1425,47 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 </section>
 
 <!-- REVIEWS -->
+<!-- STATIC REVIEW SNIPPETS — crawlable by Google, AI engines, Maps -->
 <section class="section" id="reviews" style="scroll-margin-top:80px;padding-bottom:0">
+  <!-- Noscript + SEO static reviews (hidden visually, fully crawlable) -->
+  <div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);left:-9999px" aria-hidden="true">
+    <div itemscope itemtype="https://schema.org/Review">
+      <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+        <meta itemprop="ratingValue" content="5"/><meta itemprop="bestRating" content="5"/>
+      </span>
+      <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Alexa M.</span></span>
+      <span itemprop="reviewBody">Thuy is an absolute artist. My set turned out more beautiful than I could have imagined — the freehand work is on another level.</span>
+      <meta itemprop="datePublished" content="2025-11-12"/>
+      <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="Nails by Thuy"/></span>
+    </div>
+    <div itemscope itemtype="https://schema.org/Review">
+      <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+        <meta itemprop="ratingValue" content="5"/><meta itemprop="bestRating" content="5"/>
+      </span>
+      <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Jordan K.</span></span>
+      <span itemprop="reviewBody">Best nail experience I've ever had. The 3D nail art is incredible — everyone keeps asking where I got my nails done!</span>
+      <meta itemprop="datePublished" content="2025-12-03"/>
+      <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="Nails by Thuy"/></span>
+    </div>
+    <div itemscope itemtype="https://schema.org/Review">
+      <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+        <meta itemprop="ratingValue" content="5"/><meta itemprop="bestRating" content="5"/>
+      </span>
+      <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Priya S.</span></span>
+      <span itemprop="reviewBody">The personalized experience is unmatched. She creates designs I've never seen anywhere else. Truly wearable art.</span>
+      <meta itemprop="datePublished" content="2026-01-18"/>
+      <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="Nails by Thuy"/></span>
+    </div>
+    <div itemscope itemtype="https://schema.org/Review">
+      <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+        <meta itemprop="ratingValue" content="5"/><meta itemprop="bestRating" content="5"/>
+      </span>
+      <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sarah L.</span></span>
+      <span itemprop="reviewBody">Quality over quantity is real here. She takes her time, never rushes, and the results are always flawless for weeks.</span>
+      <meta itemprop="datePublished" content="2026-02-10"/>
+      <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="Nails by Thuy"/></span>
+    </div>
+  </div>
   <div class="section-head reveal" style="align-items:center">
     <div class="section-head-left">
       <p class="t-label">Client Love</p>
@@ -3103,6 +1517,66 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 
 <!-- FOOTER -->
 </main>
+<!-- ── BLOG / RESOURCES SECTION (Phase 3 SEO — topical authority) ─── -->
+<section id="nail-tips" style="background:var(--bone);padding:72px 48px;scroll-margin-top:80px" aria-label="Nail Care Tips and Guides from Nails by Thuy Austin TX">
+  <div class="section-head reveal" style="align-items:center;margin-bottom:48px">
+    <div class="section-head-left" style="align-items:center;text-align:center">
+      <p class="t-label">From the Studio</p>
+      <h2 class="t-heading">Nail Care <em>Guides</em></h2>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;max-width:1200px;margin:0 auto" class="reveal">
+
+    <article itemscope itemtype="https://schema.org/Article" style="background:white;padding:32px 28px;border:1px solid var(--bone)">
+      <meta itemprop="author" content="Thuy — Nails by Thuy Austin TX"/>
+      <meta itemprop="publisher" content="Nails by Thuy"/>
+      <p class="t-label" style="margin-bottom:12px">Gel Nails</p>
+      <h3 itemprop="headline" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--ink);line-height:1.3;margin-bottom:14px">
+        <a href="/biab-vs-gel-x" itemprop="url" style="color:inherit">BIAB vs Gel X — Which Is Right for You?</a>
+      </h3>
+      <p itemprop="description" style="font-size:.82rem;line-height:1.9;color:var(--mist)">BIAB strengthens natural nails without extensions. Gel X adds length with a lightweight soft gel. Your Austin nail artist explains the key differences, wear time, and which suits your lifestyle.</p>
+      <a href="/biab-vs-gel-x" style="display:inline-block;margin-top:20px;font-size:.65rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);border-bottom:1px solid var(--dust);padding-bottom:2px">Read Guide →</a>
+    </article>
+
+    <article itemscope itemtype="https://schema.org/Article" style="background:white;padding:32px 28px;border:1px solid var(--bone)">
+      <meta itemprop="author" content="Thuy — Nails by Thuy Austin TX"/>
+      <meta itemprop="publisher" content="Nails by Thuy"/>
+      <p class="t-label" style="margin-bottom:12px">Nail Shapes</p>
+      <h3 itemprop="headline" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--ink);line-height:1.3;margin-bottom:14px">
+        <a href="/best-nail-shapes-short-nails" itemprop="url" style="color:inherit">Best Nail Shapes for Short Nails</a>
+      </h3>
+      <p itemprop="description" style="font-size:.82rem;line-height:1.9;color:var(--mist)">Almond, oval, squoval, or coffin? Each shape creates a different illusion of length and elegance. Thuy shares which shapes work best for naturally short nails — and why.</p>
+      <a href="/best-nail-shapes-short-nails" style="display:inline-block;margin-top:20px;font-size:.65rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);border-bottom:1px solid var(--dust);padding-bottom:2px">Read Guide →</a>
+    </article>
+
+    <article itemscope itemtype="https://schema.org/Article" style="background:white;padding:32px 28px;border:1px solid var(--bone)">
+      <meta itemprop="author" content="Thuy — Nails by Thuy Austin TX"/>
+      <meta itemprop="publisher" content="Nails by Thuy"/>
+      <p class="t-label" style="margin-bottom:12px">Gel Extensions</p>
+      <h3 itemprop="headline" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--ink);line-height:1.3;margin-bottom:14px">
+        <a href="/how-long-do-gel-x-nails-last" itemprop="url" style="color:inherit">How Long Do Gel X Nails Last?</a>
+      </h3>
+      <p itemprop="description" style="font-size:.82rem;line-height:1.9;color:var(--mist)">Gel X extensions typically last 3–5 weeks with proper care. Learn what affects longevity, the best aftercare routine, and when to book your fill at Nails by Thuy Austin.</p>
+      <a href="/how-long-do-gel-x-nails-last" style="display:inline-block;margin-top:20px;font-size:.65rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);border-bottom:1px solid var(--dust);padding-bottom:2px">Read Guide →</a>
+    </article>
+
+    <article itemscope itemtype="https://schema.org/Article" style="background:white;padding:32px 28px;border:1px solid var(--bone)">
+      <meta itemprop="author" content="Thuy — Nails by Thuy Austin TX"/>
+      <meta itemprop="publisher" content="Nails by Thuy"/>
+      <p class="t-label" style="margin-bottom:12px">Studio Experience</p>
+      <h3 itemprop="headline" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--ink);line-height:1.3;margin-bottom:14px">
+        <a href="/why-private-nail-studios-are-better" itemprop="url" style="color:inherit">Why Private Nail Studios Are Better</a>
+      </h3>
+      <p itemprop="description" style="font-size:.82rem;line-height:1.9;color:var(--mist)">One-on-one attention, zero wait time, fully custom designs, and a calm private atmosphere. Discover why clients drive across Austin for Nails by Thuy's boutique studio experience.</p>
+      <a href="/why-private-nail-studios-are-better" style="display:inline-block;margin-top:20px;font-size:.65rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);border-bottom:1px solid var(--dust);padding-bottom:2px">Read Guide →</a>
+    </article>
+
+  </div>
+  <p style="text-align:center;margin-top:40px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mist)">
+    All guides written by Thuy — Austin TX Master Nail Technician &amp; Freehand Art Specialist since 2011
+  </p>
+</section>
+
 <footer itemscope itemtype="https://schema.org/NailSalon">
   <link itemprop="sameAs" href="https://maps.app.goo.gl/YMsQDuWs2UDaaP56A"/>
   <link itemprop="sameAs" href="https://www.instagram.com/nailsbythuyh"/>
@@ -3130,6 +1604,7 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
         <li><a href="#local-area">Serving Austin TX</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#booking">Book Appointment</a></li>
+        <li><a href="#nail-tips">Nail Guides</a></li>
       </ul>
     </div>
     <div>
@@ -3289,7 +1764,7 @@ function lazyLoadShowcase(){
         obs.unobserve(img);
       }
     });
-  },{root:showcaseTrack,rootMargin:'200px'});
+  },{rootMargin:'400px'});  /* root:null = viewport; 400px prereloads next slide */
   imgs.forEach(img=>io.observe(img));
 }
 const showcaseTrack=document.getElementById('showcaseTrack');
@@ -3304,40 +1779,41 @@ let showcaseIdx=0, autoPlay=true, scTimer=null, scTouchX=0;
 let _cw=0, _gap=0, _shellW=0;
 
 function positionNavButtons(){
-  /* Place ← exactly where the active card's LEFT edge is,
-     centered vertically on the card.
-     Place → exactly where the active card's RIGHT edge is.
-     Uses shell-relative px — scroll-immune, no CSS vars, no calc races. */
-  const shell = document.getElementById('carouselView');
-  const stage = shell.querySelector('.showcase-stage');
-  const prevBtn = shell.querySelector('.showcase-prev');
-  const nextBtn = shell.querySelector('.showcase-next');
-  const card  = showcaseTrack.querySelector('.showcase-card');
+  /* Always re-measures _shellW fresh to avoid stale values */
+  const shell   = document.getElementById('carouselView');
+  const stage   = shell ? shell.querySelector('.showcase-stage') : null;
+  const prevBtn = shell ? shell.querySelector('.showcase-prev')  : null;
+  const nextBtn = shell ? shell.querySelector('.showcase-next')  : null;
+  const card    = showcaseTrack.querySelector('.showcase-card.active')
+               || showcaseTrack.querySelector('.showcase-card');
   if(!shell||!stage||!prevBtn||!nextBtn||!card) return;
 
-  /* Stage top relative to shell top (accounts for shell padding) */
-  const stageTop  = stage.offsetTop;
-  const cardH     = card.offsetHeight;
-  const cardMidY  = stageTop + cardH / 2;   /* vertical center of card in shell */
+  /* Always read fresh shell width — resize may have changed it */
+  const shellW   = shell.offsetWidth;
+  const cardW    = card.offsetWidth;
+  const cardH    = card.offsetHeight;
+  const stageTop = stage.offsetTop;
 
-  /* Card horizontal center in shell = half of shell width (track is always centered) */
-  const cardW     = card.offsetWidth;
-  const cardLeft  = (_shellW - cardW) / 2;  /* left edge of active card in shell */
-  const cardRight = cardLeft + cardW;        /* right edge */
+  const cardLeft  = (shellW - cardW) / 2;   /* left edge of centered card in shell */
+  const cardRight = cardLeft + cardW;         /* right edge */
+  const cardMidY  = stageTop + cardH / 2;    /* vertical center */
 
-  /* Button centers land exactly on card edges */
-  prevBtn.style.left = cardLeft  + 'px';   /* transform:translate(-50%,-50%) centers it */
+  /* transform:translate(-50%,-50%) on .showcase-nav means these are center coords */
+  prevBtn.style.left = cardLeft  + 'px';
   prevBtn.style.top  = cardMidY  + 'px';
   nextBtn.style.left = cardRight + 'px';
   nextBtn.style.top  = cardMidY  + 'px';
+
+  /* Keep _shellW in sync for applyPosition() */
+  _shellW = shellW;
 }
 
 function _measureLayout(){
   const card  = showcaseTrack.querySelector('.showcase-card');
   const stage = showcaseTrack.parentElement;
   if(!card||!stage) return false;
-  _gap   = parseFloat(getComputedStyle(showcaseTrack).gap)||20;
-  _cw    = card.offsetWidth + _gap;
+  _gap    = parseFloat(getComputedStyle(showcaseTrack).gap)||20;
+  _cw     = card.offsetWidth + _gap;
   _shellW = stage.parentElement.offsetWidth;
   return _cw > _gap;
 }
@@ -3354,9 +1830,8 @@ function initShowcase(){
   const total=SHOWCASE_IMAGES.length;
   const pad=n=>String(n).padStart(2,'0');
   showcaseTrack.innerHTML=SHOWCASE_IMAGES.map((p,i)=>{
-    const isEager=i<3;
-    const imgAttr=isEager
-      ? `src="${p.url}" loading="eager" fetchpriority="${i===0?'high':'auto'}"`
+    const imgAttr= i===0
+      ? `src="${p.url}" loading="eager" fetchpriority="high"`
       : `data-src="${p.url}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" loading="lazy"`;
     return `<div class="showcase-card${i===0?' active':''}" data-idx="${i}">
       <img ${imgAttr} alt="${p.title}" decoding="async"/>
@@ -3436,11 +1911,23 @@ showcaseTrack.addEventListener('click',e=>{
   const card=e.target.closest('.showcase-card');
   if(card&&parseInt(card.dataset.idx)!==showcaseIdx){goTo(parseInt(card.dataset.idx));startAuto();}
 });
-showcaseTrack.addEventListener('touchstart',e=>{scTouchX=e.touches[0].clientX},{passive:true});
-showcaseTrack.addEventListener('touchend',e=>{
-  const dx=scTouchX-e.changedTouches[0].clientX;
-  if(Math.abs(dx)>50){goTo(dx>0?showcaseIdx+1:showcaseIdx-1);startAuto();}
-},{passive:true});
+/* Swipe on the whole shell — larger hit area */
+(function(){
+  var shell=document.getElementById('carouselView');
+  var tx=0,ty=0;
+  shell.addEventListener('touchstart',function(e){
+    tx=e.touches[0].clientX;
+    ty=e.touches[0].clientY;
+  },{passive:true});
+  shell.addEventListener('touchend',function(e){
+    var dx=tx-e.changedTouches[0].clientX;
+    var dy=ty-e.changedTouches[0].clientY;
+    if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>44){
+      goTo(dx>0?showcaseIdx+1:showcaseIdx-1);
+      startAuto();
+    }
+  },{passive:true});
+})();
 var _rsTimer;window.addEventListener('resize',function(){clearTimeout(_rsTimer);_rsTimer=setTimeout(function(){if(_measureLayout()){applyPosition();positionNavButtons();}},150);});
 initShowcase();
 startAuto();
@@ -3494,38 +1981,94 @@ startAuto();
 
 /* ── Lightbox ────────────────────────────────────────────────────── */
 let popupIdx=0;
+const _popupEl  = document.getElementById('showcasePopup');
+const _popupImg = document.getElementById('showcasePopupImg');
+const _popupCtr = document.getElementById('popupCounter');
+
+function _setPopupSlide(idx){
+  popupIdx = (idx + SHOWCASE_IMAGES.length) % SHOWCASE_IMAGES.length;
+  const p = SHOWCASE_IMAGES[popupIdx];
+  /* Preload then fade in */
+  _popupImg.style.transition = 'none';
+  _popupImg.style.opacity = '0';
+  const tmp = new Image();
+  tmp.onload = function(){
+    _popupImg.src = p.url;
+    _popupImg.alt = p.title + ' — Nail Art by Thuy, Austin TX';
+    requestAnimationFrame(function(){
+      _popupImg.style.transition = 'opacity .2s ease';
+      _popupImg.style.opacity = '1';
+    });
+  };
+  tmp.onerror = function(){ _popupImg.src = p.url; _popupImg.style.opacity='1'; };
+  tmp.src = p.url;
+  _popupCtr.textContent = (popupIdx+1) + ' / ' + SHOWCASE_IMAGES.length;
+}
+
 function openPopup(idx){
-  popupIdx=idx;
-  const p=SHOWCASE_IMAGES[popupIdx];
-  const img=document.getElementById('showcasePopupImg');
-  img.src=p.url;
-  img.alt=p.title+' — Nail Art by Thuy, Austin TX';
-  document.getElementById('popupCounter').textContent=(popupIdx+1)+' / '+SHOWCASE_IMAGES.length;
-  const popup=document.getElementById('showcasePopup');
-  popup.classList.add('open');
-  popup.removeAttribute('aria-hidden');
+  _setPopupSlide(idx);
+  _popupEl.classList.add('open');
+  _popupEl.removeAttribute('aria-hidden');
   document.getElementById('showcasePopupClose').focus();
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
 }
+
 function closePopup(){
-  const popup=document.getElementById('showcasePopup');
-  popup.classList.remove('open');
-  popup.setAttribute('aria-hidden','true');
-  document.body.style.overflow='';
+  _popupEl.classList.remove('open');
+  _popupEl.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
 }
-function popupNav(dir){
-  openPopup((popupIdx+dir+SHOWCASE_IMAGES.length)%SHOWCASE_IMAGES.length);
-}
-document.getElementById('showcasePopupClose').addEventListener('click',closePopup);
-document.getElementById('popupPrev').addEventListener('click',()=>popupNav(-1));
-document.getElementById('popupNext').addEventListener('click',()=>popupNav(1));
-document.getElementById('showcasePopup').addEventListener('click',e=>{if(e.target===e.currentTarget)closePopup()});
-document.addEventListener('keydown',e=>{
-  if(!document.getElementById('showcasePopup').classList.contains('open'))return;
-  if(e.key==='Escape')closePopup();
-  if(e.key==='ArrowLeft')popupNav(-1);
+
+function popupNav(dir){ _setPopupSlide(popupIdx + dir); }
+
+/* Buttons */
+document.getElementById('showcasePopupClose').addEventListener('click', closePopup);
+document.getElementById('popupPrev').addEventListener('click', function(){ popupNav(-1); });
+document.getElementById('popupNext').addEventListener('click', function(){ popupNav(1); });
+
+/* Backdrop click to close */
+_popupEl.addEventListener('click', function(e){ if(e.target===_popupEl) closePopup(); });
+
+/* Keyboard */
+document.addEventListener('keydown', function(e){
+  if(!_popupEl.classList.contains('open')) return;
+  if(e.key==='Escape')    closePopup();
+  if(e.key==='ArrowLeft') popupNav(-1);
   if(e.key==='ArrowRight')popupNav(1);
 });
+
+/* Touch swipe on popup */
+(function(){
+  var tx=0, ty=0;
+  _popupEl.addEventListener('touchstart', function(e){
+    tx = e.touches[0].clientX;
+    ty = e.touches[0].clientY;
+  }, {passive:true});
+  _popupEl.addEventListener('touchend', function(e){
+    var dx = tx - e.changedTouches[0].clientX;
+    var dy = ty - e.changedTouches[0].clientY;
+    if(Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 44) popupNav(dx > 0 ? 1 : -1);
+  }, {passive:true});
+})();
+
+/* ── LAZY BACKGROUND IMAGES ─────────────────────────────────────── */
+(function(){
+  var bgMap={
+    '.booking-right-img':"url('https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1200&q=80')"
+  };
+  var io=new IntersectionObserver(function(entries,obs){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var el=e.target;
+      var key=Object.keys(bgMap).find(function(k){return el.matches(k)});
+      if(key){el.style.backgroundImage=bgMap[key];obs.unobserve(el);}
+    });
+  },{rootMargin:'200px'});
+  Object.keys(bgMap).forEach(function(sel){
+    var el=document.querySelector(sel);
+    if(el) io.observe(el);
+  });
+})();
 
 /* ── REVIEWS ─────────────────────────────────────────────────────── */
 const FALLBACK_REVIEWS=[
@@ -3555,6 +2098,14 @@ showReviews(FALLBACK_REVIEWS);
 <section aria-label="About Nails by Thuy — Austin TX" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;left:-9999px">
   <h2>Nails by Thuy — Private Nail Art Studio in Austin, TX</h2>
   <p>Nails by Thuy is a private, by-appointment nail art studio on Varrelman St in East Austin, TX 78725. Specialties include hand-painted freehand nail art, custom acrylic sets, Gel X, BIAB, dipping powder, and 3D nail art.</p>
+  <h3>Location and Nearby Landmarks</h3>
+  <p>The studio is located in the 78725 zip code of East Austin, Texas — conveniently close to Walter E. Long Metropolitan Park, Decker Lake, the Austin-Bergstrom International Airport (AUS), Highway 183, and the Highway 71 corridor. Clients travel from East Austin, Downtown Austin, Mueller, Manor TX, Del Valle, Pflugerville, Round Rock, Cedar Park, and Georgetown to visit the studio.</p>
+  <h3>About the Nail Artist</h3>
+  <p>Thuy (known as Twee) has been a licensed nail technician since 2011 — over 15 years of professional experience. She specializes in freehand nail art, meaning every design is hand-painted with brushes, not stamped or stickered. She is fluent in English and Vietnamese and serves Austin's diverse community.</p>
+  <h3>Comparison: Private Studio vs Traditional Nail Salon</h3>
+  <p>Unlike traditional nail salons in Austin that book multiple clients simultaneously, Nails by Thuy is a private one-on-one studio. There are no walk-ins, no waiting, no rushed appointments. Each client receives Thuy's complete attention for the full session duration. This results in higher quality, more detailed nail art and a significantly more relaxed experience.</p>
+  <h3>Services Explained</h3>
+  <p>BIAB (Builder-In-A-Bottle) is a gel-based strengthening treatment applied directly to natural nails — no extensions. Gel X are soft gel extensions applied using a dual-form technique for lightweight length. Acrylic full sets use liquid-and-powder acrylic for durable extensions. Dipping powder (SNS-style) uses a resin-and-powder system for odor-free, long-lasting color. All services can include freehand nail art add-ons.</p>
 </section>
 
 <!-- ── DESKTOP BOOKING MODAL ─────────────────────────────────────── -->
@@ -3637,27 +2188,14 @@ showReviews(FALLBACK_REVIEWS);
 </script>
 
 <script>
-(function(){
+/* CWV monitoring — runs in idle time, never on critical path */
+(typeof requestIdleCallback!=='undefined'?requestIdleCallback:setTimeout)(function(){
   if(typeof PerformanceObserver==='undefined')return;
   var r=function(v){return Math.round(v*10)/10};
-  // LCP — log once
-  try{new PerformanceObserver(function(list){
-    var e=list.getEntries();e=e[e.length-1];
-    if(e) console.log('[CWV] LCP: '+r(e.startTime)+'ms '+(e.startTime<2000?'✅':'⚠️'));
-  }).observe({type:'largest-contentful-paint',buffered:true})}catch(e){}
-  // CLS — silent unless bad
-  try{var cls=0;new PerformanceObserver(function(list){
-    list.getEntries().forEach(function(e){if(!e.hadRecentInput)cls+=e.value});
-    if(cls>0.1) console.warn('[CWV] CLS: '+r(cls)+' ⚠️ layout shift detected');
-  }).observe({type:'layout-shift',buffered:true})}catch(e){}
-  // INP — only surface genuinely slow interactions (>200ms)
-  try{new PerformanceObserver(function(list){
-    list.getEntries().forEach(function(e){
-      if(e.duration>500) console.warn('[CWV] Poor INP: '+r(e.duration)+'ms ⚠️ (>500ms)');
-      else if(e.duration>200) console.info('[CWV] INP needs improvement: '+r(e.duration)+'ms');
-    });
-  }).observe({type:'event',durationThreshold:200,buffered:true})}catch(e){}
-})();
+  try{new PerformanceObserver(function(l){var e=l.getEntries();e=e[e.length-1];if(e)console.log('[CWV] LCP:'+r(e.startTime)+'ms '+(e.startTime<2000?'✅':'⚠️'))}).observe({type:'largest-contentful-paint',buffered:true})}catch(e){}
+  try{var cls=0;new PerformanceObserver(function(l){l.getEntries().forEach(function(e){if(!e.hadRecentInput)cls+=e.value});if(cls>0.1)console.warn('[CWV] CLS:'+r(cls)+' ⚠️')}).observe({type:'layout-shift',buffered:true})}catch(e){}
+  try{new PerformanceObserver(function(l){l.getEntries().forEach(function(e){if(e.duration>500)console.warn('[CWV] Poor INP:'+r(e.duration)+'ms');else if(e.duration>200)console.info('[CWV] INP:'+r(e.duration)+'ms')})}).observe({type:'event',durationThreshold:200,buffered:true})}catch(e){}
+},{timeout:3000});
 </script>
 </body>
 </html>

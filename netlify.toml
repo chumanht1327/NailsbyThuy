@@ -1,89 +1,84 @@
+# ── BUILD ────────────────────────────────────────────────────────────
 [build]
   publish = "."
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "SAMEORIGIN"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Redirects and alias handling
-[[redirects]]
-  from = "https://nailsbythuy.com/*"
-  to = "https://www.nailsbythuy.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/nails-by-thuy"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/nailsbythuy"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/twee"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/book"
-  to = "/#booking"
-  status = 302
-
-[[redirects]]
-  from = "/booking"
-  to = "/#booking"
-  status = 302
-
-[[redirects]]
-  from = "/services"
-  to = "/#services"
-  status = 302
-
-[[redirects]]
-  from = "/gallery"
-  to = "/#gallery"
-  status = 302
-
-[[redirects]]
-  from = "/reviews"
-  to = "/#reviews"
-  status = 302
-
-[[redirects]]
-  from = "/about"
-  to = "/#about"
-  status = 302
-
-[[redirects]]
-  from = "/maps"
-  to = "https://maps.app.goo.gl/YMsQDuWs2UDaaP56A"
-  status = 301
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Enable Netlify's built-in asset optimization
+# ── BUILD PROCESSING ─────────────────────────────────────────────────
 [build.processing]
   skip_processing = false
 
 [build.processing.css]
   bundle = false
-  minify = false
+  minify = true       # free Netlify minification
 
 [build.processing.js]
   bundle = false
-  minify = false
+  minify = true       # free Netlify minification
 
 [build.processing.html]
   pretty_urls = true
 
 [build.processing.images]
   compress = true
+
+# ══════════════════════════════════════════════════════════════════════
+# HEADERS — all pages
+# NOTE: Redirects are handled by _redirects file (takes precedence over
+#       [[redirects]] blocks in netlify.toml — no duplication here)
+# ══════════════════════════════════════════════════════════════════════
+
+# Global security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options            = "SAMEORIGIN"
+    X-Content-Type-Options     = "nosniff"
+    Referrer-Policy            = "strict-origin-when-cross-origin"
+    Strict-Transport-Security  = "max-age=31536000; includeSubDomains; preload"
+    Permissions-Policy         = "camera=(), microphone=(), geolocation=(), payment=()"
+    X-XSS-Protection           = "1; mode=block"
+
+# HTML pages — no cache (always fresh)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Static assets — long cache (content-hashed by Netlify)
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Fonts — very long cache (rarely change)
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Manifest + service worker — short cache
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Sitemap + robots — short cache for crawlers
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type  = "application/xml; charset=utf-8"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

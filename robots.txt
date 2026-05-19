@@ -3,6 +3,31 @@
 
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /.netlify/
+
+# ── AI / LLM crawlers — allow indexing for AI visibility (Phase 3 goal)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ── Image crawlers — allow for Google Images + Maps signals
+User-agent: Googlebot-Image
+Allow: /
 
 # Sitemap location
 Sitemap: https://www.nailsbythuy.com/sitemap.xml

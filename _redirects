@@ -1,20 +1,44 @@
-# ── WWW → non-www canonical redirect (critical for Google Maps NAP consistency)
-# Force all traffic to www.nailsbythuy.com (matches canonical tag)
+# ── WWW → www canonical redirect (Google Maps NAP consistency)
 https://nailsbythuy.com/* https://www.nailsbythuy.com/:splat 301!
 
-# ── Common misspellings / alternate spellings
-/nails-by-thuy     /  301
-/nailsbythuy       /  301
-/twee              /  301
-/book              /#booking  302
-/booking           /#booking  302
-/services          /#services 302
-/gallery           /#gallery  302
-/reviews           /#reviews  302
-/about             /#about    302
+# ── Common misspellings / alternate paths
+/nails-by-thuy        /                    301
+/nailsbythuy          /                    301
+/twee                 /                    301
 
-# ── Old share.google Maps link → canonical Place ID URL (prevents link rot)
-/maps https://maps.app.goo.gl/YMsQDuWs2UDaaP56A 301
+# ── Section shortcuts (302 = temporary, no PageRank pass-through)
+/book                 /#booking            302
+/booking              /#booking            302
+/gallery              /#gallery            302
+/reviews              /#reviews            302
+/about                /#about              302
+/faq                  /#faq-section        302
 
-# ── 404 fallback → homepage
-/*  /index.html  200
+# ── Services: dedicated page now exists (301 = permanent)
+/services             /services.html       301
+/service              /services.html       301
+
+# ── Blog article slugs (Phase 3 — pages to be built; 302 until live)
+/biab-vs-gel-x                      /#nail-tips    302
+/best-nail-shapes-short-nails       /#nail-tips    302
+/how-long-do-gel-x-nails-last       /#nail-tips    302
+/why-private-nail-studios-are-better /#nail-tips   302
+
+# ── Guides / nail-tips shortcut
+/guides               /#nail-tips          302
+/nail-tips            /#nail-tips          302
+
+# ── Blog site
+/blog                 /blog.html           200
+/blog/*               /blog.html           200
+/blog                 /#nail-tips          302
+
+# ── Google Maps shortcut
+/maps                 https://maps.app.goo.gl/YMsQDuWs2UDaaP56A  301
+
+# ── Instagram shortcut
+/instagram            https://www.instagram.com/nailsbythuyh       301
+/ig                   https://www.instagram.com/nailsbythuyh       301
+
+# ── 404 fallback → SPA / homepage
+/*                    /index.html          200
