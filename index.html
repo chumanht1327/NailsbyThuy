@@ -674,7 +674,7 @@ to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.18) 48%,transparent 72%
 .step:hover .step-n{background:var(--terra);color:var(--paper);border-color:var(--terra)}
 .step-t{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--ink);margin-bottom:10px}
 .step-d{font-size:.82rem;line-height:1.9;color:var(--mist)}
-.reviews-strip{overflow:hidden;width:100%}
+.reviews-strip{overflow:hidden;width:100%;transition:opacity .4s ease}
 .reviews-track{display:flex;gap:16px;animation:ticker 52s linear infinite;will-change:transform}
 .reviews-track:hover{animation-play-state:paused}
 @media(hover:none){.reviews-track{animation-play-state:running}}
@@ -2389,9 +2389,24 @@ function showReviews(reviews){
       <div class="review-author">${r.author}${r.date?' · '+r.date:''}</div>
     </div>`).join('');
 }
-/* Fix 1: Direct load — removed dead unauthenticated Anthropic API call that always failed.
-   To enable live reviews, proxy this request through a backend endpoint that holds the API key. */
+// Show curated reviews immediately — no layout shift, no waiting
 showReviews(FALLBACK_REVIEWS);
+
+// After paint, fetch live Google reviews and silently upgrade
+requestAnimationFrame(function(){
+  fetch('/.netlify/functions/get-reviews')
+    .then(function(r){return r.ok?r.json():null})
+    .then(function(data){
+      if(!data||!data.reviews||data.reviews.length<2)return;
+      var strip=document.getElementById('revStrip');
+      strip.style.opacity='0';
+      setTimeout(function(){
+        showReviews(data.reviews);
+        strip.style.opacity='1';
+      },350);
+    })
+    .catch(function(){});// silent fallback — FALLBACK_REVIEWS stay
+});
 </script>
 
 <!-- ── AI / LLM SEO CONTENT (visible to crawlers, accessible to screen readers) ── -->
