@@ -33,15 +33,15 @@ Push to the `main` branch — Netlify auto-deploys with no build command. The pu
 ### Page Types
 - **`index.html`** — homepage (single-page with anchor sections: `#gallery`, `#booking`, `#reviews`, `#faq-section`, `#about`, `#nail-tips`)
 - **`services.html`** — dedicated services menu page
-- **`blog.html`** — blog hub with an AI article generator UI
+- **`blog.html`** — blog hub displaying 12 static nail care articles with direct links to article pages
 - **Blog articles** — one static `.html` file per article slug (e.g. `biab-vs-gel-x.html`)
 - **`404.html`** — custom error page
 
 ### URL Routing
-All clean-URL routing is in **`_redirects`** (not `netlify.toml` — the two must not duplicate each other). The pattern is: canonical slug → `.html` file via 301. Section shortcuts on the homepage use 302. Unknown routes fall through to `404.html` with a real 404 status.
+All clean-URL routing is in **`_redirects`** (not `netlify.toml` — the two must not duplicate each other). The pattern is: canonical slug → `.html` file via **200 rewrite** (keeps the clean URL in the address bar, matching the canonical tag). Section shortcuts on the homepage use 302. Unknown routes fall through to `404.html` with a real 404 status.
 
 ### Netlify Function
-**`netlify/functions/generate-article.js`** — a serverless Gemini API proxy. `blog.html` POSTs `{ topic, category }` to `/.netlify/functions/generate-article`, which calls `gemini-2.5-flash` and returns a JSON article object. The API key never touches the browser.
+**`netlify/functions/generate-article.js`** — a serverless Gemini API proxy that calls `gemini-2.5-flash` and returns a JSON article object. The AI generator UI was removed from `blog.html`; the function remains deployed but has no frontend caller. New articles are created as static HTML files and added to `SEED_ARTICLES` in `blog.html`. The API key (`GEMINI_API_KEY`) lives in Netlify environment variables and never touches the browser.
 
 ### Images
 Images live in two directories:

@@ -20,9 +20,10 @@
 
 [build.processing.html]
   pretty_urls = true
+  minify = true       # strips whitespace/comments — inline CSS+JS minified too
 
 [build.processing.images]
-  compress = true
+  compress = false    # images are pre-optimized WebP/AVIF — re-encoding degrades quality
 
 # ══════════════════════════════════════════════════════════════════════
 # HEADERS — all pages
@@ -98,5 +99,12 @@
 [[headers]]
   for = "/nailsbythuy-showcase-seo/*"
   [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# AVIF images — explicit MIME type (Netlify CDN edge nodes may not auto-detect)
+[[headers]]
+  for = "/*.avif"
+  [headers.values]
+    Content-Type  = "image/avif"
     Cache-Control = "public, max-age=31536000, immutable"
 
