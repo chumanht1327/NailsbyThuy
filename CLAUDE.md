@@ -52,7 +52,14 @@ All image markup uses `<picture>` with AVIF source first, then WebP srcset with 
 
 ## Design System
 
-CSS variables (design tokens) live in one place: **`shared.css`** at the repo root. Every page links to it — do not redefine `:root {}` inline in any page's `<style>` block.
+### CSS Architecture
+
+| File | Purpose |
+|------|---------|
+| `/css/index.css` | All homepage styles (nav, hero, gallery, lightbox, booking, footer) |
+| `/css/article.css` | All blog article styles (nav, breadcrumb, body, FAQ, related posts) |
+
+Design tokens are inlined as `<style>:root{...}</style>` in the `<head>` of every HTML page (immediately after `<meta charset>`). **`shared.css` no longer exists.**
 
 | Variable   | Value     | Usage                  |
 |------------|-----------|------------------------|
@@ -62,10 +69,14 @@ CSS variables (design tokens) live in one place: **`shared.css`** at the repo ro
 | `--dust`   | `#c8bfb4` | Tertiary accent        |
 | `--terra`  | `#b5624f` | Accent / brand color   |
 | `--sand`   | `#c9a97a` | Secondary accent       |
-| `--mist`   | `#8a7f76` | Muted text             |
+| `--mist`   | `#6b6258` | Muted text (WCAG AA: 5.2:1) |
 | `--gap`    | `2px`     | Grid gap between tiles |
 
-To change a design token: edit `shared.css` only — all pages pick it up automatically.
+To change a design token: find-replace the value across all HTML files (17 pages). The inline block is always the first `<style>` tag and reads: `<style>:root{--ink:...}</style>`.
+
+### JavaScript Architecture
+
+All interactive JS for `index.html` lives in **`/js/main.js`** (loaded with `<script src="/js/main.js" defer></script>` before `</body>`). It contains: years counter, ticker, custom cursor, nav scroll, hamburger menu, scroll-reveal, showcase carousel, masonry grid, lightbox (with focus trap + aria-hidden isolation), reviews fetch, booking modal (with focus trap + aria-hidden isolation), collapse toggles, FAB, and CWV monitoring.
 
 **Fonts:** Cormorant Garamond (display/headings, 300 weight) + DM Sans (body, 300–400 weight). Both loaded from Google Fonts non-blocking via `onload` swap trick, with `<noscript>` fallback.
 
@@ -97,6 +108,14 @@ node scripts/stamp.js
 
 This updates `<!-- NAV:START --> ... <!-- NAV:END -->` blocks in all 12 article pages. Blog, services, and index nav are managed separately (each has unique links).
 
+### Update sitemap lastmod dates
+
+```bash
+node scripts/update-sitemap.js
+```
+
+Reads `git log` to get the last-commit date for each HTML file and patches `<lastmod>` in `sitemap.xml`. Run before any commit that touches HTML files.
+
 ### Resize new gallery images
 
 ```bash
@@ -119,7 +138,7 @@ When adding a new blog article — use the generator (`node scripts/new-article.
 6. Add an `Article` entry to `index.html` JSON-LD `@graph` (copy the pattern from an existing entry). All 12 current articles are already in `@graph`.
 
 **Known maintainability notes:**
-- Design tokens are in `shared.css` — never inline `:root {}` in a page's `<style>` block.
+- Design tokens are inlined in each page's `<head>` — `shared.css` does not exist. To change a token, find-replace across all 17 HTML files.
 - Review data has one source of truth: live Google Places API + `FALLBACK_REVIEWS` JS array in `index.html`. The JSON-LD `aggregateRating` stays; individual review entries were removed.
 - The `generate-article.js` Netlify function is deployed but has no frontend caller — it is intentionally dormant.
 - Z-index stack: cursor `100001`, lightbox close `100000`, lightbox `99999`, FAB `9998`, desktop modal `9998`, nav `200`, hamburger `210`, drawer `190`.
