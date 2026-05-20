@@ -33,15 +33,6 @@ BOOKING CTA — include exactly once near the end:
 Write for nailsbythuy.com — private nail studio in East Austin TX.`;
 
 exports.handler = async (event) => {
-  // GET /generate-article?debug=models — lists available Gemini models for this key
-  if (event.httpMethod === 'GET' && event.queryStringParameters?.debug === 'models') {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) return { statusCode: 500, body: 'No GEMINI_API_KEY set' };
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
-    const body = await res.text();
-    return { statusCode: res.status, headers: { 'Content-Type': 'application/json' }, body };
-  }
-
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
@@ -87,7 +78,7 @@ exports.handler = async (event) => {
               text: `Write a complete SEO nail care guide for: "${topic.trim()}"\nCategory: ${(category || 'Nail Care').slice(0, 60)}\nInclude Austin TX location signals naturally.`
             }]
           }],
-          generationConfig: { maxOutputTokens: 2000, thinkingConfig: { thinkingBudget: 0 } }
+          generationConfig: { maxOutputTokens: 4096, thinkingConfig: { thinkingBudget: 0 } }
         })
       }
     );
@@ -101,7 +92,7 @@ exports.handler = async (event) => {
       return {
         statusCode: 502,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ error: userMsg, detail: errBody })
+        body: JSON.stringify({ error: userMsg })
       };
     }
 
@@ -128,7 +119,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: 'Internal error — please try again.', detail: String(err) })
+      body: JSON.stringify({ error: 'Internal error — please try again.' })
     };
   }
 };
