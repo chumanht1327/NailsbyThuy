@@ -683,6 +683,8 @@ to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.18) 48%,transparent 72%
 .review-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;line-height:1.75;color:var(--ink);margin-bottom:20px}
 .review-author{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
 .reviews-disclaimer{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(24,18,15,.35);text-align:center;padding:14px 0 0;border-top:1px solid rgba(24,18,15,.07);margin-top:8px}
+.rev-pause-btn{background:none;border:1px solid rgba(248,245,240,.18);color:rgba(248,245,240,.45);font-size:.82rem;line-height:1;padding:0;width:32px;height:32px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s,color .2s}
+.rev-pause-btn:hover,.rev-pause-btn:focus-visible{border-color:var(--sand);color:var(--paper);outline:none}
 
 .booking-grid{display:grid;grid-template-columns:1fr 1fr;min-height:420px}
 .booking-info{padding:72px 56px;display:flex;flex-direction:column}
@@ -694,7 +696,7 @@ to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.18) 48%,transparent 72%
 .booking-right-pic{position:absolute;inset:0;display:block;width:100%;height:100%;}
 .booking-right-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .booking-right-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(9,5,5,.72) 0%,rgba(9,5,5,.28) 55%,transparent 100%);}
-.btn{display:inline-block;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:300;border:none;padding:15px 40px;transition:background .3s,color .3s;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:300;border:none;padding:15px 40px;min-height:44px;transition:background .3s,color .3s;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 .btn-dark{background:var(--ink);color:var(--paper)}
 .btn-dark:hover{background:var(--terra)}
 .btn-terra{background:var(--terra);color:var(--paper)}
@@ -1109,7 +1111,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
 .about-content{padding:22px !important}
 .dm-box{padding:32px 24px}
 .btn{padding:14px 28px;font-size:.7rem}}
-.skip-link{position:absolute;top:-40px;left:0;background:var(--terra);color:#fff;padding:8px 16px;z-index:9999;font-size:.75rem;letter-spacing:.1em;transition:top .2s}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--terra);color:#fff;padding:8px 16px;z-index:9999;font-size:.75rem;letter-spacing:.1em;transition:top .05s}
 .skip-link:focus{top:0}
 .stagger-hidden{opacity:0;transform:translateY(22px)}
 .stagger-show{opacity:1;transform:translateY(0);transition:opacity .55s var(--stagger,0s) ease,transform .55s var(--stagger,0s) ease}
@@ -1485,7 +1487,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
         <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
       <div class="faq-a" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
-        <div class="faq-a-inner"><p>All bookings are by text only. Text Thuy at <a href="sms:+14259050469" style="color:var(--terra)">(425) 905-0469</a> with your desired service, style inspiration photos, and preferred date. Walk-ins are not accepted — this is a private, by-appointment nail studio in Austin TX 78725.</p></div>
+        <div class="faq-a-inner"><p>All bookings are by text only. Text Thuy at <a href="sms:+14259050469" style="color:var(--terra);text-decoration:underline;text-underline-offset:3px">(425) 905-0469</a> with your desired service, style inspiration photos, and preferred date. Walk-ins are not accepted — this is a private, by-appointment nail studio in Austin TX 78725.</p></div>
       </div>
     </div>
 
@@ -1525,7 +1527,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
         <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
       <div class="faq-a" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
-        <div class="faq-a-inner"><p>Pricing varies by service and design complexity. Nails by Thuy is a mid-range private studio ($$) offering premium custom nail art. Text <a href="sms:+14259050469" style="color:var(--terra)">(425) 905-0469</a> for a personalized quote — happy to work with your vision and budget.</p></div>
+        <div class="faq-a-inner"><p>Pricing varies by service and design complexity. Nails by Thuy is a mid-range private studio ($$) offering premium custom nail art. Text <a href="sms:+14259050469" style="color:var(--terra);text-decoration:underline;text-underline-offset:3px">(425) 905-0469</a> for a personalized quote — happy to work with your vision and budget.</p></div>
       </div>
     </div>
 
@@ -1647,7 +1649,10 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
       <p class="t-label">Client Love</p>
       <h2 class="t-heading">Google <em>Reviews</em></h2>
     </div>
-    <a href="https://maps.app.goo.gl/YMsQDuWs2UDaaP56A" target="_blank" rel="noopener noreferrer" class="btn-text btn-text--light">All Reviews ↗</a>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button id="revPauseBtn" class="rev-pause-btn" aria-label="Pause reviews carousel" aria-pressed="false" title="Pause / play reviews">⏸</button>
+      <a href="https://maps.app.goo.gl/YMsQDuWs2UDaaP56A" target="_blank" rel="noopener noreferrer" class="btn-text btn-text--light">All Reviews ↗</a>
+    </div>
   </div>
   <div class="reviews-strip" id="revStrip" style="padding-bottom:16px">
     <div class="reviews-track" id="revTrack"></div>
@@ -2351,12 +2356,21 @@ document.getElementById('popupNext').addEventListener('click', function(){ popup
 /* Backdrop click to close */
 _popupEl.addEventListener('click', function(e){ if(e.target===_popupEl) closePopup(); });
 
-/* Keyboard */
+/* Keyboard + focus trap */
 document.addEventListener('keydown', function(e){
   if(!_popupEl.classList.contains('open')) return;
-  if(e.key==='Escape')    closePopup();
-  if(e.key==='ArrowLeft') popupNav(-1);
-  if(e.key==='ArrowRight')popupNav(1);
+  if(e.key==='Escape')    { closePopup(); return; }
+  if(e.key==='ArrowLeft') { popupNav(-1); return; }
+  if(e.key==='ArrowRight'){ popupNav(1);  return; }
+  if(e.key==='Tab'){
+    var focusable=Array.prototype.slice.call(
+      _popupEl.querySelectorAll('button,[href],[tabindex]:not([tabindex="-1"])')
+    ).filter(function(el){return !el.disabled && el.offsetParent!==null});
+    if(!focusable.length){e.preventDefault();return;}
+    var first=focusable[0], last=focusable[focusable.length-1];
+    if(e.shiftKey){if(document.activeElement===first){e.preventDefault();last.focus();}}
+    else{if(document.activeElement===last){e.preventDefault();first.focus();}}
+  }
 });
 
 /* Touch swipe on popup */
@@ -2408,6 +2422,21 @@ requestAnimationFrame(function(){
     })
     .catch(function(){});// silent fallback — FALLBACK_REVIEWS stay
 });
+
+/* Reviews pause/play (WCAG 2.2.2) */
+(function(){
+  var btn=document.getElementById('revPauseBtn');
+  var track=document.getElementById('revTrack');
+  if(!btn||!track) return;
+  btn.addEventListener('click',function(){
+    var paused=btn.getAttribute('aria-pressed')==='true';
+    paused=!paused;
+    btn.setAttribute('aria-pressed',String(paused));
+    btn.setAttribute('aria-label',paused?'Play reviews carousel':'Pause reviews carousel');
+    btn.textContent=paused?'▶':'⏸';
+    track.style.animationPlayState=paused?'paused':'running';
+  });
+})();
 </script>
 
 <!-- ── AI / LLM SEO CONTENT (visible to crawlers, accessible to screen readers) ── -->
