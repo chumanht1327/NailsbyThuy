@@ -77,11 +77,19 @@ Every page must include:
 4. Open Graph + Twitter card tags
 5. JSON-LD structured data in `<script type="application/ld+json">` — homepage uses `NailSalon`/`LocalBusiness` schema; articles use `Article` + `FAQPage` + `BreadcrumbList`; blog hub uses `Blog` + `ItemList`
 
-When adding a new blog article:
-- Create `slug-name.html` at the root
-- Add a 301 redirect in `_redirects`: `/slug-name /slug-name.html 301`
-- Add the URL to `sitemap.xml` with today's date
-- Add it to the `ItemList` in `blog.html`'s JSON-LD and update `numberOfItems`
+When adding a new blog article (all 6 steps required):
+1. Create `slug-name.html` at the root — use `biab-vs-gel-x.html` as the template
+2. Add a **200 rewrite** in `_redirects`: `/slug-name /slug-name.html 200` (not 301 — keeps clean URL matching canonical)
+3. Add the URL to `sitemap.xml` with today's date (`<priority>0.7</priority>` for nutrition/care guides, `0.75` for service comparisons)
+4. Add it to the `ItemList` in `blog.html`'s JSON-LD and increment `"numberOfItems"`
+5. Add it to `SEED_ARTICLES` in `blog.html` (the JS array that renders the article cards on the blog hub page)
+6. Add it to the `index.html` guides section (`#nail-tips`) if it belongs in the "From the Studio" preview grid
+
+**Known maintainability notes:**
+- `--mist` must be `#8a7f76` in every page's `:root` — do not use `#6b6258` (darker variant, now corrected in services.html)
+- Review data lives in 3 places in `index.html`: JSON-LD `"review"` array, microdata section, and `FALLBACK_REVIEWS` JS array. All three must stay consistent when updating reviews.
+- The `generate-article.js` Netlify function is deployed but has no frontend caller — it is intentionally dormant.
+- Z-index stack: cursor `100001`, lightbox close `100000`, lightbox `99999`, FAB `9998`, desktop modal `9998`, nav `200`, hamburger `210`, drawer `190`.
 
 ## Business Context
 
