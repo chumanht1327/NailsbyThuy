@@ -16,27 +16,27 @@ https://nailsbythuy.com/* https://www.nailsbythuy.com/:splat 301!
 /guides               /#nail-tips          302
 /nail-tips            /#nail-tips          302
 
-# ── Services: dedicated page now exists (301 = permanent)
-/services             /services.html       301
-/service              /services.html       301
+# ── Services: 200 rewrite keeps URL as /services (matches canonical)
+/services             /services.html       200
+/service              /services            301
 
 # ── Blog hub
 /blog                 /blog.html           200
-/blog/*               /blog.html           200
+/blog/*               /404.html            404
 
-# ── Blog article slugs — live pages (301 permanent)
-/biab-vs-gel-x                       /biab-vs-gel-x.html                       301
-/best-nail-shapes-short-nails        /best-nail-shapes-short-nails.html        301
-/how-long-do-gel-x-nails-last        /how-long-do-gel-x-nails-last.html        301
-/why-private-nail-studios-are-better /why-private-nail-studios-are-better.html 301
-/chrome-nails-austin                 /chrome-nails-austin.html                 301
-/gel-x-vs-acrylic                    /gel-x-vs-acrylic.html                    301
-/nail-aftercare-tips                 /nail-aftercare-tips.html                 301
-/how-to-pick-a-nail-color            /how-to-pick-a-nail-color.html            301
-/pedicure-vs-manicure                /pedicure-vs-manicure.html                301
-/nail-vitamins-and-supplements       /nail-vitamins-and-supplements.html       301
-/what-to-eat-for-stronger-nails      /what-to-eat-for-stronger-nails.html      301
-/why-nails-break-and-peel            /why-nails-break-and-peel.html            301
+# ── Blog article slugs — 200 rewrite keeps URL clean (matches canonical)
+/biab-vs-gel-x                       /biab-vs-gel-x.html                       200
+/best-nail-shapes-short-nails        /best-nail-shapes-short-nails.html        200
+/how-long-do-gel-x-nails-last        /how-long-do-gel-x-nails-last.html        200
+/why-private-nail-studios-are-better /why-private-nail-studios-are-better.html 200
+/chrome-nails-austin                 /chrome-nails-austin.html                 200
+/gel-x-vs-acrylic                    /gel-x-vs-acrylic.html                    200
+/nail-aftercare-tips                 /nail-aftercare-tips.html                 200
+/how-to-pick-a-nail-color            /how-to-pick-a-nail-color.html            200
+/pedicure-vs-manicure                /pedicure-vs-manicure.html                200
+/nail-vitamins-and-supplements       /nail-vitamins-and-supplements.html       200
+/what-to-eat-for-stronger-nails      /what-to-eat-for-stronger-nails.html      200
+/why-nails-break-and-peel            /why-nails-break-and-peel.html            200
 
 # ── Social / external shortcuts
 /maps                 https://maps.app.goo.gl/YMsQDuWs2UDaaP56A  301

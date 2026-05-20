@@ -37,6 +37,16 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
+  // Optional secret header — set FUNCTION_SECRET in Netlify env vars to lock down the endpoint
+  const fnSecret = process.env.FUNCTION_SECRET;
+  if (fnSecret && event.headers['x-function-secret'] !== fnSecret) {
+    return {
+      statusCode: 401,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ error: 'Unauthorized' })
+    };
+  }
+
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return {

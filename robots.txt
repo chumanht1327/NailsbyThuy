@@ -3,8 +3,8 @@
 
 User-agent: *
 Allow: /
-Disallow: /api/
 Disallow: /.netlify/
+Disallow: /nailsbythuy-showcase-seo/seo-gallery-snippets.html
 
 # ── AI / LLM crawlers — allow indexing for AI visibility (Phase 3 goal)
 User-agent: GPTBot

@@ -100,3 +100,10 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# AVIF images — explicit MIME type (Netlify CDN edge nodes may not auto-detect)
+[[headers]]
+  for = "/*.avif"
+  [headers.values]
+    Content-Type  = "image/avif"
+    Cache-Control = "public, max-age=31536000, immutable"
+

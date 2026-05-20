@@ -38,7 +38,7 @@ Push to the `main` branch — Netlify auto-deploys with no build command. The pu
 - **`404.html`** — custom error page
 
 ### URL Routing
-All clean-URL routing is in **`_redirects`** (not `netlify.toml` — the two must not duplicate each other). The pattern is: canonical slug → `.html` file via 301. Section shortcuts on the homepage use 302. Unknown routes fall through to `404.html` with a real 404 status.
+All clean-URL routing is in **`_redirects`** (not `netlify.toml` — the two must not duplicate each other). The pattern is: canonical slug → `.html` file via **200 rewrite** (keeps the clean URL in the address bar, matching the canonical tag). Section shortcuts on the homepage use 302. Unknown routes fall through to `404.html` with a real 404 status.
 
 ### Netlify Function
 **`netlify/functions/generate-article.js`** — a serverless Gemini API proxy that calls `gemini-2.5-flash` and returns a JSON article object. The AI generator UI was removed from `blog.html`; the function remains deployed but has no frontend caller. New articles are created as static HTML files and added to `SEED_ARTICLES` in `blog.html`. The API key (`GEMINI_API_KEY`) lives in Netlify environment variables and never touches the browser.
