@@ -52,21 +52,59 @@ All image markup uses `<picture>` with AVIF source first, then WebP srcset with 
 
 ## Design System
 
-CSS variables are defined inline at the top of each page's `<style>` block:
+CSS variables (design tokens) live in one place: **`shared.css`** at the repo root. Every page links to it — do not redefine `:root {}` inline in any page's `<style>` block.
 
 | Variable   | Value     | Usage                  |
 |------------|-----------|------------------------|
 | `--ink`    | `#18120f` | Primary text/background dark |
 | `--paper`  | `#f8f5f0` | Page background        |
 | `--bone`   | `#ede8e0` | Subtle backgrounds     |
+| `--dust`   | `#c8bfb4` | Tertiary accent        |
 | `--terra`  | `#b5624f` | Accent / brand color   |
 | `--sand`   | `#c9a97a` | Secondary accent       |
 | `--mist`   | `#8a7f76` | Muted text             |
 | `--gap`    | `2px`     | Grid gap between tiles |
 
+To change a design token: edit `shared.css` only — all pages pick it up automatically.
+
 **Fonts:** Cormorant Garamond (display/headings, 300 weight) + DM Sans (body, 300–400 weight). Both loaded from Google Fonts non-blocking via `onload` swap trick, with `<noscript>` fallback.
 
 **Typography classes:** `.t-label` (small caps label), `.t-display` (hero display text), `.t-heading` (section headings), `.t-body` (body copy).
+
+## Tooling Scripts
+
+All scripts live in `scripts/` and require only Node.js or Python (no npm install needed).
+
+### Add a new blog article (3 steps, down from 6 manual)
+
+```bash
+node scripts/new-article.js
+```
+
+This interactive generator handles steps 1–5 automatically (creates HTML, patches `_redirects`, `sitemap.xml`, and `blog.html`). You then write the article content and optionally add an `Article` entry to `index.html` JSON-LD.
+
+After adding content, validate redirects:
+```bash
+node scripts/validate-redirects.js
+```
+
+### Update the nav on all article pages
+
+Edit `_fragments/nav-article.html`, then run:
+```bash
+node scripts/stamp.js
+```
+
+This updates `<!-- NAV:START --> ... <!-- NAV:END -->` blocks in all 12 article pages. Blog, services, and index nav are managed separately (each has unique links).
+
+### Resize new gallery images
+
+```bash
+python3 scripts/resize-images.py <source-image.jpg> <slug>
+# Example: python3 scripts/resize-images.py ~/Downloads/new-set.jpg chrome-nails-austin-03
+```
+
+Creates `images/<slug>-400.webp` and `images/<slug>-900.webp`.
 
 ## SEO Conventions
 
@@ -77,17 +115,12 @@ Every page must include:
 4. Open Graph + Twitter card tags
 5. JSON-LD structured data in `<script type="application/ld+json">` — homepage uses `NailSalon`/`LocalBusiness` schema; articles use `Article` + `FAQPage` + `BreadcrumbList`; blog hub uses `Blog` + `ItemList`
 
-When adding a new blog article (all 6 steps required):
-1. Create `slug-name.html` at the root — use `biab-vs-gel-x.html` as the template
-2. Add a **200 rewrite** in `_redirects`: `/slug-name /slug-name.html 200` (not 301 — keeps clean URL matching canonical)
-3. Add the URL to `sitemap.xml` with today's date (`<priority>0.7</priority>` for nutrition/care guides, `0.75` for service comparisons)
-4. Add it to the `ItemList` in `blog.html`'s JSON-LD and increment `"numberOfItems"`
-5. Add it to `SEED_ARTICLES` in `blog.html` (the JS array that renders the article cards on the blog hub page)
-6. Add it to the `index.html` guides section (`#nail-tips`) if it belongs in the "From the Studio" preview grid
+When adding a new blog article — use the generator (`node scripts/new-article.js`) which handles steps 1–5 automatically. Step 6 is still manual:
+6. Add an `Article` entry to `index.html` JSON-LD `@graph` (copy the pattern from an existing entry). All 12 current articles are already in `@graph`.
 
 **Known maintainability notes:**
-- `--mist` must be `#8a7f76` in every page's `:root` — do not use `#6b6258` (darker variant, now corrected in services.html)
-- Review data lives in 3 places in `index.html`: JSON-LD `"review"` array, microdata section, and `FALLBACK_REVIEWS` JS array. All three must stay consistent when updating reviews.
+- Design tokens are in `shared.css` — never inline `:root {}` in a page's `<style>` block.
+- Review data has one source of truth: live Google Places API + `FALLBACK_REVIEWS` JS array in `index.html`. The JSON-LD `aggregateRating` stays; individual review entries were removed.
 - The `generate-article.js` Netlify function is deployed but has no frontend caller — it is intentionally dormant.
 - Z-index stack: cursor `100001`, lightbox close `100000`, lightbox `99999`, FAB `9998`, desktop modal `9998`, nav `200`, hamburger `210`, drawer `190`.
 
