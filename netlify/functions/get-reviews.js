@@ -24,7 +24,14 @@ exports.handler = async (event) => {
   }
 
   try {
-    const resp = await fetch(`${PLACES_URL}&key=${apiKey}`);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    let resp;
+    try {
+      resp = await fetch(`${PLACES_URL}&key=${apiKey}`, { signal: controller.signal });
+    } finally {
+      clearTimeout(timeout);
+    }
     if (!resp.ok) {
       return {
         statusCode: 502,

@@ -14,7 +14,7 @@
 <link rel="preload" as="image" href="https://www.nailsbythuy.com/images/hero-nails-900.jpg" fetchpriority="high" type="image/jpeg"/>
 <!-- Preload above-fold profile photo to reduce CLS -->
 <link rel="preload" as="image" href="https://lh3.googleusercontent.com/pw/AP1GczOA262XONbzlPzY_tbc-eY1P9df82PbQpssLnRn9WtaOqKLlvOSrSHACtW-YhAsmEq1J0xC1lufWEUSI5hR2ZW39sj0_EU-NU-jTMCLDbGp8jWpszk=w400-k-no" fetchpriority="auto"/>
-<link rel="preload" as="image" href="https://www.nailsbythuy.com/images/bg-texture.jpg" fetchpriority="low"/>
+<link rel="preload" href="/shared.css" as="style"/>
 
 <!-- ── FAVICON / PWA ──────────────────────────────────────────────── -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318120f'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23b5624f'%3ET%3C/text%3E%3C/svg%3E"/>
@@ -33,7 +33,6 @@
 <link rel="canonical" href="https://www.nailsbythuy.com/"/>
 <link rel="sitemap" type="application/xml" href="https://www.nailsbythuy.com/sitemap.xml"/>
 <link rel="alternate" hreflang="en" href="https://www.nailsbythuy.com/"/>
-<link rel="alternate" hreflang="vi" href="https://www.nailsbythuy.com/"/>
 <link rel="alternate" hreflang="x-default" href="https://www.nailsbythuy.com/"/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <meta name="author" content="Thuy (Twee) — Nails by Thuy"/>
@@ -265,7 +264,7 @@
       "name": "Nails by Thuy",
       "description": "Official website of Nails by Thuy — Austin TX freehand nail art specialist.",
       "dateModified": "2026-05-19",
-      "inLanguage": ["en-US", "vi"],
+      "inLanguage": "en-US",
       "publisher": {"@id": "https://www.nailsbythuy.com/#business"},
       "speakable": {
         "@type": "SpeakableSpecification",
@@ -577,7 +576,7 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .nav-drawer.open{display:flex}
 .nav-drawer a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--ink);letter-spacing:.08em;opacity:.7;transition:opacity .25s,color .25s;}
 .nav-drawer a:hover{opacity:1;color:var(--terra)}
-.hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;max-width:100%;overflow:hidden}
+.hero{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;max-width:100%;overflow:hidden}
 .hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:100px 48px 64px;gap:20px;min-width:0;max-width:100%}
 .hero-eyebrow{opacity:0;animation:fadeUp .8s .2s forwards}
 .hero-sub{opacity:0;animation:fadeUp .8s .6s forwards;max-width:480px;font-size:.95rem;line-height:1.9}
@@ -1961,7 +1960,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
 
 /* ── CURSOR (desktop hover devices only — no CPU waste on touch) ──── */
 const cur=document.getElementById('cur'), curR=document.getElementById('cur-r');
-if(window.matchMedia('(hover:hover)').matches){
+if(window.matchMedia('(hover:hover)').matches && !window.matchMedia('(prefers-reduced-motion:reduce)').matches){
   document.body.classList.add('cursor-ready');
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
@@ -2450,8 +2449,10 @@ showReviews(FALLBACK_REVIEWS);
 
 // After paint, fetch live Google reviews and silently upgrade
 requestAnimationFrame(function(){
-  fetch('/.netlify/functions/get-reviews')
-    .then(function(r){return r.ok?r.json():null})
+  var ctrl=new AbortController();
+  var tid=setTimeout(function(){ctrl.abort();},6000);
+  fetch('/.netlify/functions/get-reviews',{signal:ctrl.signal})
+    .then(function(r){clearTimeout(tid);return r.ok?r.json():null})
     .then(function(data){
       if(!data||!data.reviews||data.reviews.length<2)return;
       var strip=document.getElementById('revStrip');
@@ -2461,7 +2462,7 @@ requestAnimationFrame(function(){
         strip.style.opacity='1';
       },350);
     })
-    .catch(function(){});// silent fallback — FALLBACK_REVIEWS stay
+    .catch(function(){clearTimeout(tid);});// silent fallback — FALLBACK_REVIEWS stay
 });
 
 /* Reviews pause/play (WCAG 2.2.2) */
