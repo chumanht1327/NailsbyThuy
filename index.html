@@ -457,7 +457,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overscroll-behavior-y:none;overflow-x:hidden}
 * {-webkit-tap-highlight-color:transparent}
-body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;max-width:100%;-webkit-font-smoothing:antialiased;cursor:none;-webkit-overflow-scrolling:touch}
+body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;max-width:100%;-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch}
+body.cursor-ready{cursor:none}
 img{display:block;width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
@@ -1114,12 +1115,11 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
   <a href="/" class="nav-logo" aria-label="Nails by Thuy — Home">Nails by Thuy</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
+    <li><a href="/services">Services</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#faq-section">FAQ</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#booking">Book</a></li>
-    <li><a href="#nail-tips">Guides</a></li>
+    <li><a href="/blog">Guides</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -1129,12 +1129,11 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
 <!-- MOBILE NAV DRAWER -->
 <div class="nav-drawer" id="navDrawer" aria-hidden="true">
   <a href="#about" class="drawer-link">About</a>
-  <a href="#services" class="drawer-link">Services</a>
+  <a href="/services" class="drawer-link">Services</a>
   <a href="#gallery" class="drawer-link">Gallery</a>
-  <a href="#faq-section" class="drawer-link">FAQ</a>
   <a href="#reviews" class="drawer-link">Reviews</a>
   <a href="#booking" class="drawer-link">Book</a>
-  <a href="#nail-tips" class="drawer-link">Guides</a>
+  <a href="/blog" class="drawer-link">Guides</a>
 </div>
 
 <!-- HERO -->
@@ -1221,7 +1220,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
     </div>
   </div>
   <div class="services-grid">
-    <a class="svc-hero svc-link" href="/services.html#freehand-nail-art-austin" id="freehand-nail-art-austin">
+    <a class="svc-hero svc-link" href="/services#freehand-nail-art-austin" id="freehand-nail-art-austin">
       <div class="svc-hero-content">
         <div class="svc-num">01</div>
         <div class="svc-name">Freehand Nail Art<br/><span style="font-size:.7em;opacity:.7">Signature Service</span></div>
@@ -1234,28 +1233,28 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
 
   <div class="svc-more" id="svcMore" aria-hidden="true">
     <div class="services-grid">
-      <a class="svc-card svc-link" href="/services.html#acrylic-full-set-austin" id="acrylic-nails-austin">
+      <a class="svc-card svc-link" href="/services#acrylic-full-set-austin" id="acrylic-nails-austin">
         <div class="svc-num">02</div>
         <div class="svc-name">Acrylic<br/>Full Set</div>
         <p class="svc-desc">Classic acrylic nail extensions with a flawless, durable finish. Shape, length, and design tailored to your lifestyle and nail goals.</p>
         <span class="svc-tag">Extensions</span>
         <div class="svc-card-bg-num">02</div>
       </a>
-      <a class="svc-card svc-link" href="/services.html#gel-x-extensions-austin" id="gel-x-extensions-austin">
+      <a class="svc-card svc-link" href="/services#gel-x-extensions-austin" id="gel-x-extensions-austin">
         <div class="svc-num">03</div>
         <div class="svc-name">Gel X<br/>Extensions</div>
         <p class="svc-desc">Soft gel extensions — lightweight and natural feeling. Perfect length without the weight of acrylics.</p>
         <span class="svc-tag">Soft Gel</span>
         <div class="svc-card-bg-num">03</div>
       </a>
-      <a class="svc-card svc-link" href="/services.html#biab-builder-gel-austin" id="biab-builder-gel-austin">
+      <a class="svc-card svc-link" href="/services#biab-builder-gel-austin" id="biab-builder-gel-austin">
         <div class="svc-num">04</div>
         <div class="svc-name">Builder<br/>Gel · BIAB</div>
         <p class="svc-desc">Builder-In-A-Bottle (BIAB) strengthens natural nails while adding beautiful, durable coverage with a mirror-glossy finish — no extensions needed.</p>
         <span class="svc-tag">Strengthening</span>
         <div class="svc-card-bg-num">04</div>
       </a>
-      <a class="svc-card svc-link" href="/services.html#dipping-powder-nails-austin" id="dipping-powder-nails-austin">
+      <a class="svc-card svc-link" href="/services#dipping-powder-nails-austin" id="dipping-powder-nails-austin">
         <div class="svc-num">05</div>
         <div class="svc-name">Dipping<br/>Powder</div>
         <p class="svc-desc">Long-lasting, odor-free dip manicures. Rich pigment, incredible durability, naturally beautiful finish that lasts.</p>
@@ -1427,81 +1426,81 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
   <div class="faq-grid reveal">
 
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">
+      <button class="faq-q" id="faq-btn-1" aria-expanded="false" aria-controls="faq-ans-1">
         <span class="faq-q-text">How do I book a nail appointment in Austin?</span>
-        <span class="faq-arrow">+</span>
+        <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a" role="region">
+      <div class="faq-a" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
         <div class="faq-a-inner"><p>All bookings are by text only. Text Thuy at <a href="sms:+14259050469" style="color:var(--terra)">(425) 905-0469</a> with your desired service, style inspiration photos, and preferred date. Walk-ins are not accepted — this is a private, by-appointment nail studio in Austin TX 78725.</p></div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">
+      <button class="faq-q" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
         <span class="faq-q-text">Where is the nail studio located in Austin?</span>
-        <span class="faq-arrow">+</span>
+        <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a" role="region">
+      <div class="faq-a" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
         <div class="faq-a-inner"><p>Nails by Thuy is a boutique nail studio on Varrelman St, Austin TX 78725, serving East Austin and beyond. Convenient for clients from East Austin, Manor TX, Del Valle, Pflugerville, and the greater Austin area. Exact address shared upon booking confirmation.</p></div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">
+      <button class="faq-q" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
         <span class="faq-q-text">What nail services are offered in Austin TX?</span>
-        <span class="faq-arrow">+</span>
+        <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a" role="region">
+      <div class="faq-a" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
         <div class="faq-a-inner"><p>Nails by Thuy specializes in freehand nail design, acrylic full sets, Gel X soft gel extensions, Builder Gel BIAB, and dipping powder. Every set is fully custom — no templates, no stickers, no stamps. 3D nail art is also available in Austin TX.</p></div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">
+      <button class="faq-q" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
         <span class="faq-q-text">What is Builder Gel BIAB and do you offer it?</span>
-        <span class="faq-arrow">+</span>
+        <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a" role="region">
+      <div class="faq-a" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
         <div class="faq-a-inner"><p>Builder-In-A-Bottle (BIAB) is a strengthening gel applied over natural nails for added durability and a glossy finish — no extensions needed. Yes, Nails by Thuy offers BIAB at our private studio in Austin TX 78725. Text to book your BIAB appointment.</p></div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">
+      <button class="faq-q" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
         <span class="faq-q-text">How much do custom nails cost in Austin?</span>
-        <span class="faq-arrow">+</span>
+        <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a" role="region">
+      <div class="faq-a" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
         <div class="faq-a-inner"><p>Pricing varies by service and design complexity. Nails by Thuy is a mid-range private studio ($$) offering premium custom nail art. Text <a href="sms:+14259050469" style="color:var(--terra)">(425) 905-0469</a> for a personalized quote — happy to work with your vision and budget.</p></div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">
+      <button class="faq-q" id="faq-btn-6" aria-expanded="false" aria-controls="faq-ans-6">
         <span class="faq-q-text">What makes Nails by Thuy different from other salons?</span>
-        <span class="faq-arrow">+</span>
+        <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a" role="region">
+      <div class="faq-a" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
         <div class="faq-a-inner"><p>Unlike a traditional nail salon, this is a private nail atelier — every design is pure freehand nail art, painted by hand. No stamps, no stickers. Thuy gives each client her complete undivided attention in a calm, luxurious atmosphere. 5.0 Google rating, 15+ years of professional experience.</p></div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">
+      <button class="faq-q" id="faq-btn-7" aria-expanded="false" aria-controls="faq-ans-7">
         <span class="faq-q-text">Do you serve East Austin and Manor TX?</span>
-        <span class="faq-arrow">+</span>
+        <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a" role="region">
+      <div class="faq-a" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7">
         <div class="faq-a-inner"><p>Yes. The studio is located in Austin TX 78725, conveniently accessible from East Austin, Manor TX, Del Valle, Pflugerville, Bastrop, and the greater Austin metro area. Text (425) 905-0469 to book.</p></div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false">
+      <button class="faq-q" id="faq-btn-8" aria-expanded="false" aria-controls="faq-ans-8">
         <span class="faq-q-text">What payment methods are accepted?</span>
-        <span class="faq-arrow">+</span>
+        <span class="faq-arrow" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a" role="region">
+      <div class="faq-a" id="faq-ans-8" role="region" aria-labelledby="faq-btn-8">
         <div class="faq-a-inner"><p>Nails by Thuy accepts cash, credit cards, and Zelle. Payment is collected at the end of your studio session.</p></div>
       </div>
     </div>
@@ -1537,6 +1536,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.3!2d-97.7431!3d30.2672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b59baecb6ca9%3A0x97672b0aa3baeb2a!2sNails%20by%20Thuy!5e0!3m2!1sen!2sus!4v1716000000000"
         width="100%"
         height="100%"
+        loading="lazy"
         allowfullscreen=""
         referrerpolicy="no-referrer-when-downgrade"
         aria-label="Map showing Nails by Thuy nail salon in Austin TX 78725">
@@ -1595,11 +1595,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
     </div>
     <a href="https://maps.app.goo.gl/YMsQDuWs2UDaaP56A" target="_blank" rel="noopener noreferrer" class="btn-text btn-text--light">All Reviews ↗</a>
   </div>
-  <div class="review-skel-wrap" id="revLoading" style="padding-bottom:40px">
-    <div class="review-skel"></div><div class="review-skel"></div>
-    <div class="review-skel"></div><div class="review-skel"></div>
-  </div>
-  <div class="reviews-strip" id="revStrip" style="display:none;padding-bottom:40px">
+  <div class="reviews-strip" id="revStrip" style="padding-bottom:40px">
     <div class="reviews-track" id="revTrack"></div>
   </div>
 </section>
@@ -1626,7 +1622,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
     <div class="booking-right">
       <picture class="booking-right-pic">
         <source type="image/avif" srcset="/nailsbythuy-showcase-seo/chrome-nails-austin-01.avif">
-        <img class="booking-right-img" src="/images/chrome-nails-austin-01-900.webp" alt="Pink chrome almond nails with mirror finish — luxury nail art at Nails by Thuy Austin TX" loading="eager" decoding="async" width="900">
+        <img class="booking-right-img" src="/images/chrome-nails-austin-01-900.webp" alt="Pink chrome almond nails with mirror finish — luxury nail art at Nails by Thuy Austin TX" loading="lazy" decoding="async" width="900">
       </picture>
       <div class="booking-right-overlay"></div>
       <!-- Google Maps local signal — canonical Place ID link -->
@@ -1865,6 +1861,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
 /* ── CURSOR (desktop hover devices only — no CPU waste on touch) ──── */
 const cur=document.getElementById('cur'), curR=document.getElementById('cur-r');
 if(window.matchMedia('(hover:hover)').matches){
+  document.body.classList.add('cursor-ready');
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
   (function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(loop)})();
@@ -2332,8 +2329,6 @@ const FALLBACK_REVIEWS=[
   {stars:5,text:"Incredibly talented and so kind. My nails have never looked this good. Already booked my next appointment!",author:'Jasmine T.',date:'Google Review'},
 ];
 function showReviews(reviews){
-  document.getElementById('revLoading').style.display='none';
-  document.getElementById('revStrip').style.display='block';
   document.getElementById('revTrack').innerHTML=[...reviews,...reviews].map(r=>`
     <div class="review-card" itemscope itemtype="https://schema.org/Review">
       <div class="review-stars">${'★'.repeat(Math.min(5,r.stars||5))}</div>
@@ -2458,6 +2453,8 @@ showReviews(FALLBACK_REVIEWS);
   initToggle('guidesToggle', 'guidesMore', 'Show all 12 guides',  'Show fewer guides');
 })();
 </script>
+
+<a class="sticky-booking-cta" href="sms:+14259050469?body=Hi%20Thuy!%20I%27d%20like%20to%20book%20%F0%9F%92%85" aria-label="Text Thuy to book an appointment">Text Thuy to Book →</a>
 
 <script>
 /* CWV monitoring — runs in idle time, never on critical path */

@@ -40,7 +40,7 @@
       "@type": "ItemList",
       "name": "Nail Care Guides",
       "url": "https://www.nailsbythuy.com/blog",
-      "numberOfItems": 9,
+      "numberOfItems": 12,
       "itemListElement": [
         {"@type":"ListItem","position":1,"name":"BIAB vs Gel X — Which Is Right for You?","url":"https://www.nailsbythuy.com/biab-vs-gel-x"},
         {"@type":"ListItem","position":2,"name":"Best Nail Shapes for Short Nails","url":"https://www.nailsbythuy.com/best-nail-shapes-short-nails"},
@@ -50,7 +50,10 @@
         {"@type":"ListItem","position":6,"name":"Gel X vs Acrylic Nails — Which Extension Wins?","url":"https://www.nailsbythuy.com/gel-x-vs-acrylic"},
         {"@type":"ListItem","position":7,"name":"Nail Aftercare Tips — Make Your Set Last Longer","url":"https://www.nailsbythuy.com/nail-aftercare-tips"},
         {"@type":"ListItem","position":8,"name":"How to Pick a Nail Color That Actually Flatters","url":"https://www.nailsbythuy.com/how-to-pick-a-nail-color"},
-        {"@type":"ListItem","position":9,"name":"Pedicure vs Manicure — What's the Difference?","url":"https://www.nailsbythuy.com/pedicure-vs-manicure"}
+        {"@type":"ListItem","position":9,"name":"Pedicure vs Manicure — What's the Difference?","url":"https://www.nailsbythuy.com/pedicure-vs-manicure"},
+        {"@type":"ListItem","position":10,"name":"Best Vitamins and Supplements for Nail Growth","url":"https://www.nailsbythuy.com/nail-vitamins-and-supplements"},
+        {"@type":"ListItem","position":11,"name":"What to Eat for Stronger Nails","url":"https://www.nailsbythuy.com/what-to-eat-for-stronger-nails"},
+        {"@type":"ListItem","position":12,"name":"Why Nails Break and Peel — Causes and Fixes","url":"https://www.nailsbythuy.com/why-nails-break-and-peel"}
       ]
     }
   ]
@@ -61,7 +64,7 @@
 /* ── TOKENS ─────────────────────────────────────────────────────── */
 :root{
   --ink:#18120f;--paper:#f8f5f0;--bone:#ede8e0;--dust:#c8bfb4;
-  --terra:#b5624f;--sand:#c9a97a;--mist:#8a7f76;
+  --terra:#b5624f;--sand:#c9a97a;--mist:#6b6258;
   --max:1120px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -98,9 +101,24 @@ img{display:block;max-width:100%}
 .nav-links{display:flex;gap:28px;list-style:none}
 .nav-links a{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;opacity:.5;transition:opacity .25s}
 .nav-links a:hover,.nav-links a[aria-current]{opacity:1}
+/* Hamburger + drawer */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:10px;cursor:pointer;z-index:210;min-width:44px;min-height:44px;justify-content:center;align-items:center}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .3s}
+.site-nav.scrolled .nav-hamburger span{background:var(--ink)}
+.nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-drawer{display:none;position:fixed;inset:0;z-index:190;background:rgba(248,245,240,.97);backdrop-filter:blur(16px);flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.nav-drawer.open{display:flex}
+.nav-drawer a{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--ink);letter-spacing:.08em;opacity:.7;transition:opacity .25s,color .25s}
+.nav-drawer a:hover{opacity:1;color:var(--terra)}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:2px}
+.article-card:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 @media(max-width:768px){
   .site-nav{padding:18px 22px}
   .nav-links{display:none}
+  .nav-hamburger{display:flex}
 }
 
 /* ── HERO ────────────────────────────────────────────────────────── */
@@ -153,38 +171,6 @@ img{display:block;max-width:100%}
   .hero-visual{display:none}
 }
 
-/* ── GENERATE STRIP ─────────────────────────────────────────────── */
-.generate-strip{
-  background:var(--ink);padding:48px;
-  margin-bottom:0;
-}
-.generate-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
-.generate-label{font-size:.62rem;letter-spacing:.36em;text-transform:uppercase;color:var(--sand);margin-bottom:10px}
-.generate-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:rgba(248,245,240,.9)}
-.generate-form{display:flex;gap:10px;flex-shrink:0}
-.generate-input{
-  width:300px;padding:12px 18px;
-  background:rgba(248,245,240,.06);
-  border:1px solid rgba(248,245,240,.15);
-  color:var(--paper);font-family:'DM Sans',sans-serif;font-size:.78rem;
-  outline:none;transition:border-color .25s;
-}
-.generate-input::placeholder{color:rgba(248,245,240,.3)}
-.generate-input:focus{border-color:var(--terra)}
-.generate-btn{
-  padding:12px 24px;background:var(--terra);color:var(--paper);
-  font-size:.65rem;letter-spacing:.26em;text-transform:uppercase;
-  transition:background .22s;white-space:nowrap;
-}
-.generate-btn:hover{background:#9c4e3f}
-.generate-btn:disabled{opacity:.5;cursor:not-allowed}
-@media(max-width:900px){
-  .generate-strip{padding:36px 24px}
-  .generate-inner{grid-template-columns:1fr;gap:24px}
-  .generate-form{flex-direction:column}
-  .generate-input{width:100%}
-}
-
 /* ── ARTICLES GRID ──────────────────────────────────────────────── */
 .articles-section{max-width:var(--max);margin:0 auto;padding:72px 48px}
 .section-label{font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--terra);margin-bottom:16px}
@@ -223,119 +209,11 @@ img{display:block;max-width:100%}
   justify-content:center;overflow:hidden;
 }
 .card-visual svg{width:60px;height:60px;opacity:.2}
-/* AI-generated card style */
-.article-card.ai-generated .card-category{color:var(--sand)}
-.article-card.ai-generated .card-category::after{content:'AI';font-size:.5rem;background:var(--sand);color:var(--ink);padding:1px 5px;border-radius:2px;letter-spacing:.1em}
 @media(max-width:768px){
   .articles-section{padding:48px 22px}
   .articles-grid{grid-template-columns:1fr}
   .article-card.featured{grid-template-columns:1fr}
   .card-visual{display:none}
-}
-
-/* ── ARTICLE READER (full article overlay) ──────────────────────── */
-#article-reader{
-  position:fixed;inset:0;z-index:9999;
-  background:var(--paper);
-  overflow-y:auto;
-  opacity:0;pointer-events:none;
-  transition:opacity .3s ease;
-}
-#article-reader.open{opacity:1;pointer-events:all}
-.reader-nav{
-  position:sticky;top:0;z-index:10;
-  background:rgba(248,245,240,.97);border-bottom:1px solid var(--bone);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:16px 48px;
-}
-.reader-back{
-  display:flex;align-items:center;gap:8px;font-size:.62rem;
-  letter-spacing:.24em;text-transform:uppercase;color:var(--mist);
-  transition:color .22s;cursor:pointer;
-}
-.reader-back:hover{color:var(--terra)}
-.reader-back svg{width:16px;height:16px}
-.reader-share{display:flex;gap:12px}
-.share-btn{
-  padding:8px 16px;border:1px solid var(--bone);font-size:.6rem;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--mist);
-  transition:border-color .22s,color .22s;
-}
-.share-btn:hover{border-color:var(--terra);color:var(--terra)}
-.reader-progress{height:2px;background:var(--bone);position:fixed;top:0;left:0;right:0;z-index:11}
-.reader-progress-bar{height:100%;background:var(--terra);width:0;transition:width .1s}
-
-/* Article content */
-.reader-content{max-width:720px;margin:0 auto;padding:72px 48px 100px}
-.reader-header{margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--bone)}
-.reader-category{font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:20px}
-.reader-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.05;margin-bottom:24px}
-.reader-title em{color:var(--terra)}
-.reader-meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-.reader-byline{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mist)}
-.reader-date{font-size:.68rem;letter-spacing:.14em;color:var(--dust)}
-.reader-readtime{font-size:.68rem;letter-spacing:.14em;color:var(--dust)}
-
-/* Article body typography */
-.article-body{font-size:.95rem;line-height:2;color:#3a3228}
-.article-body h2{
-  font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);
-  font-weight:300;margin:52px 0 20px;color:var(--ink);line-height:1.2;
-}
-.article-body h3{
-  font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;
-  margin:36px 0 14px;color:var(--ink);
-}
-.article-body p{margin-bottom:22px}
-.article-body strong{font-weight:500;color:var(--ink)}
-.article-body em{color:var(--terra);font-style:italic}
-.article-body ul,.article-body ol{margin:0 0 22px 22px}
-.article-body li{margin-bottom:8px;line-height:1.9}
-.article-body blockquote{
-  border-left:3px solid var(--terra);margin:36px 0;
-  padding:20px 28px;background:rgba(181,98,79,.04);
-  font-family:'Cormorant Garamond',serif;font-size:1.15rem;
-  font-style:italic;color:var(--ink);line-height:1.7;
-}
-.article-body .callout{
-  background:var(--bone);border:1px solid var(--dust);
-  padding:24px 28px;margin:32px 0;border-radius:0;
-}
-.article-body .callout strong{display:block;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--terra);margin-bottom:8px}
-.article-body hr{border:none;border-top:1px solid var(--bone);margin:48px 0}
-
-/* Loading skeleton */
-.skeleton{background:linear-gradient(90deg,var(--bone) 25%,var(--dust) 50%,var(--bone) 75%);background-size:200% 100%;animation:shimmer 1.4s infinite}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.skel-line{height:1em;margin-bottom:12px;border-radius:0}
-.skel-line.w-90{width:90%}.skel-line.w-75{width:75%}.skel-line.w-60{width:60%}.skel-line.w-100{width:100%}
-
-/* CTA block inside article */
-.article-cta{
-  background:var(--ink);padding:40px;margin:56px 0;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
-}
-.article-cta p{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:rgba(248,245,240,.85);max-width:420px}
-.article-cta a{
-  padding:14px 28px;background:var(--terra);color:var(--paper);
-  font-size:.65rem;letter-spacing:.26em;text-transform:uppercase;
-  white-space:nowrap;transition:background .22s;display:inline-block;
-}
-.article-cta a:hover{background:#9c4e3f}
-
-/* Related articles */
-.related-section{border-top:1px solid var(--bone);padding-top:48px;margin-top:64px}
-.related-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:32px}
-.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.related-card{padding:24px;border:1px solid var(--bone);cursor:pointer;transition:border-color .25s}
-.related-card:hover{border-color:var(--terra)}
-.related-card h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;margin-bottom:8px}
-.related-card p{font-size:.75rem;color:var(--mist);line-height:1.7}
-@media(max-width:768px){
-  .reader-content{padding:48px 22px 80px}
-  .reader-nav{padding:14px 22px}
-  .article-cta{flex-direction:column}
-  .related-grid{grid-template-columns:1fr}
 }
 
 /* ── FOOTER ─────────────────────────────────────────────────────── */
@@ -347,60 +225,30 @@ img{display:block;max-width:100%}
 .footer-links a:hover{color:var(--sand)}
 @media(max-width:768px){.site-footer{padding:36px 22px}}
 
-/* ── GENERATE STATUS ────────────────────────────────────────────── */
-.status-bar{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
-  background:var(--ink);color:var(--paper);
-  padding:12px 24px;font-size:.72rem;letter-spacing:.14em;
-  z-index:300;opacity:0;transition:opacity .3s;pointer-events:none;
-  display:flex;align-items:center;gap:10px;white-space:nowrap;
-}
-.status-bar.show{opacity:1}
-.status-dot{width:6px;height:6px;border-radius:50%;background:var(--terra);animation:pulse 1s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{animation:fadeUp .6s ease forwards}
 </style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
-
-<!-- STATUS BAR -->
-<div class="status-bar" id="statusBar">
-  <span class="status-dot"></span>
-  <span id="statusText">Generating article…</span>
-</div>
-
-<!-- READING PROGRESS -->
-<div class="reader-progress"><div class="reader-progress-bar" id="progressBar"></div></div>
 
 <!-- MAIN NAV -->
 <nav class="site-nav" id="siteNav" aria-label="Main navigation">
   <a href="/" class="nav-brand" aria-label="Nails by Thuy — Home">Nails by Thuy</a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
-    <li><a href="/services.html">Services</a></li>
+    <li><a href="/services">Services</a></li>
     <li><a href="/blog" aria-current="page">Guides</a></li>
     <li><a href="/#booking">Book</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ARTICLE READER OVERLAY -->
-<div id="article-reader" role="dialog" aria-modal="true" aria-label="Article reader">
-  <nav class="reader-nav">
-    <button class="reader-back" id="readerBack" aria-label="Back to guides">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
-      All Guides
-    </button>
-    <div class="reader-share">
-      <button class="share-btn" id="copyLinkBtn">Copy Link</button>
-      <a class="share-btn" id="bookBtn" href="sms:+14259050469?body=Hi%20Thuy!%20I%27d%20like%20to%20book%20an%20appointment%20%F0%9F%92%85" style="display:inline-flex;align-items:center">📲 Book Now</a>
-    </div>
-  </nav>
-  <div class="reader-content" id="readerContent">
-    <!-- Content injected by JS -->
-  </div>
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/services">Services</a>
+  <a href="/blog" aria-current="page">Guides</a>
+  <a href="/#booking">Book</a>
 </div>
 
 <!-- MAIN CONTENT -->
@@ -411,11 +259,11 @@ img{display:block;max-width:100%}
     <div>
       <span class="hero-kicker">From the Studio</span>
       <h1 class="hero-title">Nail Care<br/><em>Guides</em></h1>
-      <p class="hero-desc">Real answers about nail services, aftercare, and what to expect — written from 15+ years behind the nail desk in Austin, TX. Each guide is generated by AI and reviewed for accuracy.</p>
+      <p class="hero-desc">Real answers about nail services, aftercare, and what to expect — written from 15+ years behind the nail desk in Austin, TX.</p>
       <div class="hero-meta">
         <div class="hero-stat"><span class="hero-stat-n">15+</span><span class="hero-stat-l">Years Experience</span></div>
         <div class="hero-stat"><span class="hero-stat-n">⭐ 5.0</span><span class="hero-stat-l">Google Rating</span></div>
-        <div class="hero-stat"><span class="hero-stat-n" id="articleCount">4</span><span class="hero-stat-l">Guides Published</span></div>
+        <div class="hero-stat"><span class="hero-stat-n" id="articleCount">12</span><span class="hero-stat-l">Guides Published</span></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -425,29 +273,6 @@ img{display:block;max-width:100%}
       </div>
     </div>
   </header>
-
-  <!-- GENERATE STRIP -->
-  <div class="generate-strip">
-    <div class="generate-inner">
-      <div>
-        <div class="generate-label">AI Article Generator</div>
-        <div class="generate-title">Have a nail question? Generate a guide.</div>
-      </div>
-      <div class="generate-form">
-        <input
-          type="text"
-          class="generate-input"
-          id="topicInput"
-          placeholder="e.g. How to remove gel nails at home"
-          aria-label="Enter nail care topic"
-          maxlength="120"
-        />
-        <button class="generate-btn" id="generateBtn" aria-label="Generate article">
-          Generate Guide →
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- ARTICLES -->
   <section class="articles-section" aria-label="Nail care guides">
@@ -469,7 +294,7 @@ img{display:block;max-width:100%}
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="/">Home</a>
-      <a href="/services.html">Services</a>
+      <a href="/services">Services</a>
       <a href="/#gallery">Gallery</a>
       <a href="/#reviews">Reviews</a>
       <a href="/#booking">Book</a>
@@ -479,10 +304,9 @@ img{display:block;max-width:100%}
 </footer>
 
 <script>
-/* ══════════════════════════════════════════════════════════════════
-   SEED ARTICLES — these are the 4 Phase 3 topics
-   Each becomes a full article when clicked (AI generates on demand)
-══════════════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════════════════
+   ARTICLES — all 12 static guides
+════════════════════════════════════════════════════════ */
 const SEED_ARTICLES = [
   {
     id: 'biab-vs-gel-x',
@@ -566,11 +390,34 @@ const SEED_ARTICLES = [
     readTime: '5 min read',
     isStatic: true,
   },
+  {
+    id: 'nail-vitamins-and-supplements',
+    slug: '/nail-vitamins-and-supplements',
+    category: 'Nail Health',
+    title: 'Best Vitamins and Supplements for Nail Growth — Do They Actually Work?',
+    excerpt: 'Do biotin supplements actually work? What about collagen, vitamin D, and silica? An honest review of the most popular nail growth supplements — what the evidence shows and when supplementing helps vs. wastes money.',
+    readTime: '6 min read',
+    isStatic: true,
+  },
+  {
+    id: 'what-to-eat-for-stronger-nails',
+    slug: '/what-to-eat-for-stronger-nails',
+    category: 'Nail Health',
+    title: 'What to Eat for Stronger, Faster-Growing Nails',
+    excerpt: 'Biotin, protein, iron, zinc, and omega-3s directly affect nail strength and growth rate. A nail tech\'s guide to the foods that make the biggest difference — and the deficiencies to watch for.',
+    readTime: '5 min read',
+    isStatic: true,
+  },
+  {
+    id: 'why-nails-break-and-peel',
+    slug: '/why-nails-break-and-peel',
+    category: 'Nail Health',
+    title: 'Why Your Nails Break and Peel — Causes and Fixes',
+    excerpt: 'Brittle, peeling nails are rarely just bad luck. Nutritional deficiencies, dehydration, chemical damage, and removal errors all play distinct roles. A nail tech explains each cause and its fix.',
+    readTime: '5 min read',
+    isStatic: true,
+  },
 ];
-
-/* Dynamic articles added by user */
-let dynamicArticles = [];
-
 
 /* ── NAV scroll ────────────────────────────────────────────────── */
 const siteNav = document.getElementById('siteNav');
@@ -581,19 +428,10 @@ window.addEventListener('scroll', () => {
 /* ── RENDER article cards ──────────────────────────────────────── */
 function renderCards() {
   const grid = document.getElementById('articlesGrid');
-  const all = [...SEED_ARTICLES, ...dynamicArticles];
-  document.getElementById('articleCount').textContent = all.length;
-
-  grid.innerHTML = all.map((a, i) => {
+  grid.innerHTML = SEED_ARTICLES.map((a, i) => {
     const isFeatured = a.featured && i === 0;
-    const isAI = a.aiGenerated;
     return `
-    <article class="article-card${isFeatured?' featured':''}${isAI?' ai-generated':''}"
-      data-id="${a.id}" role="button" tabindex="0"
-      aria-label="Read: ${a.title}"
-      onclick="openArticle('${a.id}')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){openArticle('${a.id}')}"
-    >
+    <a class="article-card${isFeatured?' featured':''}" href="${a.slug}" aria-label="Read: ${a.title}">
       <div>
         <div class="card-category">${a.category}</div>
         <h2 class="card-title">${a.title}</h2>
@@ -607,230 +445,30 @@ function renderCards() {
         </div>
       </div>
       ${isFeatured ? `<div class="card-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="3"/></svg></div>` : ''}
-    </article>`;
+    </a>`;
   }).join('');
-}
-
-/* ── ARTICLE CACHE ─────────────────────────────────────────────── */
-const articleCache = {};
-
-/* ── OPEN ARTICLE ──────────────────────────────────────────────── */
-async function openArticle(id) {
-  const all = [...SEED_ARTICLES, ...dynamicArticles];
-  const meta = all.find(a => a.id === id);
-  if (!meta) return;
-
-  // Static seed articles go to their dedicated SEO pages
-  if (meta.isStatic && meta.slug) {
-    window.location.href = meta.slug;
-    return;
-  }
-
-  // AI-generated articles open in the reader overlay
-  const reader = document.getElementById('article-reader');
-  const content = document.getElementById('readerContent');
-  reader.classList.add('open');
-  reader.scrollTop = 0;
-  document.body.style.overflow = 'hidden';
-  history.pushState({articleId: id}, '', meta.slug || `#${id}`);
-
-  if (articleCache[id]) {
-    renderArticle(meta, articleCache[id]);
-    return;
-  }
-
-  content.innerHTML = buildSkeleton(meta);
-
-  try {
-    const article = await generateArticle(meta.title, meta.category);
-    articleCache[id] = article;
-    renderArticle(meta, article);
-  } catch(err) {
-    content.innerHTML = `<div style="padding:80px 0;text-align:center">
-      <p style="color:var(--mist);font-size:.9rem">Unable to generate article. Please try again.</p>
-      <button onclick="openArticle('${id}')" style="margin-top:20px;padding:10px 24px;background:var(--terra);color:white;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase">Retry</button>
-    </div>`;
-  }
-}
-
-/* ── RENDER ARTICLE ────────────────────────────────────────────── */
-function renderArticle(meta, article) {
-  const content = document.getElementById('readerContent');
-  const related = [...SEED_ARTICLES, ...dynamicArticles]
-    .filter(a => a.id !== meta.id).slice(0, 2);
-
-  // Update page meta for SEO
-  if (article.metaTitle) document.title = article.metaTitle;
-
-  content.innerHTML = `
-    <header class="reader-header">
-      <span class="reader-category">${article.category || meta.category}</span>
-      <h1 class="reader-title">${article.title || meta.title}</h1>
-      <div class="reader-meta">
-        <span class="reader-byline">By Thuy · Nails by Thuy Austin TX</span>
-        <span class="reader-date">${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</span>
-        <span class="reader-readtime">${article.readTime || meta.readTime}</span>
-      </div>
-    </header>
-    <div class="article-body fade-up">${article.body}</div>
-    ${related.length > 0 ? `
-    <section class="related-section" aria-label="Related guides">
-      <h3 class="related-title">More Guides</h3>
-      <div class="related-grid">
-        ${related.map(r => `
-        <div class="related-card" onclick="openArticle('${r.id}')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'){openArticle('${r.id}')}">
-          <h4>${r.title}</h4>
-          <p>${r.excerpt.slice(0,100)}…</p>
-        </div>`).join('')}
-      </div>
-    </section>` : ''}`;
-
-  // Reading progress
-  setupProgress();
-}
-
-/* ── SKELETON ──────────────────────────────────────────────────── */
-function buildSkeleton(meta) {
-  return `
-    <header class="reader-header">
-      <span class="reader-category">${meta.category}</span>
-      <h1 class="reader-title" style="opacity:.4">${meta.title}</h1>
-      <div class="reader-meta">
-        <span class="reader-byline" style="opacity:.4">By Thuy · Nails by Thuy Austin TX</span>
-      </div>
-    </header>
-    <div class="article-body">
-      ${Array.from({length:6},(_,i)=>`
-      <p>
-        <span class="skel-line skeleton w-100" style="height:.9em;display:block;margin-bottom:8px"></span>
-        <span class="skel-line skeleton w-${['90','75','100','90','60','75'][i]}" style="height:.9em;display:block;margin-bottom:8px"></span>
-        <span class="skel-line skeleton w-${['75','90','60','75','100','90'][i]}" style="height:.9em;display:block"></span>
-      </p>`).join('')}
-    </div>`;
-}
-
-/* ── READING PROGRESS ──────────────────────────────────────────── */
-function setupProgress() {
-  const bar = document.getElementById('progressBar');
-  const reader = document.getElementById('article-reader');
-  function update() {
-    const pct = (reader.scrollTop / (reader.scrollHeight - reader.clientHeight)) * 100;
-    bar.style.width = Math.min(100, pct) + '%';
-  }
-  reader.removeEventListener('scroll', reader._progressHandler);
-  reader._progressHandler = update;
-  reader.addEventListener('scroll', update, {passive: true});
-}
-
-/* ── CLOSE READER ──────────────────────────────────────────────── */
-function closeReader() {
-  const reader = document.getElementById('article-reader');
-  reader.classList.remove('open');
-  document.body.style.overflow = '';
-  document.title = 'Nail Care Guides — Nails by Thuy Austin TX';
-  history.pushState({}, '', '/blog');
-  document.getElementById('progressBar').style.width = '0';
-}
-
-document.getElementById('readerBack').addEventListener('click', closeReader);
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeReader();
-});
-
-/* ── COPY LINK ─────────────────────────────────────────────────── */
-document.getElementById('copyLinkBtn').addEventListener('click', function() {
-  navigator.clipboard?.writeText(location.href).then(() => {
-    this.textContent = 'Copied!';
-    setTimeout(() => this.textContent = 'Copy Link', 2000);
-  });
-});
-
-/* ── ARTICLE GENERATION via Netlify function proxy ─────────────── */
-async function generateArticle(topic, category) {
-  showStatus(`Writing "${topic}"…`);
-
-  const res = await fetch('/.netlify/functions/generate-article', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({ topic, category: category || 'Nail Care' })
-  });
-
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    hideStatus();
-    throw new Error(err.error || `HTTP ${res.status}`);
-  }
-
-  const parsed = await res.json();
-  hideStatus();
-  return parsed;
-}
-
-/* ── GENERATE NEW ARTICLE from user input ──────────────────────── */
-document.getElementById('generateBtn').addEventListener('click', async function() {
-  const input = document.getElementById('topicInput');
-  const topic = input.value.trim();
-  if (!topic) { input.focus(); return; }
-
-  this.disabled = true;
-  this.textContent = 'Generating…';
-  showStatus(`Generating guide about: ${topic}`);
-
-  try {
-    const article = await generateArticle(topic, 'Nail Care');
-    const id = 'gen-' + Date.now();
-    const slug = '/' + topic.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-    const newArticle = {
-      id,
-      slug,
-      category: article.category || 'Nail Care',
-      title: article.title || topic,
-      excerpt: article.body?.replace(/<[^>]+>/g,'').slice(0,160) + '…',
-      readTime: article.readTime || '4 min read',
-      aiGenerated: true,
-    };
-    dynamicArticles.unshift(newArticle);
-    articleCache[id] = article;
-    renderCards();
-    input.value = '';
-
-    // Auto-open the new article
-    setTimeout(() => openArticle(id), 300);
-
-  } catch(err) {
-    showStatus(err.message || 'Error generating article. Please try again.', true);
-    setTimeout(hideStatus, 6000);
-  } finally {
-    this.disabled = false;
-    this.textContent = 'Generate Guide →';
-  }
-});
-
-/* Allow Enter key in input */
-document.getElementById('topicInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') document.getElementById('generateBtn').click();
-});
-
-/* ── STATUS BAR ────────────────────────────────────────────────── */
-function showStatus(msg, isError) {
-  const bar = document.getElementById('statusBar');
-  const dot = bar.querySelector('.status-dot');
-  document.getElementById('statusText').textContent = msg;
-  dot.style.background = isError ? '#e05c3a' : 'var(--terra)';
-  dot.style.animation = isError ? 'none' : '';
-  bar.classList.add('show');
-}
-function hideStatus() {
-  document.getElementById('statusBar').classList.remove('show');
 }
 
 /* ── INIT ──────────────────────────────────────────────────────── */
 renderCards();
 
-// Auto-open article if URL matches a slug
-const path = location.pathname;
-const match = SEED_ARTICLES.find(a => a.slug === path);
-if (match) setTimeout(() => openArticle(match.id), 400);
+/* ── HAMBURGER ─────────────────────────────────────────────────── */
+(function(){
+  var btn=document.getElementById('navHamburger');
+  var drawer=document.getElementById('navDrawer');
+  function toggleMenu(open){
+    btn.classList.toggle('open',open);
+    drawer.classList.toggle('open',open);
+    btn.setAttribute('aria-expanded',open);
+    drawer.setAttribute('aria-hidden',!open);
+    document.body.style.overflow=open?'hidden':'';
+  }
+  btn.addEventListener('click',function(){toggleMenu(!drawer.classList.contains('open'))});
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){toggleMenu(false)});
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')toggleMenu(false)});
+})();
 </script>
 </body>
 </html>
