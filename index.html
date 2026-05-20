@@ -457,7 +457,8 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overscroll-behavior-y:none;overflow-x:hidden}
 * {-webkit-tap-highlight-color:transparent}
-body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;max-width:100%;-webkit-font-smoothing:antialiased;cursor:none;-webkit-overflow-scrolling:touch}
+body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;max-width:100%;-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch}
+body.cursor-ready{cursor:none}
 img{display:block;width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
@@ -1595,11 +1596,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
     </div>
     <a href="https://maps.app.goo.gl/YMsQDuWs2UDaaP56A" target="_blank" rel="noopener noreferrer" class="btn-text btn-text--light">All Reviews ↗</a>
   </div>
-  <div class="review-skel-wrap" id="revLoading" style="padding-bottom:40px">
-    <div class="review-skel"></div><div class="review-skel"></div>
-    <div class="review-skel"></div><div class="review-skel"></div>
-  </div>
-  <div class="reviews-strip" id="revStrip" style="display:none;padding-bottom:40px">
+  <div class="reviews-strip" id="revStrip" style="padding-bottom:40px">
     <div class="reviews-track" id="revTrack"></div>
   </div>
 </section>
@@ -1865,6 +1862,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
 /* ── CURSOR (desktop hover devices only — no CPU waste on touch) ──── */
 const cur=document.getElementById('cur'), curR=document.getElementById('cur-r');
 if(window.matchMedia('(hover:hover)').matches){
+  document.body.classList.add('cursor-ready');
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
   (function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(loop)})();
@@ -2332,8 +2330,6 @@ const FALLBACK_REVIEWS=[
   {stars:5,text:"Incredibly talented and so kind. My nails have never looked this good. Already booked my next appointment!",author:'Jasmine T.',date:'Google Review'},
 ];
 function showReviews(reviews){
-  document.getElementById('revLoading').style.display='none';
-  document.getElementById('revStrip').style.display='block';
   document.getElementById('revTrack').innerHTML=[...reviews,...reviews].map(r=>`
     <div class="review-card" itemscope itemtype="https://schema.org/Review">
       <div class="review-stars">${'★'.repeat(Math.min(5,r.stars||5))}</div>
@@ -2458,6 +2454,8 @@ showReviews(FALLBACK_REVIEWS);
   initToggle('guidesToggle', 'guidesMore', 'Show all 12 guides',  'Show fewer guides');
 })();
 </script>
+
+<a class="sticky-booking-cta" href="sms:+14259050469?body=Hi%20Thuy!%20I%27d%20like%20to%20book%20%F0%9F%92%85" aria-label="Text Thuy to book an appointment">Text Thuy to Book →</a>
 
 <script>
 /* CWV monitoring — runs in idle time, never on critical path */
