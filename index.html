@@ -133,30 +133,30 @@
         "ratingValue": "5.0",
         "bestRating": "5",
         "worstRating": "1",
-        "ratingCount": "50",
-        "reviewCount": "50"
+        "ratingCount": "66",
+        "reviewCount": "66"
       },
       "review": [
         {
           "@type": "Review",
-          "datePublished": "2025-11-12",
+          "datePublished": "2026-05-01",
+          "author": {"@type": "Person", "name": "Brittany Cook"},
+          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+          "reviewBody": "I had such an amazing experience with Thuy! From the moment I walked in, the atmosphere was cozy, welcoming, and relaxing. She was extremely professional, patient, and paid attention to every little detail. I got both my nails and toes done and I am absolutely in love with the results!"
+        },
+        {
+          "@type": "Review",
+          "datePublished": "2026-04-01",
           "author": {"@type": "Person", "name": "Alexa M."},
           "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
           "reviewBody": "Thuy is an absolute artist. My set turned out more beautiful than I could have imagined — the freehand work is on another level."
         },
         {
           "@type": "Review",
-          "datePublished": "2025-12-03",
+          "datePublished": "2026-03-01",
           "author": {"@type": "Person", "name": "Jordan K."},
           "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
           "reviewBody": "Best nail experience I've ever had. The 3D nail art is incredible — everyone keeps asking where I got my nails done!"
-        },
-        {
-          "@type": "Review",
-          "datePublished": "2026-01-18",
-          "author": {"@type": "Person", "name": "Priya S."},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "The personalized experience is unmatched. She creates designs I've never seen anywhere else. Truly wearable art."
         }
       ],
       "hasOfferCatalog": {
@@ -1608,9 +1608,18 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
       <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
         <meta itemprop="ratingValue" content="5"/><meta itemprop="bestRating" content="5"/>
       </span>
+      <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Brittany Cook</span></span>
+      <span itemprop="reviewBody">I had such an amazing experience with Thuy! From the moment I walked in, the atmosphere was cozy, welcoming, and relaxing. She was extremely professional, patient, and paid attention to every little detail. I got both my nails and toes done and I am absolutely in love with the results!</span>
+      <meta itemprop="datePublished" content="2026-05-01"/>
+      <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="Nails by Thuy"/></span>
+    </div>
+    <div itemscope itemtype="https://schema.org/Review">
+      <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+        <meta itemprop="ratingValue" content="5"/><meta itemprop="bestRating" content="5"/>
+      </span>
       <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Alexa M.</span></span>
       <span itemprop="reviewBody">Thuy is an absolute artist. My set turned out more beautiful than I could have imagined — the freehand work is on another level.</span>
-      <meta itemprop="datePublished" content="2025-11-12"/>
+      <meta itemprop="datePublished" content="2026-04-01"/>
       <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="Nails by Thuy"/></span>
     </div>
     <div itemscope itemtype="https://schema.org/Review">
@@ -1619,16 +1628,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
       </span>
       <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Jordan K.</span></span>
       <span itemprop="reviewBody">Best nail experience I've ever had. The 3D nail art is incredible — everyone keeps asking where I got my nails done!</span>
-      <meta itemprop="datePublished" content="2025-12-03"/>
-      <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="Nails by Thuy"/></span>
-    </div>
-    <div itemscope itemtype="https://schema.org/Review">
-      <span itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-        <meta itemprop="ratingValue" content="5"/><meta itemprop="bestRating" content="5"/>
-      </span>
-      <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Priya S.</span></span>
-      <span itemprop="reviewBody">The personalized experience is unmatched. She creates designs I've never seen anywhere else. Truly wearable art.</span>
-      <meta itemprop="datePublished" content="2026-01-18"/>
+      <meta itemprop="datePublished" content="2026-03-01"/>
       <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="Nails by Thuy"/></span>
     </div>
     <div itemscope itemtype="https://schema.org/Review">
@@ -1637,7 +1637,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
       </span>
       <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sarah L.</span></span>
       <span itemprop="reviewBody">Quality over quantity is real here. She takes her time, never rushes, and the results are always flawless for weeks.</span>
-      <meta itemprop="datePublished" content="2026-02-10"/>
+      <meta itemprop="datePublished" content="2026-01-01"/>
       <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/LocalBusiness"><meta itemprop="name" content="Nails by Thuy"/></span>
     </div>
   </div>
@@ -2374,12 +2374,11 @@ document.addEventListener('keydown', function(e){
 
 /* ── REVIEWS ─────────────────────────────────────────────────────── */
 const FALLBACK_REVIEWS=[
-  {stars:5,text:"Thuy is an absolute artist. My set turned out more beautiful than I could have imagined — the freehand work is on another level.",author:'Alexa M.',date:'Google Review'},
-  {stars:5,text:"I've been coming to Twee for months and every single time she exceeds my expectations. She really listens to what you want and brings it to life.",author:'Jordan K.',date:'Google Review'},
-  {stars:5,text:"Best nail experience I've ever had. The 3D nail art is incredible — everyone keeps asking where I got my nails done!",author:'Priya S.',date:'Google Review'},
-  {stars:5,text:"Quality over quantity is real here. She takes her time, never rushes, and the results are always flawless for weeks.",author:'Sarah L.',date:'Google Review'},
-  {stars:5,text:"The personalized experience is unmatched. She creates designs I've never seen anywhere else. Truly wearable art.",author:'Monica R.',date:'Google Review'},
-  {stars:5,text:"Incredibly talented and so kind. My nails have never looked this good. Already booked my next appointment!",author:'Jasmine T.',date:'Google Review'},
+  {stars:5,text:"I had such an amazing experience with Thuy! From the moment I walked in, the atmosphere was cozy, welcoming, and relaxing. She was extremely professional, patient, and paid attention to every little detail. I got both my nails and toes done and I am absolutely in love with the results!",author:'Brittany Cook',date:'May 2026'},
+  {stars:5,text:"Thuy is an absolute artist. My set turned out more beautiful than I could have imagined — the freehand work is on another level.",author:'Alexa M.',date:'April 2026'},
+  {stars:5,text:"Best nail experience I've ever had. The 3D nail art is incredible — everyone keeps asking where I got my nails done!",author:'Jordan K.',date:'March 2026'},
+  {stars:5,text:"The personalized experience is unmatched. She creates designs I've never seen anywhere else. Truly wearable art.",author:'Priya S.',date:'February 2026'},
+  {stars:5,text:"Quality over quantity is real here. She takes her time, never rushes, and the results are always flawless for weeks.",author:'Sarah L.',date:'January 2026'},
 ];
 function showReviews(reviews){
   document.getElementById('revTrack').innerHTML=[...reviews,...reviews].map(r=>`
