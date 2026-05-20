@@ -41,6 +41,7 @@
     Strict-Transport-Security  = "max-age=31536000; includeSubDomains; preload"
     Permissions-Policy         = "camera=(), microphone=(), geolocation=(), payment=()"
     X-XSS-Protection           = "1; mode=block"
+    Content-Security-Policy    = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
 
 # HTML pages — no cache (always fresh)
 [[headers]]
@@ -54,13 +55,24 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 # Static assets — long cache (content-hashed by Netlify)
+# Note: /*.css only matches root-level files; /css/*.css covers the /css/ subdirectory
 [[headers]]
   for = "/*.css"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
+  for = "/css/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
   for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*.js"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
