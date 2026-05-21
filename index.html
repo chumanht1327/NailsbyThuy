@@ -12,9 +12,9 @@
 <link rel="dns-prefetch" href="https://maps.app.goo.gl"/>
 <link rel="dns-prefetch" href="https://www.google.com"/>
 <!-- Preload LCP hero image for fastest First Contentful Paint -->
-<link rel="preload" as="image" href="https://www.nailsbythuy.com/images/hero-nails-900.jpg" fetchpriority="high" type="image/jpeg"/>
+<link rel="preload" as="image" href="/images/logo-nailsbythuy-400.webp" fetchpriority="high" type="image/webp"/>
 <!-- Preload above-fold profile photo to reduce CLS -->
-<link rel="preload" as="image" href="https://lh3.googleusercontent.com/pw/AP1GczOA262XONbzlPzY_tbc-eY1P9df82PbQpssLnRn9WtaOqKLlvOSrSHACtW-YhAsmEq1J0xC1lufWEUSI5hR2ZW39sj0_EU-NU-jTMCLDbGp8jWpszk=w400-k-no" fetchpriority="auto"/>
+<link rel="preload" as="image" href="/images/about-profile-photo-400.webp" fetchpriority="auto" type="image/webp"/>
 
 <!-- ── FAVICON / PWA ──────────────────────────────────────────────── -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318120f'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23b5624f'%3ET%3C/text%3E%3C/svg%3E"/>
@@ -28,7 +28,7 @@
 
 <!-- ── PRIMARY SEO ───────────────────────────────────────────────── -->
 <title>Nails by Thuy · Austin TX — Freehand Nail Art Studio</title>
-<meta name="description" content="Austin's premier freehand nail art specialist. Custom acrylic sets, Gel X, BIAB, dipping powder &amp; 3D nail art. Every set is a one-of-a-kind wearable creation. Text (425) 905-0469 — Austin, TX 78725."/>
+<meta name="description" content="Austin freehand nail art specialist. Custom acrylics, Gel X, BIAB &amp; 3D nail art. Every set is one-of-a-kind. Text (425) 905-0469 — Austin, TX 78725."/>
 <meta name="keywords" content="nail art Austin TX, freehand nail art Austin, custom nails Austin, nail salon Austin 78725, acrylic nails Austin, Gel X Austin, BIAB nails Austin, 3D nail art Austin, nail tech Austin, Nails by Thuy, Twee nail artist, wearable nail art, nail artist near me Austin, private nail studio Austin"/>
 <link rel="canonical" href="https://www.nailsbythuy.com/"/>
 <link rel="sitemap" type="application/xml" href="https://www.nailsbythuy.com/sitemap.xml"/>
@@ -49,8 +49,8 @@
 <meta property="og:title" content="Nails by Thuy · Austin TX — Freehand Nail Art Studio"/>
 <meta property="og:description" content="Austin TX nail artist &amp; freehand specialist. Custom nail art, acrylic sets, Gel X, BIAB, 3D nails. Private studio — by appointment only. Text (425) 905-0469."/>
 <meta property="og:image" content="https://www.nailsbythuy.com/images/og-cover.jpg"/>
-<meta property="og:image:width" content="1400"/>
-<meta property="og:image:height" content="787"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta property="og:image:type" content="image/jpeg"/>
 <meta property="og:image:alt" content="Custom freehand nail art by Thuy — Austin TX nail artist"/>
 <meta property="og:url" content="https://www.nailsbythuy.com/"/>
@@ -123,8 +123,8 @@
       "mainEntityOfPage": {"@id": "https://www.nailsbythuy.com/#webpage"},
       "image": [
         "https://www.nailsbythuy.com/images/og-cover.jpg",
-        "https://www.nailsbythuy.com/images/hero-nails-900.jpg",
-        "https://www.nailsbythuy.com/images/portrait-thuy-900.jpg"
+        "https://www.nailsbythuy.com/images/chrome-nails-austin-01-900.webp",
+        "https://www.nailsbythuy.com/images/about-profile-photo-900.webp"
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -266,6 +266,11 @@
       "dateModified": "2026-05-19",
       "inLanguage": "en-US",
       "publisher": {"@id": "https://www.nailsbythuy.com/#business"},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {"@type": "EntryPoint", "urlTemplate": "https://www.nailsbythuy.com/blog?q={search_term_string}"},
+        "query-input": "required name=search_term_string"
+      },
       "speakable": {
         "@type": "SpeakableSpecification",
         "cssSelector": ["#speakable-about", ".hero-title", "#services .section-head", "#booking .t-heading"]
@@ -278,7 +283,7 @@
       "name": "Nails by Thuy",
       "description": "Official website of Nails by Thuy — Austin TX freehand nail art specialist.",
       "inLanguage": "en-US",
-      "primaryImageOfPage": "https://www.nailsbythuy.com/images/hero-nails-900.jpg",
+      "primaryImageOfPage": "https://www.nailsbythuy.com/images/og-cover.jpg",
       "mainEntity": {"@id": "https://www.nailsbythuy.com/#business"}
     },
     {
@@ -607,7 +612,7 @@
     <div class="hero-texture"></div>
     <div class="hero-word">Twee</div>
     <div class="hero-pill">
-        <img src="https://www.nailsbythuy.com/images/hero-nails-900.jpg" alt="Nails by Thuy — Freehand Nail Art Austin TX" loading="eager" fetchpriority="high" width="1200" height="900" decoding="sync"/>
+        <img src="/images/logo-nailsbythuy-400.webp" alt="Nails by Thuy logo — Made With Love" loading="eager" fetchpriority="high" width="400" height="400" decoding="sync"/>
       </div>
   </div>
 </section>
@@ -618,7 +623,7 @@
 </div>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" aria-label="About Thuy — Master Nail Artist">
   <div class="about-grid">
     <div class="about-visual">
       <div class="about-mono">T</div>
@@ -640,7 +645,10 @@
     </div>
     <div class="about-content">
       <div class="about-profile-photo">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOA262XONbzlPzY_tbc-eY1P9df82PbQpssLnRn9WtaOqKLlvOSrSHACtW-YhAsmEq1J0xC1lufWEUSI5hR2ZW39sj0_EU-NU-jTMCLDbGp8jWpszk=w400-k-no" alt="Thuy (Twee) — Master Nail Artist and freehand nail art specialist in Austin TX 78725" loading="lazy" width="400" height="400" decoding="async"/>
+        <picture>
+          <source type="image/webp" srcset="/images/about-profile-photo-400.webp 400w, /images/about-profile-photo-900.webp 900w" sizes="(max-width:600px) 280px, 380px"/>
+          <img src="/images/about-profile-photo-400.webp" alt="Thuy (Twee) — Master Nail Artist and freehand nail art specialist in Austin TX 78725" loading="lazy" width="400" height="400" decoding="async"/>
+        </picture>
       </div>
       <p class="t-label reveal">About Thuy</p>
       <h2 class="t-heading reveal">Meet <em>Twee</em>,<br/>Your Nail Artist</h2>
@@ -665,7 +673,7 @@
 </section>
 
 <!-- SERVICES -->
-<section class="section section--dark" id="services" style="scroll-margin-top:80px">
+<section class="section section--dark" id="services" aria-label="Nail Services" style="scroll-margin-top:80px">
   <div class="section-head reveal" style="align-items:center">
     <div class="section-head-left">
       <p class="t-label" style="color:var(--sand)">What I Offer</p>
@@ -728,7 +736,7 @@
 </section>
 
 <!-- RECENT WORK SHOWCASE -->
-<section class="section section--dark" id="gallery" style="scroll-margin-top:80px">
+<section class="section section--dark" id="gallery" aria-label="Nail Art Gallery" style="scroll-margin-top:80px">
   <div class="section-head reveal" style="align-items:center">
     <div class="section-head-left">
       <p class="t-label" style="color:var(--sand)">Portfolio</p>
@@ -802,58 +810,58 @@
   <!-- MASONRY GRID VIEW — static <picture> markup for SEO/crawlers; JS wires interaction -->
   <div class="gallery-masonry" id="masonryView">
     <figure class="gallery-masonry-item" data-idx="0" role="button" tabindex="0" aria-label="View Chrome Nails — Mirror Finish">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/chrome-nails-austin-01.avif"><source type="image/webp" srcset="/images/chrome-nails-austin-01-400.webp 400w, /images/chrome-nails-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/chrome-nails-austin-01-400.webp" alt="Pink chrome almond nails with mirror chrome finish — luxury nail art in Austin TX by Nails by Thuy" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/chrome-nails-austin-01.avif"><source type="image/webp" srcset="/images/chrome-nails-austin-01-400.webp 400w, /images/chrome-nails-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/chrome-nails-austin-01-400.webp" alt="Pink chrome almond nails with mirror chrome finish — luxury nail art in Austin TX by Nails by Thuy" loading="lazy" decoding="async" width="400" height="698" style="object-position:center 48%"></picture>
       <div class="gm-overlay"><div class="gm-label">Chrome Nails — Mirror Finish</div><div class="gm-cat">Chrome Nails · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="1" role="button" tabindex="0" aria-label="View Chrome Nails — Cat Eye">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/chrome-nails-austin-02.avif"><source type="image/webp" srcset="/images/chrome-nails-austin-02-400.webp 400w, /images/chrome-nails-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/chrome-nails-austin-02-400.webp" alt="Cat eye chrome nails with reflective metallic shimmer — luxury nail studio Austin TX by Nails by Thuy" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/chrome-nails-austin-02.avif"><source type="image/webp" srcset="/images/chrome-nails-austin-02-400.webp 400w, /images/chrome-nails-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/chrome-nails-austin-02-400.webp" alt="Cat eye chrome nails with reflective metallic shimmer — luxury nail studio Austin TX by Nails by Thuy" loading="lazy" decoding="async" width="400" height="600" style="object-position:center 42%"></picture>
       <div class="gm-overlay"><div class="gm-label">Chrome Nails — Cat Eye</div><div class="gm-cat">Chrome Nails · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="2" role="button" tabindex="0" aria-label="View Gel X Extensions — Sculpted">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/gel-x-extensions-austin-01.avif"><source type="image/webp" srcset="/images/gel-x-extensions-austin-01-400.webp 400w, /images/gel-x-extensions-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/gel-x-extensions-austin-01-400.webp" alt="Sculpted Gel X soft gel nail extensions with French tip free edge — nail studio Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/gel-x-extensions-austin-01.avif"><source type="image/webp" srcset="/images/gel-x-extensions-austin-01-400.webp 400w, /images/gel-x-extensions-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/gel-x-extensions-austin-01-400.webp" alt="Sculpted Gel X soft gel nail extensions with French tip free edge — nail studio Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400" height="600" style="object-position:center 32%"></picture>
       <div class="gm-overlay"><div class="gm-label">Gel X Extensions — Sculpted</div><div class="gm-cat">Gel X Extensions · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="3" role="button" tabindex="0" aria-label="View Gel X Extensions — Glossy">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/gel-x-extensions-austin-02.avif"><source type="image/webp" srcset="/images/gel-x-extensions-austin-02-400.webp 400w, /images/gel-x-extensions-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/gel-x-extensions-austin-02-400.webp" alt="Gel X nail extensions elegant square shape with glossy topcoat — Nails by Thuy Austin TX" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/gel-x-extensions-austin-02.avif"><source type="image/webp" srcset="/images/gel-x-extensions-austin-02-400.webp 400w, /images/gel-x-extensions-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/gel-x-extensions-austin-02-400.webp" alt="Gel X nail extensions elegant square shape with glossy topcoat — Nails by Thuy Austin TX" loading="lazy" decoding="async" width="400" height="515" style="object-position:center 40%"></picture>
       <div class="gm-overlay"><div class="gm-label">Gel X Extensions — Glossy</div><div class="gm-cat">Gel X Extensions · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="4" role="button" tabindex="0" aria-label="View French Tip Nails — Classic">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/french-tip-nails-austin-01.avif"><source type="image/webp" srcset="/images/french-tip-nails-austin-01-400.webp 400w, /images/french-tip-nails-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/french-tip-nails-austin-01-400.webp" alt="Classic French tip manicure with clean white free edge — nail art Austin TX by Nails by Thuy" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/french-tip-nails-austin-01.avif"><source type="image/webp" srcset="/images/french-tip-nails-austin-01-400.webp 400w, /images/french-tip-nails-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/french-tip-nails-austin-01-400.webp" alt="Classic French tip manicure with clean white free edge — nail art Austin TX by Nails by Thuy" loading="lazy" decoding="async" width="400" height="600" style="object-position:center 52%"></picture>
       <div class="gm-overlay"><div class="gm-label">French Tip Nails — Classic</div><div class="gm-cat">French Tip · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="5" role="button" tabindex="0" aria-label="View French Tip Nails — Modern">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/french-tip-nails-austin-02.avif"><source type="image/webp" srcset="/images/french-tip-nails-austin-02-400.webp 400w, /images/french-tip-nails-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/french-tip-nails-austin-02-400.webp" alt="Modern French tip nail design almond shape with elevated detail — nail artist Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/french-tip-nails-austin-02.avif"><source type="image/webp" srcset="/images/french-tip-nails-austin-02-400.webp 400w, /images/french-tip-nails-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/french-tip-nails-austin-02-400.webp" alt="Modern French tip nail design almond shape with elevated detail — nail artist Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400" height="600" style="object-position:center 35%"></picture>
       <div class="gm-overlay"><div class="gm-label">French Tip Nails — Modern</div><div class="gm-cat">French Tip · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="6" role="button" tabindex="0" aria-label="View Builder Gel BIAB — Natural">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/builder-gel-austin-01.avif"><source type="image/webp" srcset="/images/builder-gel-austin-01-400.webp 400w, /images/builder-gel-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/builder-gel-austin-01-400.webp" alt="Builder gel BIAB nail manicure with reinforced apex and natural nude finish — Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/builder-gel-austin-01.avif"><source type="image/webp" srcset="/images/builder-gel-austin-01-400.webp 400w, /images/builder-gel-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/builder-gel-austin-01-400.webp" alt="Builder gel BIAB nail manicure with reinforced apex and natural nude finish — Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400" height="516" style="object-position:center 45%"></picture>
       <div class="gm-overlay"><div class="gm-label">Builder Gel BIAB — Natural</div><div class="gm-cat">Builder Gel · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="7" role="button" tabindex="0" aria-label="View Builder Gel — Glossy Finish">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/builder-gel-austin-02.avif"><source type="image/webp" srcset="/images/builder-gel-austin-02-400.webp 400w, /images/builder-gel-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/builder-gel-austin-02-400.webp" alt="Mirror-glossy builder gel nails strengthened natural nail base — Nails by Thuy Austin TX" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/builder-gel-austin-02.avif"><source type="image/webp" srcset="/images/builder-gel-austin-02-400.webp 400w, /images/builder-gel-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/builder-gel-austin-02-400.webp" alt="Mirror-glossy builder gel nails strengthened natural nail base — Nails by Thuy Austin TX" loading="lazy" decoding="async" width="400" height="529" style="object-position:center 30%"></picture>
       <div class="gm-overlay"><div class="gm-label">Builder Gel — Glossy Finish</div><div class="gm-cat">Builder Gel · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="8" role="button" tabindex="0" aria-label="View Luxury Pedicure — Gel">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/pedicure-nails-austin-01.avif"><source type="image/webp" srcset="/images/pedicure-nails-austin-01-400.webp 400w, /images/pedicure-nails-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/pedicure-nails-austin-01-400.webp" alt="Luxury gel pedicure with immaculate color and flawless finish — nail salon Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/pedicure-nails-austin-01.avif"><source type="image/webp" srcset="/images/pedicure-nails-austin-01-400.webp 400w, /images/pedicure-nails-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/pedicure-nails-austin-01-400.webp" alt="Luxury gel pedicure with immaculate color and flawless finish — nail salon Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400" height="710" style="object-position:center 45%"></picture>
       <div class="gm-overlay"><div class="gm-label">Luxury Pedicure — Gel</div><div class="gm-cat">Pedicure · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="9" role="button" tabindex="0" aria-label="View Pedicure — Nail Art Detail">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/pedicure-nails-austin-02.avif"><source type="image/webp" srcset="/images/pedicure-nails-austin-02-400.webp 400w, /images/pedicure-nails-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/pedicure-nails-austin-02-400.webp" alt="Pedicure with custom freehand nail art detail and premium gel finish — luxury nail studio Austin TX" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/pedicure-nails-austin-02.avif"><source type="image/webp" srcset="/images/pedicure-nails-austin-02-400.webp 400w, /images/pedicure-nails-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/pedicure-nails-austin-02-400.webp" alt="Pedicure with custom freehand nail art detail and premium gel finish — luxury nail studio Austin TX" loading="lazy" decoding="async" width="400" height="716" style="object-position:center 35%"></picture>
       <div class="gm-overlay"><div class="gm-label">Pedicure — Nail Art Detail</div><div class="gm-cat">Pedicure · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="10" role="button" tabindex="0" aria-label="View Seasonal Nail Art — Editorial">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/seasonal-nail-art-austin-01.avif"><source type="image/webp" srcset="/images/seasonal-nail-art-austin-01-400.webp 400w, /images/seasonal-nail-art-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/seasonal-nail-art-austin-01-400.webp" alt="Editorial seasonal nail art hand-painted freehand details — nail artist Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/seasonal-nail-art-austin-01.avif"><source type="image/webp" srcset="/images/seasonal-nail-art-austin-01-400.webp 400w, /images/seasonal-nail-art-austin-01-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/seasonal-nail-art-austin-01-400.webp" alt="Editorial seasonal nail art hand-painted freehand details — nail artist Austin TX Nails by Thuy" loading="lazy" decoding="async" width="400" height="499" style="object-position:center 28%"></picture>
       <div class="gm-overlay"><div class="gm-label">Seasonal Nail Art — Editorial</div><div class="gm-cat">Seasonal Art · Austin TX</div></div>
     </figure>
     <figure class="gallery-masonry-item" data-idx="11" role="button" tabindex="0" aria-label="View Seasonal Nail Art — Bespoke">
-      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/seasonal-nail-art-austin-02.avif"><source type="image/webp" srcset="/images/seasonal-nail-art-austin-02-400.webp 400w, /images/seasonal-nail-art-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/seasonal-nail-art-austin-02-400.webp" alt="Bespoke seasonal nail art layered techniques custom color palette — Austin TX nail art Nails by Thuy" loading="lazy" decoding="async" width="400"></picture>
+      <picture><source type="image/avif" srcset="/nailsbythuy-showcase-seo/seasonal-nail-art-austin-02.avif"><source type="image/webp" srcset="/images/seasonal-nail-art-austin-02-400.webp 400w, /images/seasonal-nail-art-austin-02-900.webp 900w" sizes="(max-width:600px) 50vw, 33vw"><img src="/images/seasonal-nail-art-austin-02-400.webp" alt="Bespoke seasonal nail art layered techniques custom color palette — Austin TX nail art Nails by Thuy" loading="lazy" decoding="async" width="400" height="600" style="object-position:center 38%"></picture>
       <div class="gm-overlay"><div class="gm-label">Seasonal Nail Art — Bespoke</div><div class="gm-cat">Seasonal Art · Austin TX</div></div>
     </figure>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section section--bone" id="experience" style="scroll-margin-top:80px">
+<section class="section section--bone" id="experience" aria-label="Studio Experience" style="scroll-margin-top:80px">
   <div class="section-head reveal" style="align-items:center">
     <div class="section-head-left">
       <p class="t-label">How It Works</p>
@@ -1019,7 +1027,7 @@
 </section>
 
 <!-- BOOKING -->
-<section class="section--dark" id="booking" style="scroll-margin-top:80px">
+<section class="section--dark" id="booking" aria-label="Book an Appointment" style="scroll-margin-top:80px">
   <div class="booking-grid">
     <div class="booking-info">
       <p class="t-label" style="color:var(--sand)">Ready for your set?</p>
@@ -1252,6 +1260,7 @@
       <a href="https://photos.app.goo.gl/MtWFs2oWE9V7VMas8" target="_blank" rel="noopener noreferrer">Photos</a>
       <a href="https://maps.app.goo.gl/YMsQDuWs2UDaaP56A" target="_blank" rel="noopener noreferrer" aria-label="View Nails by Thuy on Google Maps">Google Maps</a>
       <a href="sms:+14259050469?body=Hi%20Thuy!%20I%27d%20like%20to%20book%20an%20appointment%20%F0%9F%92%85" id="footerTextBtn">Text Us</a>
+      <a href="/privacy-policy">Privacy</a>
     </div>
   </div>
 </footer>

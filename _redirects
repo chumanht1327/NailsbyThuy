@@ -19,6 +19,7 @@ https://nailsbythuy.com/* https://www.nailsbythuy.com/:splat 301!
 # ── Services: 200 rewrite keeps URL as /services (matches canonical)
 /services             /services.html       200
 /service              /services            301
+/privacy-policy       /privacy-policy.html 200
 
 # ── Blog hub
 /blog                 /blog.html           200
