@@ -139,7 +139,7 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .showcase-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,rgba(0,0,0,.15) 45%,transparent 68%);}
 .showcase-count{position:absolute;top:28px;left:32px;font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:rgba(242,207,193,.7);line-height:1;}
 .showcase-content{position:absolute;left:0;right:0;bottom:18px;display:flex;justify-content:center;align-items:center}
-.showcase-btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.28);color:white;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;backdrop-filter:blur(12px);background:rgba(0,0,0,.32);transition:background .3s,border-color .3s,transform .2s;cursor:pointer;white-space:nowrap;gap:0;}
+.showcase-btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;min-height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.28);color:white;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;backdrop-filter:blur(12px);background:rgba(0,0,0,.32);transition:background .3s,border-color .3s,transform .2s;cursor:pointer;white-space:nowrap;gap:0;}
 .showcase-btn:hover{background:rgba(181,98,79,.55);border-color:var(--terra);transform:scale(1.04)}
 .showcase-stage{width:100%;display:flex;align-items:center;overflow:visible;}
 .showcase-nav{position:absolute;transform:translate(-50%,-50%);z-index:10;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(10,6,5,.65);color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;cursor:pointer;transition:background .22s ease,border-color .22s ease,transform .18s ease;-webkit-tap-highlight-color:transparent;user-select:none;}
@@ -229,7 +229,7 @@ to top,rgba(0,0,0,.78) 0%,rgba(0,0,0,.18) 48%,transparent 72%
 .review-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;line-height:1.75;color:var(--ink);margin-bottom:20px}
 .review-author{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
 .reviews-disclaimer{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(24,18,15,.35);text-align:center;padding:14px 0 0;border-top:1px solid rgba(24,18,15,.07);margin-top:8px}
-.rev-pause-btn{background:none;border:1px solid rgba(248,245,240,.18);color:rgba(248,245,240,.45);font-size:.82rem;line-height:1;padding:0;width:32px;height:32px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s,color .2s}
+.rev-pause-btn{background:none;border:1px solid rgba(248,245,240,.18);color:rgba(248,245,240,.45);font-size:.82rem;line-height:1;padding:0;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s,color .2s}
 .rev-pause-btn:hover,.rev-pause-btn:focus-visible{border-color:var(--sand);color:var(--paper);outline:none}
 
 .booking-grid{display:grid;grid-template-columns:1fr 1fr;min-height:420px}
