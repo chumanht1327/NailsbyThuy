@@ -11,8 +11,9 @@
 <link rel="dns-prefetch" href="https://www.instagram.com"/>
 <link rel="dns-prefetch" href="https://maps.app.goo.gl"/>
 <link rel="dns-prefetch" href="https://www.google.com"/>
-<!-- Preload LCP bg-texture — fetchpriority high tells browser this is the LCP resource -->
-<link rel="preload" as="image" href="/images/bg-texture.webp" fetchpriority="high" type="image/webp"/>
+<!-- Preload LCP hero photo — responsive srcset preload -->
+<link rel="preload" as="image" href="/images/hero-bg-900.webp" imagesrcset="/images/hero-bg-400.webp 400w, /images/hero-bg-900.webp 900w, /images/hero-bg-1400.webp 1400w" imagesizes="(max-width:900px) 100vw, 50vw" fetchpriority="high" type="image/webp"/>
+<link rel="preload" as="image" href="/images/bg-texture.webp" fetchpriority="auto" type="image/webp"/>
 <!-- Preload hero logo and profile photo -->
 <link rel="preload" as="image" href="/images/logo-nailsbythuy-400.webp" fetchpriority="auto" type="image/webp"/>
 <link rel="preload" as="image" href="/images/about-profile-photo-400.webp" fetchpriority="auto" type="image/webp"/>
@@ -609,6 +610,10 @@
     </div>
   </div>
   <div class="hero-right">
+    <picture>
+      <source type="image/avif" srcset="/images/hero-bg-400.avif 400w, /images/hero-bg-900.avif 900w, /images/hero-bg-1400.avif 1400w" sizes="(max-width:900px) 100vw, 50vw">
+      <img class="hero-photo" srcset="/images/hero-bg-400.webp 400w, /images/hero-bg-900.webp 900w, /images/hero-bg-1400.webp 1400w" sizes="(max-width:900px) 100vw, 50vw" src="/images/hero-bg-900.webp" alt="Freehand gel-X nail art by Thuy — botanical design on almond nails, Austin TX" loading="eager" fetchpriority="high" decoding="sync" width="900" height="1030">
+    </picture>
     <div class="hero-bg"></div>
     <div class="hero-texture"></div>
     <div class="hero-word">Twee</div>
