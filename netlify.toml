@@ -41,7 +41,7 @@
     Strict-Transport-Security  = "max-age=31536000; includeSubDomains; preload"
     Permissions-Policy         = "camera=(), microphone=(), geolocation=(), payment=()"
     X-XSS-Protection           = "1; mode=block"
-    Content-Security-Policy    = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
+    Content-Security-Policy    = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com; connect-src 'self'; frame-src https://www.google.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'"
 
 # HTML pages — no cache (always fresh)
 [[headers]]
