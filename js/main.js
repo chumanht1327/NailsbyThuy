@@ -518,12 +518,13 @@ const FALLBACK_REVIEWS=[
   {stars:5,text:"Thuy has been my nail tech and friend for nearly 8 years. A true gem of a person. Amazing artist. I have loved every set. Sometimes I come in and get vetoed. Thuy sees my idea and says \u201cno, that\u2019s too basic, you won\u2019t be happy. I got this,\u201d and then knocks out a design that blows me away. Anyone who passes up booking with her is truly missing out and I pity you deeply.",author:"Maggie Kieffer",date:"June 2025"},
   {stars:5,text:"Thuy is amazing! If you\u2019re looking for a nail tech who is extremely talented, takes pride in their work and is friendly, then look no further! She executes every requested design with perfection. I have never been disappointed in her work. She is reasonably priced even though she provides top of the line quality designs.",author:"Ty Bush",date:"July 2025"},
 ];
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function showReviews(reviews){
   document.getElementById('revTrack').innerHTML=[...reviews,...reviews].map(r=>`
     <div class="review-card" itemscope itemtype="https://schema.org/Review">
       <div class="review-stars">${'★'.repeat(Math.min(5,r.stars||5))}</div>
-      <div class="review-text">"${r.text}"</div>
-      <div class="review-author">${r.author}${r.date?' · '+r.date:''}</div>
+      <div class="review-text">"${esc(r.text)}"</div>
+      <div class="review-author">${esc(r.author)}${r.date?' · '+esc(r.date):''}</div>
     </div>`).join('');
 }
 // Show curated reviews immediately — no layout shift, no waiting

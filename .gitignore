@@ -1,0 +1,23 @@
+# Source images (converted to WebP for serving — originals not needed in deploy)
+images/*.jpg
+images/*.JPG
+images/*.png
+images/*.jpeg
+
+# Keep WebP and AVIF (these are the served assets)
+!images/*.webp
+!images/*.avif
+
+# Keep og-cover.jpg and hero-nails-900.jpg (used in JSON-LD / OG — no WebP version)
+!images/og-cover.jpg
+!images/hero-nails-900.jpg
+!images/bg-texture.jpg
+
+# Node
+node_modules/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
