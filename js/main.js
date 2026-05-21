@@ -132,14 +132,16 @@ function lazyLoadShowcase(){
     entries.forEach(e=>{
       if(e.isIntersecting){
         const img=e.target;
+        obs.unobserve(img);
+        if(!img.dataset.src)return;  /* goTo() already loaded this image */
         const pic=img.parentElement;
         if(pic&&pic.tagName==='PICTURE'){
           const src=pic.querySelector('source[data-srcset]');
           if(src){src.srcset=src.dataset.srcset;src.removeAttribute('data-srcset');}
         }
+        img.loading='eager';
         img.src=img.dataset.src;
         img.removeAttribute('data-src');
-        obs.unobserve(img);
       }
     });
   },{rootMargin:'400px'});
@@ -211,7 +213,7 @@ function initShowcase(){
     const pos=p.pos?` style="object-position:${p.pos}"`:''
     const imgEl= i===0
       ? `<picture><source type="image/avif" srcset="${p.avif}" media="(min-width:769px)"><img src="${p.thumb}" alt="${p.alt}" loading="eager" fetchpriority="high" decoding="sync"${pos}></picture>`
-      : `<picture><source type="image/avif" data-srcset="${p.avif}" media="(min-width:769px)"><img data-src="${p.thumb}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="${p.alt}" loading="lazy" decoding="async"${pos}></picture>`;
+      : `<picture><source type="image/avif" data-srcset="${p.avif}" media="(min-width:769px)"><img data-src="${p.thumb}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="${p.alt}" loading="eager" decoding="async"${pos}></picture>`;
     return `<div class="showcase-card${i===0?' active':''}" data-idx="${i}">
       ${imgEl}
       <div class="showcase-overlay"></div>
@@ -267,11 +269,7 @@ function goTo(n){
     const ci=cards[ni];
     const cimg=ci?.querySelector('img[data-src]');
     if(!cimg)return;
-    const cpic=cimg.parentElement;
-    if(cpic&&cpic.tagName==='PICTURE'){
-      const csrc=cpic.querySelector('source[data-srcset]');
-      if(csrc){csrc.srcset=csrc.dataset.srcset;csrc.removeAttribute('data-srcset');}
-    }
+    cimg.loading='eager';
     cimg.src=cimg.dataset.src;
     cimg.removeAttribute('data-src');
   });
