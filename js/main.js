@@ -225,20 +225,22 @@ function initShowcase(){
 
   lazyLoadShowcase();
 
+  /* Hide until positioned — prevents flash of unpositioned cards */
+  showcaseTrack.style.visibility='hidden';
+
   /* Measure + position after browser paints — guarantees real offsetWidth */
   requestAnimationFrame(function(){
     requestAnimationFrame(function(){
       if(_measureLayout()){
         positionNavButtons();
+        showcaseTrack.style.transition='none'; /* no slide-in on first paint */
         applyPosition();
+        void showcaseTrack.offsetWidth;        /* flush style before restore */
+        showcaseTrack.style.visibility='';
+        showcaseTrack.style.transition='';
       }
     });
   });
-}
-
-function renderShowcase(){
-  /* Resize alias */
-  if(_measureLayout()) applyPosition();
 }
 
 function goTo(n){
