@@ -12,9 +12,9 @@
 <link rel="dns-prefetch" href="https://maps.app.goo.gl"/>
 <link rel="dns-prefetch" href="https://www.google.com"/>
 <!-- Preload LCP hero image for fastest First Contentful Paint -->
-<link rel="preload" as="image" href="/images/hero-nails-900.jpg" fetchpriority="high" type="image/jpeg"/>
+<link rel="preload" as="image" href="/images/logo-nailsbythuy-400.webp" fetchpriority="high" type="image/webp"/>
 <!-- Preload above-fold profile photo to reduce CLS -->
-<link rel="preload" as="image" href="https://lh3.googleusercontent.com/pw/AP1GczOA262XONbzlPzY_tbc-eY1P9df82PbQpssLnRn9WtaOqKLlvOSrSHACtW-YhAsmEq1J0xC1lufWEUSI5hR2ZW39sj0_EU-NU-jTMCLDbGp8jWpszk=w400-k-no" fetchpriority="auto"/>
+<link rel="preload" as="image" href="/images/about-profile-photo-400.webp" fetchpriority="auto" type="image/webp"/>
 
 <!-- ── FAVICON / PWA ──────────────────────────────────────────────── -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318120f'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23b5624f'%3ET%3C/text%3E%3C/svg%3E"/>
@@ -124,7 +124,7 @@
       "image": [
         "https://www.nailsbythuy.com/images/og-cover.jpg",
         "https://www.nailsbythuy.com/images/hero-nails-900.jpg",
-        "https://www.nailsbythuy.com/images/portrait-thuy-900.jpg"
+        "https://www.nailsbythuy.com/images/about-profile-photo-900.webp"
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -607,7 +607,7 @@
     <div class="hero-texture"></div>
     <div class="hero-word">Twee</div>
     <div class="hero-pill">
-        <img src="/images/hero-nails-900.jpg" alt="Nails by Thuy — Freehand Nail Art Austin TX" loading="eager" fetchpriority="high" width="1200" height="900" decoding="sync"/>
+        <img src="/images/logo-nailsbythuy-400.webp" alt="Nails by Thuy logo — Made With Love" loading="eager" fetchpriority="high" width="400" height="400" decoding="sync"/>
       </div>
   </div>
 </section>
@@ -640,7 +640,10 @@
     </div>
     <div class="about-content">
       <div class="about-profile-photo">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOA262XONbzlPzY_tbc-eY1P9df82PbQpssLnRn9WtaOqKLlvOSrSHACtW-YhAsmEq1J0xC1lufWEUSI5hR2ZW39sj0_EU-NU-jTMCLDbGp8jWpszk=w400-k-no" alt="Thuy (Twee) — Master Nail Artist and freehand nail art specialist in Austin TX 78725" loading="lazy" width="400" height="400" decoding="async"/>
+        <picture>
+          <source type="image/webp" srcset="/images/about-profile-photo-400.webp 400w, /images/about-profile-photo-900.webp 900w" sizes="(max-width:600px) 280px, 380px"/>
+          <img src="/images/about-profile-photo-400.webp" alt="Thuy (Twee) — Master Nail Artist and freehand nail art specialist in Austin TX 78725" loading="lazy" width="400" height="400" decoding="async"/>
+        </picture>
       </div>
       <p class="t-label reveal">About Thuy</p>
       <h2 class="t-heading reveal">Meet <em>Twee</em>,<br/>Your Nail Artist</h2>
