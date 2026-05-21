@@ -98,7 +98,8 @@ document.querySelectorAll('.faq-item').forEach(function(item){
     var isOpen=item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(function(i){
       i.classList.remove('open');
-      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      var q=i.querySelector('.faq-q');
+      if(q) q.setAttribute('aria-expanded','false');
     });
     if(!isOpen){
       item.classList.add('open');
@@ -233,12 +234,13 @@ function initShowcase(){
     requestAnimationFrame(function(){
       if(_measureLayout()){
         positionNavButtons();
-        showcaseTrack.style.transition='none'; /* no slide-in on first paint */
+        showcaseTrack.style.transition='none'; /* snap to position, no slide-in */
         applyPosition();
-        void showcaseTrack.offsetWidth;        /* flush style before restore */
-        showcaseTrack.style.visibility='';
-        showcaseTrack.style.transition='';
       }
+      showcaseTrack.style.visibility='';       /* always reveal even if measure failed */
+      requestAnimationFrame(function(){
+        showcaseTrack.style.transition='';     /* re-enable for user interactions */
+      });
     });
   });
 }

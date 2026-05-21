@@ -101,7 +101,7 @@ details.faq-item .faq-answer{padding:0 0 22px;font-size:.88rem;line-height:1.9;c
 .footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.2em;color:rgba(248,245,240,.85)}
 .footer-nap{font-size:.6rem;color:rgba(248,245,240,.3);margin-top:5px;letter-spacing:.1em}
 .footer-links{display:flex;gap:18px;flex-wrap:wrap}
-.footer-links a{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,245,240,.38);transition:color .25s}
+.footer-links a{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,245,240,.60);transition:color .25s}
 .footer-links a:hover{color:var(--sand)}
 @media(max-width:768px){.site-footer{padding:32px 22px}}
 .article-hero{margin:0 0 52px;overflow:hidden;border-radius:4px}
