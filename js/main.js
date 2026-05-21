@@ -200,7 +200,7 @@ function cacheLayout(){  _measureLayout(); }
 
 function applyPosition(){
   if(!_cw) return;
-  showcaseTrack.style.marginLeft = (_shellW/2 - _cw/2 - showcaseIdx*_cw) + 'px';
+  showcaseTrack.style.transform = 'translateX(' + (_shellW/2 - _cw/2 - showcaseIdx*_cw) + 'px)';
 }
 
 function initShowcase(){
@@ -209,8 +209,8 @@ function initShowcase(){
   showcaseTrack.innerHTML=SHOWCASE_IMAGES.map((p,i)=>{
     const pos=p.pos?` style="object-position:${p.pos}"`:''
     const imgEl= i===0
-      ? `<picture><source type="image/avif" srcset="${p.avif}"><img src="${p.thumb}" alt="${p.alt}" loading="eager" fetchpriority="high" decoding="sync"${pos}></picture>`
-      : `<picture><source type="image/avif" data-srcset="${p.avif}"><img data-src="${p.thumb}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="${p.alt}" loading="lazy" decoding="async"${pos}></picture>`;
+      ? `<picture><source type="image/avif" srcset="${p.avif}" media="(min-width:769px)"><img src="${p.thumb}" alt="${p.alt}" loading="eager" fetchpriority="high" decoding="sync"${pos}></picture>`
+      : `<picture><source type="image/avif" data-srcset="${p.avif}" media="(min-width:769px)"><img data-src="${p.thumb}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="${p.alt}" loading="lazy" decoding="async"${pos}></picture>`;
     return `<div class="showcase-card${i===0?' active':''}" data-idx="${i}">
       ${imgEl}
       <div class="showcase-overlay"></div>
@@ -256,7 +256,6 @@ function goTo(n){
 
   /* Slide track */
   applyPosition();
-  positionNavButtons();
 
   /* Lazy-load the newly visible card and its neighbours */
   [showcaseIdx, showcaseIdx-1, showcaseIdx+1].forEach(j=>{
@@ -313,8 +312,7 @@ showcaseTrack.addEventListener('click',e=>{
   },{passive:true});
 })();
 var _rsTimer;window.addEventListener('resize',function(){clearTimeout(_rsTimer);_rsTimer=setTimeout(function(){if(_measureLayout()){applyPosition();positionNavButtons();}},150);});
-initShowcase();
-startAuto();
+requestAnimationFrame(function(){ initShowcase(); startAuto(); });
 
 /* ── Masonry Grid ────────────────────────────────────────────────── */
 (function(){
@@ -527,11 +525,10 @@ function showReviews(reviews){
       <div class="review-author">${esc(r.author)}${r.date?' · '+esc(r.date):''}</div>
     </div>`).join('');
 }
-// Show curated reviews immediately — no layout shift, no waiting
-showReviews(FALLBACK_REVIEWS);
-
-// After paint, fetch live Google reviews and silently upgrade
+// Defer reviews DOM build to after first paint — reviews are below the fold
 requestAnimationFrame(function(){
+  showReviews(FALLBACK_REVIEWS);
+  // After paint, fetch live Google reviews and silently upgrade
   var ctrl=new AbortController();
   var tid=setTimeout(function(){ctrl.abort();},6000);
   fetch('/.netlify/functions/get-reviews',{signal:ctrl.signal})
@@ -628,6 +625,7 @@ requestAnimationFrame(function(){
     btn.addEventListener('click', function() {
       var isOpen = panel.classList.toggle('open');
       panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      if(isOpen) panel.removeAttribute('inert'); else panel.setAttribute('inert','');
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       btn.classList.toggle('open', isOpen);
       btn.querySelector('.expand-label').textContent = isOpen ? closeLabel : openLabel;
@@ -649,12 +647,14 @@ requestAnimationFrame(function(){
     isOpen=true;fab.classList.add('open');
     btn.setAttribute('aria-expanded','true');
     actions.removeAttribute('aria-hidden');
+    actions.removeAttribute('inert');
     btn.setAttribute('aria-label','Close booking options');
   }
   function closeFab(){
     isOpen=false;fab.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
     actions.setAttribute('aria-hidden','true');
+    actions.setAttribute('inert','');
     btn.setAttribute('aria-label','Open booking options');
   }
   btn.addEventListener('click',function(e){e.stopPropagation();isOpen?closeFab():openFab()});
@@ -665,6 +665,26 @@ requestAnimationFrame(function(){
   }
   document.addEventListener('click',function(e){if(isOpen&&!fab.contains(e.target))closeFab()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isOpen)closeFab()});
+})();
+
+/* ── Lazy-load Google Maps iframe when local-area scrolls into view ── */
+(function(){
+  var mapDiv=document.getElementById('mapEmbed');
+  if(!mapDiv)return;
+  var io=new IntersectionObserver(function(entries){
+    if(!entries[0].isIntersecting)return;
+    var iframe=document.createElement('iframe');
+    iframe.title='Nails by Thuy — Austin TX nail art studio on Google Maps';
+    iframe.src=mapDiv.dataset.src;
+    iframe.style.cssText='width:100%;height:100%;border:0;display:block';
+    iframe.loading='lazy';
+    iframe.allowFullscreen=true;
+    iframe.referrerPolicy='no-referrer-when-downgrade';
+    iframe.setAttribute('aria-label',mapDiv.getAttribute('aria-label'));
+    mapDiv.replaceWith(iframe);
+    io.disconnect();
+  },{rootMargin:'500px'});
+  io.observe(mapDiv);
 })();
 
 /* CWV monitoring — runs in idle time, never on critical path */
