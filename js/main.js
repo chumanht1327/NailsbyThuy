@@ -136,8 +136,7 @@ function lazyLoadShowcase(){
         if(!img.dataset.src)return;  /* goTo() already loaded this image */
         const pic=img.parentElement;
         if(pic&&pic.tagName==='PICTURE'){
-          const src=pic.querySelector('source[data-srcset]');
-          if(src){src.srcset=src.dataset.srcset;src.removeAttribute('data-srcset');}
+          pic.querySelectorAll('source[data-srcset]').forEach(src=>{src.srcset=src.dataset.srcset;src.removeAttribute('data-srcset');});
         }
         img.loading='eager';
         img.src=img.dataset.src;
@@ -205,8 +204,8 @@ function initShowcase(){
   showcaseTrack.innerHTML=SHOWCASE_IMAGES.map((p,i)=>{
     const pos=p.pos?` style="object-position:${p.pos}"`:''
     const imgEl= i===0
-      ? `<picture><source type="image/avif" srcset="${p.avif}" media="(min-width:769px)"><img src="${p.thumb}" alt="${p.alt}" loading="eager" fetchpriority="high" decoding="sync"${pos}></picture>`
-      : `<picture><source type="image/avif" data-srcset="${p.avif}" media="(min-width:769px)"><img data-src="${p.thumb}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="${p.alt}" loading="eager" decoding="async"${pos}></picture>`;
+      ? `<picture><source type="image/avif" srcset="${p.avif}" media="(min-width:769px)"><source type="image/webp" srcset="${p.thumb} 400w, ${p.url} 900w" sizes="(max-width:768px) 60vw, 21vw"><img src="${p.thumb}" alt="${p.alt}" loading="eager" fetchpriority="high" decoding="sync"${pos}></picture>`
+      : `<picture><source type="image/avif" data-srcset="${p.avif}" media="(min-width:769px)"><source type="image/webp" data-srcset="${p.thumb} 400w, ${p.url} 900w" sizes="(max-width:768px) 60vw, 21vw"><img data-src="${p.thumb}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="${p.alt}" loading="eager" decoding="async"${pos}></picture>`;
     return `<div class="showcase-card${i===0?' active':''}" data-idx="${i}">
       ${imgEl}
       <div class="showcase-overlay"></div>
@@ -262,6 +261,10 @@ function goTo(n){
     const ci=cards[ni];
     const cimg=ci?.querySelector('img[data-src]');
     if(!cimg)return;
+    const cpic=cimg.parentElement;
+    if(cpic?.tagName==='PICTURE'){
+      cpic.querySelectorAll('source[data-srcset]').forEach(src=>{src.srcset=src.dataset.srcset;src.removeAttribute('data-srcset');});
+    }
     cimg.loading='eager';
     cimg.src=cimg.dataset.src;
     cimg.removeAttribute('data-src');

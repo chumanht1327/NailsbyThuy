@@ -77,7 +77,7 @@ details.faq-item .faq-answer{padding:0 0 22px;font-size:.88rem;line-height:1.9;c
 /* CTA BLOCK */
 .article-cta{background:var(--ink);padding:40px 44px;margin:56px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .article-cta p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:rgba(248,245,240,.85);max-width:400px;line-height:1.5}
-.article-cta a{padding:14px 28px;background:var(--terra);color:#f8f5f0;font-size:.65rem;letter-spacing:.26em;text-transform:uppercase;white-space:nowrap;transition:background .22s;display:inline-block}
+.article-cta a{padding:14px 28px;background:var(--terra);color:#ffffff;font-size:.65rem;letter-spacing:.26em;text-transform:uppercase;white-space:nowrap;transition:background .22s;display:inline-block}
 .article-cta a:hover{background:#8e3c30}
 @media(max-width:640px){.article-cta{padding:28px 24px;flex-direction:column}}
 
