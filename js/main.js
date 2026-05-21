@@ -159,33 +159,27 @@ let showcaseIdx=0, autoPlay=true, scTimer=null, scTouchX=0;
 let _cw=0, _gap=0, _shellW=0;
 
 function positionNavButtons(){
-  /* Always re-measures _shellW fresh to avoid stale values */
+  /* _cw, _gap, _shellW already measured by _measureLayout() — no repeat reads needed */
   const shell   = document.getElementById('carouselView');
   const stage   = shell ? shell.querySelector('.showcase-stage') : null;
   const prevBtn = shell ? shell.querySelector('.showcase-prev')  : null;
   const nextBtn = shell ? shell.querySelector('.showcase-next')  : null;
-  const card    = showcaseTrack.querySelector('.showcase-card.active')
-               || showcaseTrack.querySelector('.showcase-card');
-  if(!shell||!stage||!prevBtn||!nextBtn||!card) return;
+  if(!shell||!stage||!prevBtn||!nextBtn||!_cw) return;
 
-  /* Always read fresh shell width — resize may have changed it */
-  const shellW   = shell.offsetWidth;
-  const cardW    = card.offsetWidth;
-  const cardH    = card.offsetHeight;
+  /* Only 2 layout reads needed — cardH and stageTop (not cached by _measureLayout) */
+  const card     = showcaseTrack.querySelector('.showcase-card.active')
+                || showcaseTrack.querySelector('.showcase-card');
+  const cardH    = card ? card.offsetHeight : 0;
   const stageTop = stage.offsetTop;
 
-  const cardLeft  = (shellW - cardW) / 2;   /* left edge of centered card in shell */
-  const cardRight = cardLeft + cardW;         /* right edge */
-  const cardMidY  = stageTop + cardH / 2;    /* vertical center */
+  const cardW    = _cw - _gap;
+  const cardLeft = (_shellW - cardW) / 2;
+  const cardMidY = stageTop + cardH / 2;
 
-  /* transform:translate(-50%,-50%) on .showcase-nav means these are center coords */
-  prevBtn.style.left = cardLeft  + 'px';
-  prevBtn.style.top  = cardMidY  + 'px';
-  nextBtn.style.left = cardRight + 'px';
-  nextBtn.style.top  = cardMidY  + 'px';
-
-  /* Keep _shellW in sync for applyPosition() */
-  _shellW = shellW;
+  prevBtn.style.left = cardLeft         + 'px';
+  prevBtn.style.top  = cardMidY         + 'px';
+  nextBtn.style.left = (cardLeft + cardW) + 'px';
+  nextBtn.style.top  = cardMidY         + 'px';
 }
 
 function _measureLayout(){
@@ -198,7 +192,6 @@ function _measureLayout(){
   return _cw > _gap;
 }
 
-function updateNavPos(){ _measureLayout(); positionNavButtons(); }
 function cacheLayout(){  _measureLayout(); }
 
 function applyPosition(){

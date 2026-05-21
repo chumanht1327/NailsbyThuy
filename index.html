@@ -11,12 +11,10 @@
 <link rel="dns-prefetch" href="https://www.instagram.com"/>
 <link rel="dns-prefetch" href="https://maps.app.goo.gl"/>
 <link rel="dns-prefetch" href="https://www.google.com"/>
-<!-- Preload LCP hero photo — responsive srcset preload -->
-<link rel="preload" as="image" href="/images/hero-bg-900.webp" imagesrcset="/images/hero-bg-400.webp 400w, /images/hero-bg-900.webp 900w, /images/hero-bg-1400.webp 1400w" imagesizes="(max-width:900px) 100vw, 50vw" fetchpriority="high" type="image/webp"/>
-<link rel="preload" as="image" href="/images/bg-texture.webp" fetchpriority="auto" type="image/webp"/>
-<!-- Preload hero logo and profile photo -->
-<link rel="preload" as="image" href="/images/logo-nailsbythuy-400.webp" fetchpriority="auto" type="image/webp"/>
-<link rel="preload" as="image" href="/images/about-profile-photo-400.webp" fetchpriority="auto" type="image/webp"/>
+<!-- Preload LCP hero photo (AVIF — matches <source type="image/avif"> in <picture>) -->
+<link rel="preload" as="image" href="/images/hero-bg-900.avif" imagesrcset="/images/hero-bg-400.avif 400w, /images/hero-bg-900.avif 900w, /images/hero-bg-1400.avif 1400w" imagesizes="(max-width:900px) 100vw, 50vw" fetchpriority="high" type="image/avif"/>
+<!-- Logo pill is above-fold; bg-texture and about photo are below-fold (no preload) -->
+<link rel="preload" as="image" href="/images/logo-nailsbythuy-400.webp" fetchpriority="low" type="image/webp"/>
 
 <!-- ── FAVICON / PWA ──────────────────────────────────────────────── -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318120f'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23b5624f'%3ET%3C/text%3E%3C/svg%3E"/>
