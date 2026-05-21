@@ -233,12 +233,13 @@ function initShowcase(){
     requestAnimationFrame(function(){
       if(_measureLayout()){
         positionNavButtons();
-        showcaseTrack.style.transition='none'; /* no slide-in on first paint */
+        showcaseTrack.style.transition='none'; /* snap to position, no slide-in */
         applyPosition();
-        void showcaseTrack.offsetWidth;        /* flush style before restore */
-        showcaseTrack.style.visibility='';
-        showcaseTrack.style.transition='';
       }
+      showcaseTrack.style.visibility='';       /* always reveal even if measure failed */
+      requestAnimationFrame(function(){
+        showcaseTrack.style.transition='';     /* re-enable for user interactions */
+      });
     });
   });
 }
