@@ -229,8 +229,8 @@ function initShowcase(){
   requestAnimationFrame(function(){
     requestAnimationFrame(function(){
       if(_measureLayout()){
-        applyPosition();
         positionNavButtons();
+        applyPosition();
       }
     });
   });
@@ -311,7 +311,7 @@ showcaseTrack.addEventListener('click',e=>{
     }
   },{passive:true});
 })();
-var _rsTimer;window.addEventListener('resize',function(){clearTimeout(_rsTimer);_rsTimer=setTimeout(function(){if(_measureLayout()){applyPosition();positionNavButtons();}},150);});
+var _rsTimer;window.addEventListener('resize',function(){clearTimeout(_rsTimer);_rsTimer=setTimeout(function(){if(_measureLayout()){positionNavButtons();applyPosition();}},150);});
 requestAnimationFrame(function(){ initShowcase(); startAuto(); });
 
 /* ── Masonry Grid ────────────────────────────────────────────────── */
