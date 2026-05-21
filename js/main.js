@@ -98,7 +98,8 @@ document.querySelectorAll('.faq-item').forEach(function(item){
     var isOpen=item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(function(i){
       i.classList.remove('open');
-      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      var q=i.querySelector('.faq-q');
+      if(q) q.setAttribute('aria-expanded','false');
     });
     if(!isOpen){
       item.classList.add('open');

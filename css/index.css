@@ -74,8 +74,8 @@ nav#nav.scrolled .nav-hamburger span{background:var(--ink)}
 .about-profile:hover img{transform:scale(1.04)}
 .about-year-strip{position:relative;z-index:5;padding:32px 36px 36px;border-bottom:1px solid rgba(248,245,240,.06);display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;}
 .about-year-num{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1;color:var(--terra);}
-.about-year-label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,245,240,.48);line-height:1.6;margin-top:4px;}
-.about-year-bio{font-size:.85rem;line-height:1.9;color:rgba(248,245,240,.5);margin-top:20px;max-width:340px;}
+.about-year-label{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,245,240,.62);line-height:1.6;margin-top:4px;}
+.about-year-bio{font-size:.85rem;line-height:1.9;color:rgba(248,245,240,.62);margin-top:20px;max-width:340px;}
 .about-year-since{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(248,245,240,.2);font-style:italic;font-family:'Cormorant Garamond',serif;white-space:nowrap;}
 .about-philosophy{position:relative;z-index:3;padding:32px 36px;border-top:1px solid rgba(248,245,240,.07);background:rgba(248,245,240,.02);}
 .about-philosophy-label{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);margin-bottom:12px;}
@@ -621,7 +621,7 @@ nav#nav.scrolled .nav-logo{color:#17110e !important;text-shadow:none !important;
 #local-area .section-head{align-items:center;text-align:center}
 #local-area .section-head-left{align-items:center}
 .local-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;margin-top:48px}
-.local-text p{font-size:.88rem;line-height:2;color:rgba(248,245,240,.52);margin-bottom:16px}
+.local-text p{font-size:.88rem;line-height:2;color:rgba(248,245,240,.65);margin-bottom:16px}
 .local-text p strong{color:rgba(248,245,240,.8);font-weight:400}
 .local-areas{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:32px}
 .local-area-pill{padding:14px 18px;border:1px solid rgba(248,245,240,.07);background:rgba(248,245,240,.02)}
