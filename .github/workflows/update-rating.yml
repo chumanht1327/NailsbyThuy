@@ -1,0 +1,40 @@
+name: Update Google Rating
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'   # Every Monday 8 AM UTC
+  workflow_dispatch:        # Allow manual trigger from GitHub Actions tab
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch rating from Google Places API
+        id: fetch
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: |
+          RESPONSE=$(curl -sf \
+            "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJpWwrrsS5RIYRKrruowqxcgk&fields=rating%2Cuser_ratings_total&key=$GOOGLE_PLACES_API_KEY")
+          STATUS=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status',''))")
+          if [ "$STATUS" != "OK" ]; then
+            echo "Places API returned status: $STATUS — skipping update"
+            exit 0
+          fi
+          RATING=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin)['result']; print(d['rating'])")
+          TOTAL=$(echo "$RESPONSE"  | python3 -c "import sys,json; d=json.load(sys.stdin)['result']; print(d['user_ratings_total'])")
+          echo "{\"rating\":$RATING,\"total\":$TOTAL}" > data/rating.json
+          echo "rating=$RATING | total=$TOTAL"
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/rating.json
+          git diff --cached --quiet && echo "No change" || \
+            git commit -m "chore: update Google rating [skip ci]" && git push

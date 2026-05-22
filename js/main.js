@@ -550,7 +550,7 @@ function initRevDots(count){
 requestAnimationFrame(function(){
   showReviews(FALLBACK_REVIEWS);
   // Silently update rating badge with live data; fallback stays if fetch fails
-  fetch('/.netlify/functions/get-rating').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+  fetch('/data/rating.json').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
     if(!d||!d.rating||!d.total) return;
     var score=document.querySelector('.rev-rating-score');
     var count=document.querySelector('.rev-rating-count');
