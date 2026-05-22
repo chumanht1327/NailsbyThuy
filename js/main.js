@@ -547,7 +547,17 @@ function initRevDots(count){
   });
 }
 // Defer reviews DOM build to after first paint — reviews are below the fold
-requestAnimationFrame(function(){ showReviews(FALLBACK_REVIEWS); });
+requestAnimationFrame(function(){
+  showReviews(FALLBACK_REVIEWS);
+  // Silently update rating badge with live data; fallback stays if fetch fails
+  fetch('/.netlify/functions/get-rating').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+    if(!d||!d.rating||!d.total) return;
+    var score=document.querySelector('.rev-rating-score');
+    var count=document.querySelector('.rev-rating-count');
+    if(score) score.textContent=d.rating.toFixed(1);
+    if(count) count.textContent=d.total+' reviews on Google';
+  }).catch(function(){});
+});
 
 /* Reviews pause/play (WCAG 2.2.2) */
 (function(){
