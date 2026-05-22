@@ -524,24 +524,7 @@ function showReviews(reviews){
     </div>`).join('');
 }
 // Defer reviews DOM build to after first paint — reviews are below the fold
-requestAnimationFrame(function(){
-  showReviews(FALLBACK_REVIEWS);
-  // After paint, fetch live Google reviews and silently upgrade
-  var ctrl=new AbortController();
-  var tid=setTimeout(function(){ctrl.abort();},6000);
-  fetch('/.netlify/functions/get-reviews',{signal:ctrl.signal})
-    .then(function(r){clearTimeout(tid);return r.ok?r.json():null})
-    .then(function(data){
-      if(!data||!data.reviews||data.reviews.length<2)return;
-      var strip=document.getElementById('revStrip');
-      strip.style.opacity='0';
-      setTimeout(function(){
-        showReviews(data.reviews);
-        strip.style.opacity='1';
-      },350);
-    })
-    .catch(function(){clearTimeout(tid);});// silent fallback — FALLBACK_REVIEWS stay
-});
+requestAnimationFrame(function(){ showReviews(FALLBACK_REVIEWS); });
 
 /* Reviews pause/play (WCAG 2.2.2) */
 (function(){
