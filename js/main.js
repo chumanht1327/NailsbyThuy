@@ -516,31 +516,47 @@ const FALLBACK_REVIEWS=[
 ];
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function showReviews(reviews){
-  document.getElementById('revTrack').innerHTML=[...reviews,...reviews].map(r=>`
-    <div class="review-card" itemscope itemtype="https://schema.org/Review">
-      <div class="review-stars">${'★'.repeat(Math.min(5,r.stars||5))}</div>
-      <div class="review-text">"${esc(r.text)}"</div>
-      <div class="review-author">${esc(r.author)}${r.date?' · '+esc(r.date):''}</div>
-    </div>`).join('');
+  document.getElementById('revTrack').innerHTML=[...reviews,...reviews].map(r=>{
+    var init=r.author?r.author.charAt(0).toUpperCase():'★';
+    var stars='★'.repeat(Math.min(5,r.stars||5));
+    return `<div class="review-card" itemscope itemtype="https://schema.org/Review"><div class="review-card-top"><div class="review-avatar">${init}</div><div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="${r.stars||5}">${stars}</div></div><p class="review-text" itemprop="reviewBody">"${esc(r.text)}"</p><div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">${esc(r.author)}</span>${r.date?' · '+esc(r.date):''}</div></div>`;
+  }).join('');
+  initRevDots(reviews.length);
+}
+function initRevDots(count){
+  var dots=document.getElementById('revDots');
+  var track=document.getElementById('revTrack');
+  if(!dots||!track) return;
+  dots.innerHTML=Array.from({length:count},function(_,i){
+    return '<button class="rev-dot'+(i===0?' active':'')+'" aria-label="Go to review '+(i+1)+'"></button>';
+  }).join('');
+  var btns=dots.querySelectorAll('.rev-dot');
+  track.addEventListener('scroll',function(){
+    var card=track.querySelector('.review-card');
+    if(!card) return;
+    var cardW=card.offsetWidth+12;
+    var idx=Math.min(count-1,Math.round(track.scrollLeft/cardW));
+    btns.forEach(function(d,i){d.classList.toggle('active',i===idx);});
+  },{passive:true});
+  btns.forEach(function(d,i){
+    d.addEventListener('click',function(){
+      var card=track.querySelector('.review-card');
+      if(!card) return;
+      track.scrollTo({left:i*(card.offsetWidth+12),behavior:'smooth'});
+    });
+  });
 }
 // Defer reviews DOM build to after first paint — reviews are below the fold
 requestAnimationFrame(function(){
   showReviews(FALLBACK_REVIEWS);
-  // After paint, fetch live Google reviews and silently upgrade
-  var ctrl=new AbortController();
-  var tid=setTimeout(function(){ctrl.abort();},6000);
-  fetch('/.netlify/functions/get-reviews',{signal:ctrl.signal})
-    .then(function(r){clearTimeout(tid);return r.ok?r.json():null})
-    .then(function(data){
-      if(!data||!data.reviews||data.reviews.length<2)return;
-      var strip=document.getElementById('revStrip');
-      strip.style.opacity='0';
-      setTimeout(function(){
-        showReviews(data.reviews);
-        strip.style.opacity='1';
-      },350);
-    })
-    .catch(function(){clearTimeout(tid);});// silent fallback — FALLBACK_REVIEWS stay
+  // Silently update rating badge with live data; fallback stays if fetch fails
+  fetch('/.netlify/functions/get-rating').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+    if(!d||!d.rating||!d.total) return;
+    var score=document.querySelector('.rev-rating-score');
+    var count=document.querySelector('.rev-rating-count');
+    if(score) score.textContent=d.rating.toFixed(1);
+    if(count) count.textContent=d.total+' reviews on Google';
+  }).catch(function(){});
 });
 
 /* Reviews pause/play (WCAG 2.2.2) */
