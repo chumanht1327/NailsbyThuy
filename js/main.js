@@ -516,11 +516,21 @@ const FALLBACK_REVIEWS=[
 ];
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function showReviews(reviews){
-  document.getElementById('revTrack').innerHTML=[...reviews,...reviews].map(r=>{
+  var track=document.getElementById('revTrack');
+  track.innerHTML=[...reviews,...reviews].map(r=>{
     var init=r.author?r.author.charAt(0).toUpperCase():'★';
     var stars='★'.repeat(Math.min(5,r.stars||5));
-    return `<div class="review-card" itemscope itemtype="https://schema.org/Review"><div class="review-card-top"><div class="review-avatar">${init}</div><div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="${r.stars||5}">${stars}</div></div><p class="review-text" itemprop="reviewBody">"${esc(r.text)}"</p><div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">${esc(r.author)}</span>${r.date?' · '+esc(r.date):''}</div></div>`;
+    return `<div class="review-card" itemscope itemtype="https://schema.org/Review"><div class="review-card-top"><div class="review-avatar">${init}</div><div class="review-stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="${r.stars||5}">${stars}</div></div><p class="review-text" itemprop="reviewBody">"${esc(r.text)}"</p><button class="rev-expand-btn" aria-expanded="false">Read more</button><div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">${esc(r.author)}</span>${r.date?' · '+esc(r.date):''}</div></div>`;
   }).join('');
+  track.addEventListener('click',function(e){
+    var btn=e.target.closest('.rev-expand-btn');
+    if(!btn) return;
+    var txt=btn.previousElementSibling;
+    var expanded=btn.getAttribute('aria-expanded')==='true';
+    txt.classList.toggle('expanded',!expanded);
+    btn.setAttribute('aria-expanded',String(!expanded));
+    btn.textContent=expanded?'Read more':'Read less';
+  },{capture:false});
   initRevDots(reviews.length);
 }
 function initRevDots(count){
