@@ -43,6 +43,15 @@ exports.handler = async (event) => {
       };
     }
 
+    const { rating, user_ratings_total: total } = data.result;
+    if (!rating || !total) {
+      return {
+        statusCode: 502,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ error: 'Places API: rating data unavailable' }),
+      };
+    }
+
     return {
       statusCode: 200,
       headers: {
@@ -50,10 +59,7 @@ exports.handler = async (event) => {
         'Cache-Control': 'public, max-age=3600, s-maxage=86400',
         'Vary': 'Accept-Encoding',
       },
-      body: JSON.stringify({
-        rating: data.result.rating,
-        total: data.result.user_ratings_total,
-      }),
+      body: JSON.stringify({ rating, total }),
     };
   } catch (err) {
     console.error('get-rating error:', err.message);
