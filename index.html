@@ -6,8 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 
 <!-- ── PERFORMANCE HINTS (Core Web Vitals → Maps ranking signal) ─── -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" href="/fonts/cormorant-300.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/fonts/cormorant-300-italic.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="dns-prefetch" href="https://www.instagram.com"/>
 <link rel="dns-prefetch" href="https://maps.app.goo.gl"/>
 <link rel="dns-prefetch" href="https://www.google.com"/>
@@ -531,9 +532,6 @@
   ]
 }
 </script>
-<!-- Non-blocking font load: media="print" trick loads async, onload switches to all -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/></noscript>
 <link rel="preload" href="/css/index.css" as="style"/>
 <link rel="stylesheet" href="/css/index.css"/>
 </head>
