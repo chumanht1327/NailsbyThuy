@@ -541,18 +541,20 @@ function initRevDots(count){
     return '<button class="rev-dot'+(i===0?' active':'')+'" aria-label="Go to review '+(i+1)+'"></button>';
   }).join('');
   var btns=dots.querySelectorAll('.rev-dot');
+  var cardW=0;
+  function getCardW(){var c=track.querySelector('.review-card');return c?c.offsetWidth+12:0;}
+  window.addEventListener('resize',function(){cardW=0;},{passive:true});
   track.addEventListener('scroll',function(){
-    var card=track.querySelector('.review-card');
-    if(!card) return;
-    var cardW=card.offsetWidth+12;
+    if(!cardW)cardW=getCardW();
+    if(!cardW) return;
     var idx=Math.min(count-1,Math.round(track.scrollLeft/cardW));
     btns.forEach(function(d,i){d.classList.toggle('active',i===idx);});
   },{passive:true});
   btns.forEach(function(d,i){
     d.addEventListener('click',function(){
-      var card=track.querySelector('.review-card');
-      if(!card) return;
-      track.scrollTo({left:i*(card.offsetWidth+12),behavior:'smooth'});
+      if(!cardW)cardW=getCardW();
+      if(!cardW) return;
+      track.scrollTo({left:i*cardW,behavior:'smooth'});
     });
   });
 }
